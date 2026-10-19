@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-10-19T07:05:36Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 2: non c'è nulla da pubblicare.",
+  "when": "2026-10-19T07:14:31Z",
+  "changed": true,
+  "message": "Pubblicata la versione 3. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 2,
+  "version": 3,
   "counts": {
     "aree_colonnine": 405,
     "aree_marche_carburante": 469,
@@ -18,13 +18,26 @@
     "da_verificare": 206,
     "gestori_ricarica": 22,
     "impianti_ministero": 527,
-    "info_aggiornamento": 8,
+    "info_aggiornamento": 9,
     "marche_carburante": 22,
     "marche_ristorante": 18,
     "prezzi": 1990,
     "servizi": 28,
     "tratte": 49,
     "tariffe_ricarica": 15,
+    "tassi_cambio": 10,
     "aree_servizio_attive": 440
+  },
+  "changes": {
+    "info_aggiornamento": {
+      "aggiunte": 1,
+      "tolte": 0,
+      "modificate": 0
+    },
+    "tassi_cambio": {
+      "aggiunte": 10,
+      "tolte": 0,
+      "modificate": 0
+    }
   }
 }
