@@ -31,6 +31,8 @@ XLSX = os.path.join(ROOT, "source", "dati.xlsx")
 # file dei prezzi caricato a mano dalla pagina di aggiornamento (quando il Ministero non risponde a GitHub)
 CARICATO = os.path.join(ROOT, "source", "prezzi_mimit.csv")
 URL_PREZZI = "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv"
+# copia pubblica degli stessi open data (OpenDataView.it, ripubblica il file MIMIT): si usa se il Ministero non risponde
+URL_PREZZI_RISERVA = "https://opendataview.it/api/datasets/1494206/download"
 URL_CAMBI = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
 VALUTE = ["USD", "GBP", "CHF", "SEK", "NOK", "DKK", "PLN", "CZK", "HUF", "RON"]   # quelle del menu Impostazioni
 MIN_COPERTURA = 0.5     # se meno della metà degli impianti abbinati è nel file, il file è sospetto: non si usa
@@ -244,8 +246,21 @@ def main():
     forza = os.environ.get("FORZA") == "1" or file_prezzi or file_cambi
     if forza or vecchio(wb, "data_estrazione"):
         try:
-            raw = open(file_prezzi, "rb").read() if file_prezzi else scarica(URL_PREZZI)
-            esiti.append(aggiorna_prezzi(wb, raw, oggi) + (" (file caricato dalla pagina di aggiornamento)" if caricato else ""))
+            fonte = "file caricato dalla pagina di aggiornamento" if caricato else "Ministero"
+            if file_prezzi:
+                raw = open(file_prezzi, "rb").read()
+            else:
+                try:
+                    raw = scarica(URL_PREZZI, tentativi=2)
+                except Exception as e1:
+                    errori.append(f"Ministero non raggiungibile ({e1}); provo la copia OpenDataView")
+                    raw = scarica(URL_PREZZI_RISERVA, tentativi=2)
+                    fonte = "copia OpenDataView.it degli open data MIMIT"
+            try:
+                esiti.append(aggiorna_prezzi(wb, raw, oggi) + f" (fonte: {fonte})")
+            except Exception as e2:
+                anteprima = raw[:300].decode("utf-8", "replace").replace("\n", " ⏎ ")
+                raise ValueError(f"{e2} — inizio del file: {anteprima}")
         except Exception as e:
             errori.append(f"prezzi non aggiornati: {e}")
         if caricato:
