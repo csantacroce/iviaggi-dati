@@ -28,6 +28,8 @@ from openpyxl import load_workbook
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 XLSX = os.path.join(ROOT, "source", "dati.xlsx")
+# file dei prezzi caricato a mano dalla pagina di aggiornamento (quando il Ministero non risponde a GitHub)
+CARICATO = os.path.join(ROOT, "source", "prezzi_mimit.csv")
 URL_PREZZI = "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv"
 URL_CAMBI = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
 VALUTE = ["USD", "GBP", "CHF", "SEK", "NOK", "DKK", "PLN", "CZK", "HUF", "RON"]   # quelle del menu Impostazioni
@@ -230,6 +232,9 @@ def main():
     args = sys.argv[1:]
     file_prezzi = args[args.index("--prezzi") + 1] if "--prezzi" in args else None
     file_cambi = args[args.index("--cambi") + 1] if "--cambi" in args else None
+    caricato = not file_prezzi and os.path.exists(CARICATO)
+    if caricato:
+        file_prezzi = CARICATO
     oggi = dt.date.today().isoformat()
     wb = load_workbook(XLSX)
     esiti, errori, saltati = [], [], []
@@ -240,9 +245,11 @@ def main():
     if forza or vecchio(wb, "data_estrazione"):
         try:
             raw = open(file_prezzi, "rb").read() if file_prezzi else scarica(URL_PREZZI)
-            esiti.append(aggiorna_prezzi(wb, raw, oggi))
+            esiti.append(aggiorna_prezzi(wb, raw, oggi) + (" (file caricato dalla pagina di aggiornamento)" if caricato else ""))
         except Exception as e:
             errori.append(f"prezzi non aggiornati: {e}")
+        if caricato:
+            os.remove(CARICATO)     # usato (o scartato): non resta nell'archivio
     else:
         saltati.append("prezzi: aggiornati da meno di 6 giorni")
     if forza or vecchio(wb, "data_cambi"):

@@ -89,6 +89,15 @@
     </ol>
     <div id="esito" class="result" hidden></div>
   </section>
+  <section id="prezzi">
+    <h2><span class="n">4</span> Prezzi dei carburanti dal Ministero</h2>
+    <p class="mute" style="margin-top:0">Di solito non serve: GitHub li aggiorna da solo una volta alla settimana. Se il sito del Ministero non risponde a GitHub, puoi farlo tu: scarica il file con il telefono o il computer e caricalo qui.</p>
+    <p id="ultimoAgg" class="mute"></p>
+    <div class="row"><a class="sec" id="linkMimit" href="https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv" target="_blank" rel="noopener">1. Scarica prezzo_alle_8.csv</a></div>
+    <input type="file" id="fileCsv" accept=".csv,text/csv,text/plain">
+    <button class="big" id="caricaCsv" disabled>2. Carica i prezzi</button>
+    <div id="esitoCsv" class="result" hidden></div>
+  </section>
 </main>
 
 <script>
@@ -255,7 +264,39 @@ $("pubblica").onclick = async () => {
   } finally { busy = false; updatePubblica(); }
 };
 
-mostraStato(); loadAccess();
+// --- prezzi del Ministero caricati a mano
+const CSV_PATH = "source/prezzi_mimit.csv";
+function updateCsv(){ $("caricaCsv").disabled = !(token && repo && $("fileCsv").files.length && !busy); }
+$("fileCsv").onchange = updateCsv;
+async function mostraUltimoAgg(){
+  try {
+    const j = await fetch("https://raw.githubusercontent.com/" + (repo || guessRepo()) + "/" + BRANCH + "/data/aggiornamento_settimanale.json?t=" + Date.now()).then(r => r.json());
+    const ok = (j.ok || []).map(esc).join("<br>"), ko = (j.problemi || []).map(esc).join("<br>");
+    $("ultimoAgg").innerHTML = `Ultimo tentativo automatico: ${fmt(j.quando)}.` + (ok ? `<br>✔ ${ok}` : "") + (ko ? `<br>✖ ${ko}` : "");
+  } catch(e) {}
+}
+$("caricaCsv").onclick = async () => {
+  const file = $("fileCsv").files[0]; if (!file || busy) return;
+  busy = true; updateCsv(); const out = $("esitoCsv"); out.hidden = false; out.className = "result info"; out.textContent = "Invio del file…";
+  try {
+    if (file.size > 30 * 1024 * 1024) throw new Error("Il file è troppo grande.");
+    const testa = await file.slice(0, 300).text();
+    if (!/idimpianto/i.test(testa.replace(/_/g, ""))) throw new Error("Questo non sembra il file dei prezzi del Ministero (prezzo_alle_8.csv).");
+    let sha; const cur = await gh(`/repos/${repo}/contents/${CSV_PATH}?ref=${BRANCH}`);
+    if (cur.ok) sha = (await cur.json()).sha;
+    const put = await gh(`/repos/${repo}/contents/${CSV_PATH}`, { method: "PUT", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: "[aggiorna prezzi] File prezzi del Ministero caricato dal sito", content: await toBase64(file),
+        branch: BRANCH, ...(sha ? { sha } : {}) }) });
+    if (!put.ok) throw new Error(explain(put));
+    out.className = "result ok";
+    out.innerHTML = "<b>✔ File caricato.</b> Tra 2–3 minuti GitHub aggiorna i prezzi e pubblica i dati. L’esito compare qui sopra («Ultimo tentativo») e in «Dati online adesso».";
+    setTimeout(() => { mostraUltimoAgg(); mostraStato(); }, 180000);
+  } catch(e) { out.className = "result ko"; out.innerHTML = `<b>✖ ${esc(e.message)}</b>`; }
+  finally { busy = false; updateCsv(); }
+};
+const _render = render; render = function(){ _render(); updateCsv(); };
+
+mostraStato(); loadAccess(); mostraUltimoAgg();
 </script>
 </body>
 </html>
