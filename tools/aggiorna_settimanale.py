@@ -19,6 +19,8 @@ import io
 import os
 import re
 import sys
+import json
+import time
 import urllib.request
 import xml.etree.ElementTree as ET
 
@@ -32,10 +34,20 @@ VALUTE = ["USD", "GBP", "CHF", "SEK", "NOK", "DKK", "PLN", "CZK", "HUF", "RON"] 
 MIN_COPERTURA = 0.5     # se meno della metà degli impianti abbinati è nel file, il file è sospetto: non si usa
 
 
-def scarica(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "iVIAGGI-dati/1.0 (aggiornamento settimanale)"})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        return r.read()
+def scarica(url, tentativi=3):
+    """Scarica con qualche tentativo (il sito del Ministero a volte è lento)."""
+    ultimo = None
+    for n in range(tentativi):
+        try:
+            req = urllib.request.Request(url, headers={
+                "User-Agent": "Mozilla/5.0 (compatible; iVIAGGI-dati/1.0; aggiornamento settimanale)",
+                "Accept": "text/csv,text/plain,application/xml,*/*"})
+            with urllib.request.urlopen(req, timeout=180) as r:
+                return r.read()
+        except Exception as e:      # noqa: BLE001
+            ultimo = e
+            time.sleep(20 * (n + 1))
+    raise RuntimeError(f"download non riuscito da {url}: {ultimo}")
 
 
 # ---------------------------------------------------------------- prezzi
@@ -222,6 +234,10 @@ def main():
         errori.append(f"cambi non aggiornati: {e}")
     if esiti:
         wb.save(XLSX)
+    # esito leggibile anche senza accesso ai log di GitHub
+    with open(os.path.join(ROOT, "data", "aggiornamento_settimanale.json"), "w", encoding="utf-8") as f:
+        json.dump({"quando": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                   "ok": esiti, "problemi": errori}, f, ensure_ascii=False, indent=2)
     for x in esiti:
         print("OK  ", x)
     for x in errori:
