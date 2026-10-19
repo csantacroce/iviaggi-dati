@@ -7,9 +7,10 @@ on:
       - "source/**"
       - "tools/**"
       - "site/**"
-  # ogni lunedì alle 6:15 UTC (8:15 in Italia d'estate, 7:15 d'inverno): prezzi del Ministero e cambi BCE
+  # ogni mattina alle 6:15 UTC: prezzi del Ministero e cambi BCE, aggiornati solo se hanno almeno 6 giorni
+  # (quindi circa una volta alla settimana; se il Ministero non risponde riprova il giorno dopo)
   schedule:
-    - cron: "15 6 * * 1"
+    - cron: "15 6 * * *"
   workflow_dispatch:
     inputs:
       aggiorna_prezzi:
@@ -41,7 +42,10 @@ jobs:
       - run: pip install openpyxl
       - name: Aggiorna prezzi e cambi (lunedì, a mano, o commit con "[aggiorna prezzi]")
         id: aggiorna
+        continue-on-error: true      # se il Ministero non risponde si prosegue: i dati restano quelli di prima
         if: github.event_name == 'schedule' || inputs.aggiorna_prezzi || contains(github.event.head_commit.message, '[aggiorna prezzi]')
+        env:
+          FORZA: ${{ github.event_name != 'schedule' && '1' || '0' }}
         run: python tools/aggiorna_settimanale.py
       - name: Controlla l'Excel e costruisci il database
         id: build
@@ -51,6 +55,7 @@ jobs:
           PREZZI_AUTOMATICI: ${{ steps.aggiorna.outcome == 'success' && '1' || '0' }}
         run: python tools/build.py
       - name: Salva l'esito (anche se ci sono errori)
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

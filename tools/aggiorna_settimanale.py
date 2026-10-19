@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Aggiornamento automatico settimanale (lo lancia GitHub Actions ogni lunedì mattina).
+"""Aggiornamento automatico settimanale (GitHub Actions lo prova ogni mattina; aggiorna i dati vecchi di almeno 6 giorni).
 
 1. Prezzi dei carburanti: scarica dal Ministero (MIMIT, Osservaprezzi Carburanti, open data IODL 2.0)
    il file dei prezzi praticati e riscrive il foglio «prezzi» dell'Excel solo per gli impianti già
@@ -206,6 +206,17 @@ def aggiorna_cambi(wb, raw):
     return f"cambi BCE del {data}: " + ", ".join(f"{v} {tassi[v]}" for v in VALUTE)
 
 
+def vecchio(wb, chiave, giorni=6):
+    """True se la data in info_aggiornamento manca o ha almeno `giorni` giorni."""
+    for row in wb["info_aggiornamento"].iter_rows(min_row=2, values_only=True):
+        if row[0] == chiave and row[1]:
+            try:
+                return (dt.date.today() - dt.date.fromisoformat(str(row[1])[:10])).days >= giorni
+            except ValueError:
+                return True
+    return True
+
+
 def imposta_info(wb, chiave, valore):
     ws = wb["info_aggiornamento"]
     for row in ws.iter_rows(min_row=2):
@@ -221,28 +232,38 @@ def main():
     file_cambi = args[args.index("--cambi") + 1] if "--cambi" in args else None
     oggi = dt.date.today().isoformat()
     wb = load_workbook(XLSX)
-    esiti, errori = [], []
-    try:
-        raw = open(file_prezzi, "rb").read() if file_prezzi else scarica(URL_PREZZI)
-        esiti.append(aggiorna_prezzi(wb, raw, oggi))
-    except Exception as e:
-        errori.append(f"prezzi non aggiornati: {e}")
-    try:
-        raw = open(file_cambi, "rb").read() if file_cambi else scarica(URL_CAMBI)
-        esiti.append(aggiorna_cambi(wb, raw))
-    except Exception as e:
-        errori.append(f"cambi non aggiornati: {e}")
+    esiti, errori, saltati = [], [], []
+    # GitHub prova ogni mattina; ogni parte si aggiorna solo se i dati hanno almeno 6 giorni
+    # (in pratica una volta alla settimana, e se il Ministero non risponde riprova il giorno dopo).
+    # FORZA=1 (avvio a mano o commit con "[aggiorna prezzi]") aggiorna subito.
+    forza = os.environ.get("FORZA") == "1" or file_prezzi or file_cambi
+    if forza or vecchio(wb, "data_estrazione"):
+        try:
+            raw = open(file_prezzi, "rb").read() if file_prezzi else scarica(URL_PREZZI)
+            esiti.append(aggiorna_prezzi(wb, raw, oggi))
+        except Exception as e:
+            errori.append(f"prezzi non aggiornati: {e}")
+    else:
+        saltati.append("prezzi: aggiornati da meno di 6 giorni")
+    if forza or vecchio(wb, "data_cambi"):
+        try:
+            raw = open(file_cambi, "rb").read() if file_cambi else scarica(URL_CAMBI)
+            esiti.append(aggiorna_cambi(wb, raw))
+        except Exception as e:
+            errori.append(f"cambi non aggiornati: {e}")
+    else:
+        saltati.append("cambi: aggiornati da meno di 6 giorni")
     if esiti:
         wb.save(XLSX)
     # esito leggibile anche senza accesso ai log di GitHub
     with open(os.path.join(ROOT, "data", "aggiornamento_settimanale.json"), "w", encoding="utf-8") as f:
         json.dump({"quando": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                   "ok": esiti, "problemi": errori}, f, ensure_ascii=False, indent=2)
+                   "ok": esiti, "problemi": errori, "non_necessari": saltati}, f, ensure_ascii=False, indent=2)
     for x in esiti:
         print("OK  ", x)
     for x in errori:
         print("ATTENZIONE", x)
-    if not esiti:
+    if errori and not esiti:
         sys.exit(1)
 
 
