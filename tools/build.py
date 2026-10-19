@@ -49,7 +49,7 @@ FOREIGN = [  # (tabella, colonna, tabella riferita, colonna riferita, obbligator
     ("tariffe_ricarica", "id_gestore", "gestori_ricarica", "id", True),
 ]
 RANGES = [  # (tabella, colonna, minimo, massimo)
-    ("aree_servizio", "lat", 35, 48), ("aree_servizio", "lon", 6, 19), ("aree_servizio", "km", -50, 2000), ("aree_servizio", "km_cippo", -5, 2000),
+    ("aree_servizio", "lat", 35, 48), ("aree_servizio", "lon", 6, 19), ("aree_servizio", "km", -50, 2000), ("aree_servizio", "km_cippo", -5, 2000), ("tassi_cambio", "per_euro", 0.0001, 100000),
     ("caselli", "lat", 35, 48), ("caselli", "lon", 6, 19),
     ("aree_colonnine", "numero_colonnine", 1, 100), ("aree_colonnine", "potenza_kw", 1, 1000),
     ("aree_colonnine", "prezzo_kwh", 0.01, 2),
@@ -67,7 +67,7 @@ ALLOWED = [
     ("tariffe_ricarica", "tipo_corrente", {"AC", "DC"}),
     ("tariffe_ricarica", "stato", {"verificato", "da verificare"}),
 ]
-DATES = [("aree_colonnine", "data_aggiornamento"), ("tariffe_ricarica", "data_fonte")]
+DATES = [("aree_colonnine", "data_aggiornamento"), ("tariffe_ricarica", "data_fonte"), ("tassi_cambio", "data")]
 
 
 class Problems:
@@ -250,7 +250,10 @@ def validate(schema, tables, pb, prev_counts):
     allow = os.environ.get("ALLOW_SHRINK") == "1"
     for name, now in (("aree_servizio", active), ("aree_colonnine", len(tables["aree_colonnine"])), ("prezzi", len(tables["prezzi"]))):
         before = prev_counts.get(name)
-        if before and now < before * 0.9 and not allow:
+        # aggiornamento automatico dei prezzi: il numero di righe può calare (impianti che non comunicano),
+        # il controllo scatta solo sotto la metà (aggiorna_settimanale.py controlla già la copertura)
+        soglia = 0.5 if name == "prezzi" and os.environ.get("PREZZI_AUTOMATICI") == "1" else 0.9
+        if before and now < before * soglia and not allow:
             pb.error(f"Il foglio «{name}» è sceso da {before} a {now} righe (oltre il 10%). Se è voluto, avvia la pubblicazione a mano da GitHub con «allow_shrink».")
     return active
 

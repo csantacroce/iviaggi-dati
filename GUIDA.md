@@ -47,3 +47,10 @@ Serve una volta sola, circa 30 minuti, da computer. Dopo, aggiornare i dati è: 
 ## Colonne dei km (foglio aree_servizio)
 - `km`: progressivo **nel senso di marcia** della carreggiata (nella carreggiata verso l'inizio dell'autostrada è contato dall'altro capo). Serve all'app per calcolare le distanze: non va "corretto".
 - `km_cippo`: il km **del cartello** (contato dall'inizio dell'autostrada), quello che l'app mostra ("Ti trovi al km …", km delle aree). Per una nuova area scrivi il km che leggi sul cartello. Se manca, la pubblicazione dà un avviso e l'app mostra `km`.
+
+## Aggiornamento automatico settimanale (prezzi e cambi)
+- Ogni **lunedì mattina** GitHub scarica da solo i prezzi dei carburanti del Ministero (Osservaprezzi, open data IODL 2.0) e i cambi della BCE, aggiorna i fogli `prezzi` e `tassi_cambio` dell'Excel e pubblica una nuova versione dei dati se qualcosa è cambiato. Non devi fare nulla.
+- Si aggiornano solo i prezzi degli impianti già abbinati alle aree nel foglio `impianti_ministero`: le tue correzioni negli altri fogli non vengono toccate. Per abbinare un impianto nuovo aggiungi una riga in `impianti_ministero` (id_area e id_impianto del Ministero).
+- Se il Ministero o la BCE non rispondono, quella parte resta com'era; se non risponde nessuno dei due, GitHub ti manda una mail e i dati pubblicati restano quelli di prima.
+- Per lanciarlo subito: scheda **Actions → Pubblica i dati dell'app → Run workflow**, spunta «Scarica adesso prezzi…».
+- Prima di modificare l'Excel scarica sempre l'ultima versione dalla pagina di aggiornamento: il lunedì GitHub la aggiorna.

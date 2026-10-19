@@ -130,3 +130,10 @@ CREATE INDEX idx_marche_rist_area ON aree_marche_ristorante(id_area);
 CREATE INDEX idx_servizi_area ON aree_servizi(id_area);
 CREATE INDEX idx_prezzi_area ON prezzi(id_area);
 CREATE INDEX idx_tariffe_gestore ON tariffe_ricarica(id_gestore);
+
+CREATE TABLE tassi_cambio (
+  valuta TEXT,
+  per_euro REAL,
+  data TEXT,
+  fonte TEXT
+);

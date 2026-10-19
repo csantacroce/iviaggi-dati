@@ -7,8 +7,15 @@ on:
       - "source/**"
       - "tools/**"
       - "site/**"
+  # ogni lunedì alle 6:15 UTC (8:15 in Italia d'estate, 7:15 d'inverno): prezzi del Ministero e cambi BCE
+  schedule:
+    - cron: "15 6 * * 1"
   workflow_dispatch:
     inputs:
+      aggiorna_prezzi:
+        description: "Scarica adesso prezzi dei carburanti (Ministero) e cambi (BCE)"
+        type: boolean
+        default: false
       allow_shrink:
         description: "Consenti un calo di righe superiore al 10% (solo se è voluto)"
         type: boolean
@@ -32,19 +39,24 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install openpyxl
+      - name: Aggiorna prezzi e cambi (lunedì, a mano, o commit con "[aggiorna prezzi]")
+        id: aggiorna
+        if: github.event_name == 'schedule' || inputs.aggiorna_prezzi || contains(github.event.head_commit.message, '[aggiorna prezzi]')
+        run: python tools/aggiorna_settimanale.py
       - name: Controlla l'Excel e costruisci il database
         id: build
         continue-on-error: true
         env:
           ALLOW_SHRINK: ${{ inputs.allow_shrink && '1' || '0' }}
+          PREZZI_AUTOMATICI: ${{ steps.aggiorna.outcome == 'success' && '1' || '0' }}
         run: python tools/build.py
       - name: Salva l'esito (anche se ci sono errori)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
+          git add data source
           if ! git diff --cached --quiet; then
-            git commit -m "Dati: esito della pubblicazione"
+            git commit -m "Dati: esito della pubblicazione${{ steps.aggiorna.outcome == 'success' && ' (prezzi e cambi aggiornati)' || '' }}"
             git pull --rebase
             git push
           fi
