@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "when": "2026-10-18T17:21:41Z",
+  "changed": true,
+  "message": "Pubblicata la versione 2. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "errors": [],
+  "warnings": [],
+  "version": 2,
+  "counts": {
+    "aree_colonnine": 405,
+    "aree_marche_carburante": 469,
+    "aree_marche_ristorante": 426,
+    "aree_servizi": 2531,
+    "aree_servizio": 480,
+    "autostrade": 53,
+    "caselli": 106,
+    "correzioni_log": 263,
+    "da_verificare": 206,
+    "gestori_ricarica": 22,
+    "impianti_ministero": 527,
+    "info_aggiornamento": 8,
+    "marche_carburante": 22,
+    "marche_ristorante": 18,
+    "prezzi": 1990,
+    "servizi": 28,
+    "tratte": 49,
+    "tariffe_ricarica": 15,
+    "aree_servizio_attive": 440
+  },
+  "changes": {
+    "aree_servizio": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 480
+    },
+    "correzioni_log": {
+      "aggiunte": 1,
+      "tolte": 0,
+      "modificate": 0
+    }
+  }
+}

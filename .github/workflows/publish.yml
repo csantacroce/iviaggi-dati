@@ -1,0 +1,74 @@
+name: Pubblica i dati dell'app
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "source/**"
+      - "tools/**"
+      - "site/**"
+  workflow_dispatch:
+    inputs:
+      allow_shrink:
+        description: "Consenti un calo di righe superiore al 10% (solo se è voluto)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pubblica
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install openpyxl
+      - name: Controlla l'Excel e costruisci il database
+        id: build
+        continue-on-error: true
+        env:
+          ALLOW_SHRINK: ${{ inputs.allow_shrink && '1' || '0' }}
+        run: python tools/build.py
+      - name: Salva l'esito (anche se ci sono errori)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if ! git diff --cached --quiet; then
+            git commit -m "Dati: esito della pubblicazione"
+            git pull --rebase
+            git push
+          fi
+      - name: Prepara il sito
+        run: |
+          mkdir -p _site/data
+          cp -r site/. _site/
+          cp data/manifest.json data/iviaggi_database.sqlite data/status.json _site/data/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Segnala l'errore se la costruzione è fallita
+        if: steps.build.outcome == 'failure'
+        run: |
+          echo "La costruzione del database è fallita: vedi data/status.json"
+          exit 1
+
+  deploy:
+    needs: build
+    if: always() && needs.build.result != 'cancelled'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

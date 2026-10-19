@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Aggiornamento dei dati</title>
+<style>
+  :root { color-scheme: dark; --bg:#10140f; --card:#1a201a; --line:#2b342b; --fg:#eef2ee; --mute:#9aa59a;
+          --green:#2fa564; --green-d:#00693e; --red:#e5645a; --amber:#e0a23a; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 28px 16px 80px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  .sub { color: var(--mute); margin: 0 0 22px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; margin:0 0 14px; }
+  h2 { font-size: 1.02rem; margin: 0 0 10px; display:flex; gap:10px; align-items:center; }
+  h2 .n { background:var(--green-d); color:#fff; border-radius:50%; width:26px; height:26px; display:inline-grid; place-items:center; font-size:.85rem; flex:none; }
+  label { display:block; color:var(--mute); font-size:.9rem; margin:10px 0 4px; }
+  input[type=password], input[type=text] { width:100%; padding:12px; border-radius:10px; border:1px solid var(--line); background:#0f130f; color:var(--fg); font-size:1rem; }
+  input[type=file] { width:100%; padding:10px; border:1px dashed #3c493c; border-radius:10px; background:#0f130f; color:var(--fg); }
+  .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  button { appearance:none; border:0; border-radius:12px; padding:13px 18px; font-size:1rem; font-weight:600; background:var(--green); color:#04140a; cursor:pointer; }
+  button.sec { background:#263026; color:var(--fg); }
+  button:disabled { opacity:.45; cursor:not-allowed; }
+  .big { width:100%; margin-top:12px; padding:15px; font-size:1.05rem; }
+  .mute { color:var(--mute); font-size:.9rem; }
+  .pill { display:inline-block; padding:2px 10px; border-radius:99px; font-size:.82rem; font-weight:600; background:#263026; }
+  .pill.ok { background:#16422a; color:#7ee2a6; } .pill.ko { background:#4a1f1b; color:#ff9d94; }
+  ol.steps { list-style:none; padding:0; margin:14px 0 0; }
+  ol.steps li { display:flex; gap:10px; align-items:center; padding:6px 0; color:var(--mute); }
+  ol.steps li.on { color:var(--fg); } ol.steps li.done { color:#7ee2a6; } ol.steps li.fail { color:#ff9d94; }
+  .dot { width:12px; height:12px; border-radius:50%; background:#3a453a; flex:none; }
+  li.on .dot { background:var(--amber); animation:pulse 1s infinite; } li.done .dot { background:var(--green); } li.fail .dot { background:var(--red); }
+  @keyframes pulse { 50% { opacity:.35; } }
+  .result { margin-top:14px; border-radius:12px; padding:12px 14px; border:1px solid var(--line); }
+  .result.ok { background:#112619; border-color:#1e5a38; } .result.ko { background:#2a1513; border-color:#6a2a24; } .result.info { background:#1f2316; border-color:#4b5320; }
+  .result ul { margin:8px 0 0; padding-left:1.2em; } .result li { margin:3px 0; }
+  details { margin-top:8px; } summary { cursor:pointer; color:var(--mute); }
+  a { color:#7ee2a6; }
+  [hidden] { display:none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Aggiornamento dei dati</h1>
+  <p class="sub">Carica l’Excel aggiornato: viene controllato e, se tutto è a posto, pubblicato per l’app.</p>
+
+  <section id="stato">
+    <h2>Dati online adesso</h2>
+    <div id="statoTesto" class="mute">Controllo…</div>
+  </section>
+
+  <section id="accesso">
+    <h2><span class="n">1</span> Accesso</h2>
+    <div id="accessoOk" hidden>
+      <span class="pill ok">Codice salvato</span>
+      <span class="mute" id="repoNome"></span>
+      <div class="row" style="margin-top:10px"><button class="sec" id="esci">Esci da questo dispositivo</button></div>
+    </div>
+    <div id="accessoForm">
+      <label for="token">Codice di accesso personale (si inserisce una volta sola)</label>
+      <input id="token" type="password" autocomplete="off" placeholder="github_pat_…">
+      <div id="repoCampo" hidden>
+        <label for="repo">Archivio (utente/nome)</label>
+        <input id="repo" type="text" autocomplete="off" placeholder="csantacroce/iviaggi-dati">
+      </div>
+      <label class="mute"><input type="checkbox" id="ricorda" checked> Ricordalo su questo dispositivo</label>
+      <div class="row" style="margin-top:10px"><button id="salva">Salva</button></div>
+      <p class="mute">Il codice resta solo su questo telefono o computer e non viene mai mostrato né condiviso.</p>
+    </div>
+  </section>
+
+  <section id="scarica">
+    <h2><span class="n">2</span> Scarica l’Excel attuale</h2>
+    <p class="mute" style="margin-top:0">Parti sempre da questo file, così non perdi le modifiche fatte da altri dispositivi.</p>
+    <div class="row"><button class="sec" id="btnScarica" disabled>Scarica dati.xlsx</button><span class="mute" id="scaricaInfo"></span></div>
+  </section>
+
+  <section id="carica">
+    <h2><span class="n">3</span> Carica il file modificato</h2>
+    <input type="file" id="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+    <button class="big" id="pubblica" disabled>Controlla e pubblica</button>
+    <ol class="steps" id="passi" hidden>
+      <li data-s="invio"><span class="dot"></span> Invio del file</li>
+      <li data-s="avvio"><span class="dot"></span> Avvio del controllo</li>
+      <li data-s="controllo"><span class="dot"></span> Controllo e costruzione del database</li>
+      <li data-s="fine"><span class="dot"></span> Pubblicazione</li>
+    </ol>
+    <div id="esito" class="result" hidden></div>
+  </section>
+</main>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const store = { get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+                set(k,v){ try { localStorage.setItem(k,v); } catch(e){} },
+                del(k){ try { localStorage.removeItem(k); } catch(e){} } };
+// Per le prove in locale si può usare ?api=http://localhost:PORTA (solo da localhost).
+const API = (()=>{ const p = new URLSearchParams(location.search).get("api");
+  return p && /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? p.replace(/\/$/,"") : "https://api.github.com"; })();
+const BRANCH = "main", XLSX_PATH = "source/dati.xlsx", STATUS_PATH = "data/status.json";
+
+let token = null, repo = null, busy = false;
+
+function guessRepo(){
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/), seg = location.pathname.split("/").filter(Boolean)[0];
+  return m && seg && seg !== "admin" ? `${m[1]}/${seg}` : null;
+}
+function loadAccess(){
+  token = store.get("tk") || sessionStorage.getItem("tk");
+  repo = store.get("repo") || guessRepo();
+  if (!guessRepo()) $("repoCampo").hidden = false;
+  if (repo) $("repo").value = repo;
+  render();
+}
+function render(){
+  const ok = !!(token && repo);
+  $("accessoOk").hidden = !ok; $("accessoForm").hidden = ok;
+  $("repoNome").textContent = repo || "";
+  $("btnScarica").disabled = !ok;
+  updatePubblica();
+}
+function updatePubblica(){ $("pubblica").disabled = !(token && repo && $("file").files.length && !busy); }
+
+$("salva").onclick = () => {
+  const t = $("token").value.trim(), r = ($("repo").value || guessRepo() || "").trim();
+  if (!t) return alert("Incolla il codice di accesso.");
+  if (!/^[\w.-]+\/[\w.-]+$/.test(r)) return alert("Scrivi l’archivio come utente/nome, per esempio mio-utente/iviaggi-dati.");
+  token = t; repo = r;
+  if ($("ricorda").checked) { store.set("tk", t); store.set("repo", r); } else { sessionStorage.setItem("tk", t); store.set("repo", r); }
+  $("token").value = ""; render();
+};
+$("esci").onclick = () => { store.del("tk"); sessionStorage.removeItem("tk"); token = null; render(); };
+$("file").onchange = updatePubblica;
+
+async function gh(path, opts = {}){
+  const res = await fetch(API + path, { ...opts, headers: { "Authorization": "Bearer " + token,
+    "Accept": opts.accept || "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", ...(opts.headers||{}) } });
+  return res;
+}
+function explain(res){
+  if (res.status === 401) return "Il codice di accesso non è valido o è scaduto. Esci e inseriscine uno nuovo.";
+  if (res.status === 403) return "Il codice non ha il permesso necessario, oppure GitHub ha limitato le richieste. Riprova tra qualche minuto.";
+  if (res.status === 404) return "Archivio non trovato, o il codice non ha accesso a questo archivio. Controlla il nome (utente/nome).";
+  if (res.status === 409 || res.status === 422) return "Il file online è stato cambiato nel frattempo. Scarica di nuovo l’Excel attuale e rifai le modifiche.";
+  return `Errore di GitHub (${res.status}).`;
+}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const fmt = iso => { try { return new Date(iso).toLocaleString("it-IT", { dateStyle:"medium", timeStyle:"short" }); } catch(e){ return iso; } };
+
+// --- stato pubblico
+async function mostraStato(){
+  try {
+    const [m, s] = await Promise.all([
+      fetch("../data/manifest.json?t=" + Date.now()).then(r => r.json()),
+      fetch("../data/status.json?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null)]);
+    let t = `Versione <b>${m.version}</b> (${Math.round(m.bytes/1024)} KB)`;
+    if (s && s.when) t += `, ultimo controllo ${fmt(s.when)}`;
+    $("statoTesto").innerHTML = t + ".";
+  } catch(e) { $("statoTesto").textContent = "Non riesco a leggere i dati pubblicati (normale se apri il file in locale)."; }
+}
+
+// --- scarica l'Excel attuale
+$("btnScarica").onclick = async () => {
+  $("scaricaInfo").textContent = "Scarico…";
+  try {
+    const res = await gh(`/repos/${repo}/contents/${XLSX_PATH}?ref=${BRANCH}`, { accept: "application/vnd.github.raw+json" });
+    if (!res.ok) throw new Error(explain(res));
+    const blob = await res.blob();
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "dati.xlsx";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    $("scaricaInfo").textContent = "Fatto.";
+  } catch(e) { $("scaricaInfo").textContent = e.message; }
+};
+
+// --- pubblica
+function setStep(name, state){
+  const items = [...document.querySelectorAll("#passi li")]; const idx = items.findIndex(li => li.dataset.s === name);
+  items.forEach((li, i) => { li.className = i < idx ? "done" : i === idx ? state : ""; });
+  if (state === "done") items[idx].className = "done";
+}
+function showEsito(kind, html){ const e = $("esito"); e.className = "result " + kind; e.innerHTML = html; e.hidden = false; }
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+
+function toBase64(file){
+  return new Promise((resolve, reject) => { const r = new FileReader();
+    r.onload = () => resolve(String(r.result).split(",")[1]); r.onerror = () => reject(new Error("Non riesco a leggere il file."));
+    r.readAsDataURL(file); });
+}
+
+$("pubblica").onclick = async () => {
+  const file = $("file").files[0]; if (!file || busy) return;
+  busy = true; updatePubblica(); $("esito").hidden = true; $("passi").hidden = false;
+  try {
+    if (!/\.xlsx$/i.test(file.name)) throw new Error("Il file deve essere un Excel .xlsx.");
+    if (file.size > 20 * 1024 * 1024) throw new Error("Il file è troppo grande (oltre 20 MB).");
+    const head = new Uint8Array(await file.slice(0, 2).arrayBuffer());
+    if (head[0] !== 0x50 || head[1] !== 0x4B) throw new Error("Questo file non sembra un Excel .xlsx valido.");
+
+    setStep("invio", "on");
+    let sha; const cur = await gh(`/repos/${repo}/contents/${XLSX_PATH}?ref=${BRANCH}`);
+    if (cur.ok) sha = (await cur.json()).sha; else if (cur.status !== 404) throw new Error(explain(cur));
+    let prevWhen = null;   // data dell'ultimo esito prima di questo invio: serve a riconoscere quello nuovo
+    const ps = await gh(`/repos/${repo}/contents/${STATUS_PATH}?ref=${BRANCH}&t=${Date.now()}`, { accept: "application/vnd.github.raw+json" });
+    if (ps.ok) { try { prevWhen = (await ps.json()).when; } catch(e){} }
+    const put = await gh(`/repos/${repo}/contents/${XLSX_PATH}`, { method: "PUT", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: "Aggiornamento dati dal sito (" + new Date().toISOString().slice(0,16).replace("T"," ") + ")",
+        content: await toBase64(file), branch: BRANCH, ...(sha ? { sha } : {}) }) });
+    if (!put.ok) throw new Error(explain(put));
+    const sent = await put.json(); const commit = sent.commit && sent.commit.sha;
+    if (!commit) throw new Error("Risposta inattesa di GitHub.");
+
+    setStep("avvio", "on");
+    let run = null;
+    for (let i = 0; i < 45 && !run; i++) {   // fino a ~3 minuti
+      await sleep(i ? 4000 : 2500);
+      const r = await gh(`/repos/${repo}/actions/runs?head_sha=${commit}&per_page=5`);
+      if (r.ok) { const j = await r.json(); run = (j.workflow_runs || [])[0] || null; }
+    }
+    if (!run) throw new Error("Il file è stato caricato, ma il controllo automatico non è partito. Controlla che le «Actions» siano attive nell’archivio.");
+
+    setStep("controllo", "on");
+    for (let i = 0; i < 90 && run.status !== "completed"; i++) {   // fino a ~7 minuti
+      await sleep(5000);
+      const r = await gh(`/repos/${repo}/actions/runs/${run.id}`);
+      if (r.ok) run = await r.json();
+    }
+    if (run.status !== "completed") throw new Error("Il controllo sta impiegando più del solito. Riguarda tra qualche minuto qui sotto «Dati online adesso».");
+
+    // esito scritto dal controllo
+    const sres = await gh(`/repos/${repo}/contents/${STATUS_PATH}?ref=${BRANCH}&t=${Date.now()}`, { accept: "application/vnd.github.raw+json" });
+    let st = null; if (sres.ok) { try { st = await sres.json(); } catch(e){} }
+    const fresh = !!(st && st.when && st.when !== prevWhen);
+    setStep("fine", "done");
+    if (fresh && st.ok && st.changed) {
+      const ch = Object.entries(st.changes || {}).map(([t, c]) => `<li><b>${esc(t)}</b>: ${c.aggiunte} aggiunte, ${c.modificate} modificate, ${c.tolte} tolte</li>`).join("");
+      const w = (st.warnings||[]).map(x => `<li>${esc(x)}</li>`).join("");
+      showEsito("ok", `<b>✔ ${esc(st.message)}</b>${ch ? "<ul>"+ch+"</ul>" : ""}${w ? "<details open><summary>Avvisi (non bloccanti)</summary><ul>"+w+"</ul></details>" : ""}
+        <p class="mute" style="margin:8px 0 0">Il sito può impiegare 1–2 minuti ad aggiornarsi del tutto.</p>`);
+      mostraStato();
+    } else if (fresh && st.ok) {
+      showEsito("info", `<b>${esc(st.message)}</b>`);
+    } else if (fresh && !st.ok) {
+      setStep("controllo", "fail");
+      showEsito("ko", `<b>✖ Non pubblicato.</b> L’app continua a usare i dati precedenti. Correggi questi punti nell’Excel e ricarica:<ul>${(st.errors||[]).map(x => `<li>${esc(x)}</li>`).join("")}</ul>`);
+    } else {
+      setStep("controllo", "fail");
+      showEsito("ko", `<b>✖ Qualcosa è andato storto nell’esecuzione.</b> I dati online non sono stati cambiati. <a href="${esc(run.html_url)}" target="_blank" rel="noopener">Apri il registro su GitHub</a>.`);
+    }
+  } catch (e) {
+    document.querySelectorAll("#passi li.on").forEach(li => li.className = "fail");
+    showEsito("ko", `<b>✖ ${esc(e.message)}</b>`);
+  } finally { busy = false; updatePubblica(); }
+};
+
+mostraStato(); loadAccess();
+</script>
+</body>
+</html>
