@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-10-18T17:21:41Z",
-  "changed": true,
-  "message": "Pubblicata la versione 2. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-10-19T07:00:43Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 2: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 2,
@@ -26,17 +26,5 @@
     "tratte": 49,
     "tariffe_ricarica": 15,
     "aree_servizio_attive": 440
-  },
-  "changes": {
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 480
-    },
-    "correzioni_log": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
