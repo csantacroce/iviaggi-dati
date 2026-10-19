@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-10-19T07:14:31Z",
-  "changed": true,
-  "message": "Pubblicata la versione 3. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-10-19T07:24:44Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 3: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 3,
@@ -27,17 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 440
-  },
-  "changes": {
-    "info_aggiornamento": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "tassi_cambio": {
-      "aggiunte": 10,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
