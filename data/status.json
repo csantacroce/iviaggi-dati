@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-10-21T07:00:54Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 4: non c'è nulla da pubblicare.",
+  "when": "2026-10-22T07:02:17Z",
+  "changed": true,
+  "message": "Pubblicata la versione 5. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 4,
+  "version": 5,
   "counts": {
     "aree_colonnine": 405,
     "aree_marche_carburante": 469,
@@ -27,5 +27,17 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 440
+  },
+  "changes": {
+    "info_aggiornamento": {
+      "aggiunte": 1,
+      "tolte": 1,
+      "modificate": 0
+    },
+    "tassi_cambio": {
+      "aggiunte": 10,
+      "tolte": 10,
+      "modificate": 0
+    }
   }
 }
