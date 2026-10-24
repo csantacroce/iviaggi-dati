@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-10-23T07:05:46Z",
-  "changed": true,
-  "message": "Pubblicata la versione 6. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-10-24T06:56:40Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 6: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 6,
@@ -27,17 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 440
-  },
-  "changes": {
-    "info_aggiornamento": {
-      "aggiunte": 1,
-      "tolte": 1,
-      "modificate": 0
-    },
-    "prezzi": {
-      "aggiunte": 2056,
-      "tolte": 2056,
-      "modificate": 0
-    }
   }
 }

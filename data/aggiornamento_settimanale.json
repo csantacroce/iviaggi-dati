@@ -1,12 +1,9 @@
 {
-  "quando": "2026-10-23T07:05:46Z",
-  "ok": [
-    "prezzi: 2056 righe da 512/526 impianti (estrazione 2026-10-20), 25 righe vecchie tenute (fonte: copia OpenDataView.it degli open data MIMIT)"
-  ],
-  "problemi": [
-    "Ministero non raggiungibile (download non riuscito da https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv: <urlopen error [Errno 110] Connection timed out>); provo la copia OpenDataView"
-  ],
+  "quando": "2026-10-24T06:56:40Z",
+  "ok": [],
+  "problemi": [],
   "non_necessari": [
+    "prezzi: aggiornati da meno di 6 giorni",
     "cambi: aggiornati da meno di 6 giorni"
   ]
 }
