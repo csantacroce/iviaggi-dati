@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-10-27T07:01:28Z",
-  "changed": true,
-  "message": "Pubblicata la versione 8. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-10-28T07:12:38Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 8: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 8,
@@ -27,17 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 440
-  },
-  "changes": {
-    "info_aggiornamento": {
-      "aggiunte": 1,
-      "tolte": 1,
-      "modificate": 0
-    },
-    "tassi_cambio": {
-      "aggiunte": 10,
-      "tolte": 10,
-      "modificate": 0
-    }
   }
 }
