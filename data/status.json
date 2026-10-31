@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-10-30T07:19:23Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 8: non c'è nulla da pubblicare.",
+  "when": "2026-10-31T07:13:31Z",
+  "changed": true,
+  "message": "Pubblicata la versione 9. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 8,
+  "version": 9,
   "counts": {
     "aree_colonnine": 405,
     "aree_marche_carburante": 469,
@@ -27,5 +27,17 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 440
+  },
+  "changes": {
+    "info_aggiornamento": {
+      "aggiunte": 1,
+      "tolte": 1,
+      "modificate": 0
+    },
+    "prezzi": {
+      "aggiunte": 2064,
+      "tolte": 2064,
+      "modificate": 0
+    }
   }
 }
