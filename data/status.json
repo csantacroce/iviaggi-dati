@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-10-31T07:13:31Z",
+  "when": "2026-11-01T07:15:55Z",
   "changed": true,
-  "message": "Pubblicata la versione 9. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "message": "Pubblicata la versione 10. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 9,
+  "version": 10,
   "counts": {
     "aree_colonnine": 405,
     "aree_marche_carburante": 469,
@@ -34,9 +34,9 @@
       "tolte": 1,
       "modificate": 0
     },
-    "prezzi": {
-      "aggiunte": 2064,
-      "tolte": 2064,
+    "tassi_cambio": {
+      "aggiunte": 10,
+      "tolte": 10,
       "modificate": 0
     }
   }
