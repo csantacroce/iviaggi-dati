@@ -1,10 +1,9 @@
 {
-  "quando": "2026-11-01T07:15:55Z",
-  "ok": [
-    "cambi BCE del 2026-10-30: USD 1.1172, GBP 0.8338, CHF 0.9194, SEK 10.978, NOK 10.312, DKK 7.4735, PLN 4.4038, CZK 24.353, HUF 366.33, RON 5.3447"
-  ],
+  "quando": "2026-11-02T07:40:10Z",
+  "ok": [],
   "problemi": [],
   "non_necessari": [
-    "prezzi: aggiornati da meno di 6 giorni"
+    "prezzi: aggiornati da meno di 6 giorni",
+    "cambi: aggiornati da meno di 6 giorni"
   ]
 }
