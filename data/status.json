@@ -1,21 +1,21 @@
 {
   "ok": true,
-  "when": "2026-11-07T16:50:58Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 13: non c'è nulla da pubblicare.",
+  "when": "2026-11-07T17:08:55Z",
+  "changed": true,
+  "message": "Pubblicata la versione 14. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 13,
+  "version": 14,
   "counts": {
     "aree_colonnine": 407,
     "aree_marche_carburante": 469,
-    "aree_marche_ristorante": 426,
+    "aree_marche_ristorante": 428,
     "aree_servizi": 2531,
     "aree_servizio": 480,
     "autostrade": 53,
     "caselli": 106,
     "correzioni_log": 263,
-    "da_verificare": 204,
+    "da_verificare": 202,
     "gestori_ricarica": 22,
     "impianti_ministero": 527,
     "info_aggiornamento": 9,
@@ -26,6 +26,23 @@
     "tratte": 49,
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
-    "aree_servizio_attive": 442
+    "aree_servizio_attive": 444
+  },
+  "changes": {
+    "aree_marche_ristorante": {
+      "aggiunte": 2,
+      "tolte": 0,
+      "modificate": 0
+    },
+    "aree_servizio": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 2
+    },
+    "da_verificare": {
+      "aggiunte": 0,
+      "tolte": 2,
+      "modificate": 0
+    }
   }
 }
