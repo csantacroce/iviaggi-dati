@@ -1,13 +1,13 @@
 {
   "ok": true,
-  "when": "2026-11-07T21:56:25Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 18: non c'è nulla da pubblicare.",
+  "when": "2026-11-07T22:00:09Z",
+  "changed": true,
+  "message": "Pubblicata la versione 19. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 18,
+  "version": 19,
   "counts": {
-    "aree_colonnine": 418,
+    "aree_colonnine": 436,
     "aree_marche_carburante": 469,
     "aree_marche_ristorante": 428,
     "aree_servizi": 2543,
@@ -27,5 +27,17 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
+  },
+  "changes": {
+    "aree_colonnine": {
+      "aggiunte": 18,
+      "tolte": 0,
+      "modificate": 10
+    },
+    "tariffe_ricarica": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 4
+    }
   }
 }
