@@ -7,8 +7,8 @@ on:
       - "source/**"
       - "tools/**"
       - "site/**"
-  # ogni mattina alle 6:15 UTC: prezzi del Ministero e cambi BCE, aggiornati solo se hanno almeno 6 giorni
-  # (quindi circa una volta alla settimana; se il Ministero non risponde riprova il giorno dopo)
+  # ogni mattina alle 6:15 UTC: prezzi del Ministero ogni giorno, cambi BCE una volta alla settimana
+  # (se il Ministero non risponde riprova il giorno dopo)
   schedule:
     - cron: "15 6 * * *"
   workflow_dispatch:
@@ -61,7 +61,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data source
           if ! git diff --cached --quiet; then
-            git commit -m "Dati: esito della pubblicazione${{ steps.aggiorna.outcome == 'success' && ' (prezzi e cambi aggiornati)' || '' }}"
+            git commit -m "Dati: esito della pubblicazione${{ steps.aggiorna.outputs.aggiornati == '1' && ' (prezzi aggiornati)' || '' }}"
             git pull --rebase
             git push
           fi

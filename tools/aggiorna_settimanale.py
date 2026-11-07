@@ -240,11 +240,12 @@ def main():
     oggi = dt.date.today().isoformat()
     wb = load_workbook(XLSX)
     esiti, errori, saltati = [], [], []
-    # GitHub prova ogni mattina; ogni parte si aggiorna solo se i dati hanno almeno 6 giorni
-    # (in pratica una volta alla settimana, e se il Ministero non risponde riprova il giorno dopo).
+    # GitHub prova ogni mattina. Dal 7/11/2026 i prezzi dei carburanti si aggiornano OGNI GIORNO
+    # (il Ministero pubblica ogni mattina i prezzi alle 8 del giorno prima); i cambi BCE una volta alla
+    # settimana (dati con almeno 6 giorni). Se il Ministero non risponde riprova il giorno dopo.
     # FORZA=1 (avvio a mano o commit con "[aggiorna prezzi]") aggiorna subito.
     forza = os.environ.get("FORZA") == "1" or file_prezzi or file_cambi
-    if forza or vecchio(wb, "data_estrazione"):
+    if forza or vecchio(wb, "data_estrazione", giorni=1):
         try:
             fonte = "file caricato dalla pagina di aggiornamento" if caricato else "Ministero"
             if file_prezzi:
@@ -266,7 +267,7 @@ def main():
         if caricato:
             os.remove(CARICATO)     # usato (o scartato): non resta nell'archivio
     else:
-        saltati.append("prezzi: aggiornati da meno di 6 giorni")
+        saltati.append("prezzi: già aggiornati oggi")
     if forza or vecchio(wb, "data_cambi"):
         try:
             raw = open(file_cambi, "rb").read() if file_cambi else scarica(URL_CAMBI)
@@ -281,6 +282,10 @@ def main():
     with open(os.path.join(ROOT, "data", "aggiornamento_settimanale.json"), "w", encoding="utf-8") as f:
         json.dump({"quando": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                    "ok": esiti, "problemi": errori, "non_necessari": saltati}, f, ensure_ascii=False, indent=2)
+    # per il messaggio del commit: dice se qualcosa è stato davvero aggiornato
+    if os.environ.get("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+            f.write(f"aggiornati={'1' if esiti else '0'}\n")
     for x in esiti:
         print("OK  ", x)
     for x in errori:

@@ -48,10 +48,10 @@ Serve una volta sola, circa 30 minuti, da computer. Dopo, aggiornare i dati è: 
 - `km`: progressivo **nel senso di marcia** della carreggiata (nella carreggiata verso l'inizio dell'autostrada è contato dall'altro capo). Serve all'app per calcolare le distanze: non va "corretto".
 - `km_cippo`: il km **del cartello** (contato dall'inizio dell'autostrada), quello che l'app mostra ("Ti trovi al km …", km delle aree). Per una nuova area scrivi il km che leggi sul cartello. Se manca, la pubblicazione dà un avviso e l'app mostra `km`.
 
-## Aggiornamento automatico settimanale (prezzi e cambi)
-- Ogni mattina GitHub controlla e, **una volta alla settimana** (quando i dati hanno almeno 6 giorni), scarica da solo i prezzi dei carburanti del Ministero (Osservaprezzi, open data IODL 2.0) e i cambi della BCE, aggiorna i fogli `prezzi` e `tassi_cambio` dell'Excel e pubblica una nuova versione dei dati se qualcosa è cambiato. Non devi fare nulla.
+## Aggiornamento automatico (prezzi ogni giorno, cambi ogni settimana)
+- Ogni mattina GitHub scarica da solo i prezzi dei carburanti del Ministero (Osservaprezzi, open data IODL 2.0) e, una volta alla settimana (quando hanno almeno 6 giorni), i cambi della BCE, aggiorna i fogli `prezzi` e `tassi_cambio` dell'Excel e pubblica una nuova versione dei dati se qualcosa è cambiato. Non devi fare nulla.
 - Si aggiornano solo i prezzi degli impianti già abbinati alle aree nel foglio `impianti_ministero`: le tue correzioni negli altri fogli non vengono toccate. Per abbinare un impianto nuovo aggiungi una riga in `impianti_ministero` (id_area e id_impianto del Ministero).
 - Se il Ministero o la BCE non rispondono, quella parte resta com'era e GitHub riprova la mattina dopo. L'esito dell'ultimo tentativo è in `data/aggiornamento_settimanale.json`.
 - **Se il Ministero non risponde a GitHub** (succede: blocca alcuni server esteri), dalla pagina di aggiornamento, sezione 4: scarica `prezzo_alle_8.csv` con il telefono e caricalo con «Carica i prezzi». GitHub lo usa, aggiorna e pubblica in 2–3 minuti.
 - Per lanciarlo subito: scheda **Actions → Pubblica i dati dell'app → Run workflow**, spunta «Scarica adesso prezzi…».
-- Prima di modificare l'Excel scarica sempre l'ultima versione dalla pagina di aggiornamento: il lunedì GitHub la aggiorna.
+- Prima di modificare l'Excel scarica sempre l'ultima versione dalla pagina di aggiornamento: GitHub la aggiorna ogni mattina con i prezzi nuovi.
