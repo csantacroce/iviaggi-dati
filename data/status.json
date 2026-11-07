@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-07T21:39:36Z",
-  "changed": true,
-  "message": "Pubblicata la versione 16. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-07T21:39:54Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 16: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 16,
@@ -27,12 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 454
-  },
-  "changes": {
-    "aree_colonnine": {
-      "aggiunte": 3,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
