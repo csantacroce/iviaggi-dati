@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-09T20:23:26Z",
-  "changed": true,
-  "message": "Pubblicata la versione 62. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-09T20:23:50Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 62: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 62,
@@ -27,22 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
-  },
-  "changes": {
-    "aree_servizi": {
-      "aggiunte": 127,
-      "tolte": 1,
-      "modificate": 0
-    },
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 39
-    },
-    "correzioni_log": {
-      "aggiunte": 40,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
