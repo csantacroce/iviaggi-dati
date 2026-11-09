@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-11-09T09:52:47Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 41: non c'è nulla da pubblicare.",
+  "when": "2026-11-09T09:56:05Z",
+  "changed": true,
+  "message": "Pubblicata la versione 42. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 41,
+  "version": 42,
   "counts": {
     "aree_colonnine": 458,
     "aree_marche_carburante": 469,
@@ -27,5 +27,12 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
+  },
+  "changes": {
+    "aree_colonnine": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 3
+    }
   }
 }
