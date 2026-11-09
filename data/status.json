@@ -1,13 +1,13 @@
 {
   "ok": true,
-  "when": "2026-11-09T09:58:43Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 45: non c'è nulla da pubblicare.",
+  "when": "2026-11-09T10:00:24Z",
+  "changed": true,
+  "message": "Pubblicata la versione 46. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 45,
+  "version": 46,
   "counts": {
-    "aree_colonnine": 458,
+    "aree_colonnine": 457,
     "aree_marche_carburante": 469,
     "aree_marche_ristorante": 428,
     "aree_servizi": 2543,
@@ -27,5 +27,12 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
+  },
+  "changes": {
+    "aree_colonnine": {
+      "aggiunte": 0,
+      "tolte": 1,
+      "modificate": 3
+    }
   }
 }
