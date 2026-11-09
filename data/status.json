@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-09T10:40:09Z",
-  "changed": true,
-  "message": "Pubblicata la versione 56. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-09T10:41:42Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 56: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 56,
@@ -27,12 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
-  },
-  "changes": {
-    "aree_colonnine": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 3
-    }
   }
 }
