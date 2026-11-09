@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-09T09:52:34Z",
-  "changed": true,
-  "message": "Pubblicata la versione 41. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-09T09:52:47Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 41: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 41,
@@ -27,12 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
-  },
-  "changes": {
-    "aree_colonnine": {
-      "aggiunte": 2,
-      "tolte": 0,
-      "modificate": 1
-    }
   }
 }
