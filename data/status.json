@@ -1,13 +1,13 @@
 {
   "ok": true,
-  "when": "2026-11-09T10:09:02Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 49: non c'è nulla da pubblicare.",
+  "when": "2026-11-09T10:14:17Z",
+  "changed": true,
+  "message": "Pubblicata la versione 50. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 49,
+  "version": 50,
   "counts": {
-    "aree_colonnine": 457,
+    "aree_colonnine": 458,
     "aree_marche_carburante": 469,
     "aree_marche_ristorante": 428,
     "aree_servizi": 2543,
@@ -16,7 +16,7 @@
     "caselli": 106,
     "correzioni_log": 263,
     "da_verificare": 192,
-    "gestori_ricarica": 22,
+    "gestori_ricarica": 23,
     "impianti_ministero": 527,
     "info_aggiornamento": 9,
     "marche_carburante": 22,
@@ -27,5 +27,17 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
+  },
+  "changes": {
+    "aree_colonnine": {
+      "aggiunte": 1,
+      "tolte": 0,
+      "modificate": 1
+    },
+    "gestori_ricarica": {
+      "aggiunte": 1,
+      "tolte": 0,
+      "modificate": 0
+    }
   }
 }
