@@ -1,10 +1,10 @@
 {
-  "version": 35,
-  "content_hash": "cff5f03fa3e977138052c40731e9b5ca2be026621fff3b72aff52c74fe4dd3ed",
+  "version": 36,
+  "content_hash": "2581afcb43742c58c689020b0e27f91b9c47314fed8360b3c5318addbcfb1aaf",
   "counts": {
     "aree_servizio": 456,
     "aree_colonnine": 454,
     "prezzi": 2081
   },
-  "published": "2026-11-09T08:14:40Z"
+  "published": "2026-11-09T08:16:27Z"
 }
