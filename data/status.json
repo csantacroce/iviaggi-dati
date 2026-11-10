@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T18:13:00Z",
-  "changed": true,
-  "message": "Pubblicata la versione 82. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T18:13:11Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 82: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 82,
@@ -27,17 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 458
-  },
-  "changes": {
-    "impianti_ministero": {
-      "aggiunte": 2,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "prezzi": {
-      "aggiunte": 4,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
