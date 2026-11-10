@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T19:11:54Z",
-  "changed": true,
-  "message": "Pubblicata la versione 90. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T19:12:05Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 90: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 90,
@@ -27,22 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 459
-  },
-  "changes": {
-    "aree_colonnine": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 1
-    },
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 4
-    },
-    "correzioni_log": {
-      "aggiunte": 5,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
