@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T19:04:58Z",
-  "changed": true,
-  "message": "Pubblicata la versione 88. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T19:05:17Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 88: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 88,
@@ -27,27 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 459
-  },
-  "changes": {
-    "aree_marche_ristorante": {
-      "aggiunte": 17,
-      "tolte": 11,
-      "modificate": 0
-    },
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 10
-    },
-    "correzioni_log": {
-      "aggiunte": 34,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "marche_ristorante": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
