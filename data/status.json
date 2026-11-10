@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-11-10T18:15:23Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 83: non c'è nulla da pubblicare.",
+  "when": "2026-11-10T18:26:53Z",
+  "changed": true,
+  "message": "Pubblicata la versione 84. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 83,
+  "version": 84,
   "counts": {
     "aree_colonnine": 460,
     "aree_marche_carburante": 471,
@@ -27,5 +27,12 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 458
+  },
+  "changes": {
+    "aree_colonnine": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 1
+    }
   }
 }
