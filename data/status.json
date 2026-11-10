@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T16:31:33Z",
-  "changed": true,
-  "message": "Pubblicata la versione 69. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T16:31:47Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 69: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 69,
@@ -27,27 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
-  },
-  "changes": {
-    "aree_colonnine": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "aree_servizi": {
-      "aggiunte": 5,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 2
-    },
-    "correzioni_log": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
