@@ -1,20 +1,20 @@
 {
   "ok": true,
-  "when": "2026-11-10T18:09:51Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 79: non c'è nulla da pubblicare.",
+  "when": "2026-11-10T18:10:11Z",
+  "changed": true,
+  "message": "Pubblicata la versione 80. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 79,
+  "version": 80,
   "counts": {
     "aree_colonnine": 460,
     "aree_marche_carburante": 469,
     "aree_marche_ristorante": 469,
-    "aree_servizi": 3425,
+    "aree_servizi": 3428,
     "aree_servizio": 482,
     "autostrade": 53,
     "caselli": 106,
-    "correzioni_log": 616,
+    "correzioni_log": 617,
     "da_verificare": 192,
     "gestori_ricarica": 23,
     "impianti_ministero": 527,
@@ -27,5 +27,17 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
+  },
+  "changes": {
+    "aree_servizi": {
+      "aggiunte": 3,
+      "tolte": 0,
+      "modificate": 0
+    },
+    "correzioni_log": {
+      "aggiunte": 1,
+      "tolte": 0,
+      "modificate": 0
+    }
   }
 }
