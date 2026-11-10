@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T18:30:12Z",
-  "changed": true,
-  "message": "Pubblicata la versione 85. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T18:30:23Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 85: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 85,
@@ -27,22 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 459
-  },
-  "changes": {
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 1
-    },
-    "correzioni_log": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "impianti_ministero": {
-      "aggiunte": 1,
-      "tolte": 1,
-      "modificate": 0
-    }
   }
 }
