@@ -16,21 +16,28 @@ jobs:
   scarica:
     runs-on: ubuntu-latest
     steps:
-      - name: Scarica anagrafica e prezzi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Scarica anagrafica e prezzi (stesso metodo dell'aggiornamento giornaliero)
         run: |
-          mkdir out && cd out
-          UA="Mozilla/5.0 (compatible; iVIAGGI-dati/1.0; anagrafica impianti)"
-          for f in anagrafica_impianti_attivi.csv prezzo_alle_8.csv; do
-            for n in 1 2 3; do
-              curl -fsSL --max-time 300 -A "$UA" -o "$f" "https://www.mimit.gov.it/images/exportCSV/$f" && break
-              sleep 30
-            done
-            head -3 "$f"; wc -l "$f"
-          done
-          date -u > scaricato_il.txt
+          mkdir -p /tmp/out
+          python - <<'EOF'
+          import sys, datetime
+          sys.path.insert(0, "tools")
+          from aggiorna_settimanale import scarica
+          base = "https://www.mimit.gov.it/images/exportCSV/"
+          for nome in ("anagrafica_impianti_attivi.csv", "prezzo_alle_8.csv"):
+              dati = scarica(base + nome)
+              open("/tmp/out/" + nome, "wb").write(dati)
+              print(nome, len(dati), "byte")
+              print(dati[:300].decode("utf-8", "replace"))
+          open("/tmp/out/scaricato_il.txt", "w").write(datetime.datetime.utcnow().isoformat() + "Z\n")
+          EOF
       - name: Salva nel ramo mimit-anagrafica
         run: |
-          cd out
+          cd /tmp/out
           git init -q
           git checkout -q -b mimit-anagrafica
           git config user.name "github-actions[bot]"
