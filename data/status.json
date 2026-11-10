@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T17:16:01Z",
-  "changed": true,
-  "message": "Pubblicata la versione 74. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T17:16:13Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 74: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 74,
@@ -27,27 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
-  },
-  "changes": {
-    "aree_colonnine": {
-      "aggiunte": 1,
-      "tolte": 1,
-      "modificate": 2
-    },
-    "aree_marche_ristorante": {
-      "aggiunte": 2,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "aree_servizi": {
-      "aggiunte": 13,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "correzioni_log": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
