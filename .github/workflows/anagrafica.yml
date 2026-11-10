@@ -20,6 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: pip install openpyxl
       - name: Scarica anagrafica e prezzi (stesso metodo dell'aggiornamento giornaliero)
         run: |
           mkdir -p /tmp/out
