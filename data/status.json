@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T19:34:38Z",
-  "changed": true,
-  "message": "Pubblicata la versione 93. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T19:35:13Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 93: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 93,
@@ -27,47 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 463
-  },
-  "changes": {
-    "aree_servizi": {
-      "aggiunte": 0,
-      "tolte": 1,
-      "modificate": 0
-    },
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 3
-    },
-    "correzioni_log": {
-      "aggiunte": 27,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "da_verificare": {
-      "aggiunte": 14,
-      "tolte": 166,
-      "modificate": 0
-    },
-    "gestori_ricarica": {
-      "aggiunte": 0,
-      "tolte": 3,
-      "modificate": 0
-    },
-    "marche_carburante": {
-      "aggiunte": 0,
-      "tolte": 7,
-      "modificate": 0
-    },
-    "marche_ristorante": {
-      "aggiunte": 0,
-      "tolte": 3,
-      "modificate": 0
-    },
-    "servizi": {
-      "aggiunte": 0,
-      "tolte": 1,
-      "modificate": 0
-    }
   }
 }
