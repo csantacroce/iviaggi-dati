@@ -141,7 +141,8 @@ def aggiorna_prezzi(wb, raw, oggi):
     abbinati = {}
     for r in ws_imp.iter_rows(min_row=2, values_only=True):
         if r[i_area] is not None and r[i_imp] is not None:
-            abbinati[int(r[i_imp])] = int(r[i_area])
+            # un impianto può servire due aree (stesso piazzale per le due direzioni, es. Frejus, Autoporto di Susa)
+            abbinati.setdefault(int(r[i_imp]), []).append(int(r[i_area]))
     per_impianto = {}
     for p in righe:
         if p["id"] in abbinati:
@@ -159,9 +160,10 @@ def aggiorna_prezzi(wb, raw, oggi):
     nuove = []
     for imp, lista in sorted(per_impianto.items()):
         for (carb, mod), p in sorted(scegli(lista).items()):
-            nuove.append({"id_area": abbinati[imp], "id_impianto": imp, "carburante": carb, "modalita": mod,
-                          "prezzo": round(p["prezzo"], 3), "data_comunicazione": p["data"],
-                          "data_estrazione": estrazione or oggi})
+            for area in abbinati[imp]:
+                nuove.append({"id_area": area, "id_impianto": imp, "carburante": carb, "modalita": mod,
+                              "prezzo": round(p["prezzo"], 3), "data_comunicazione": p["data"],
+                              "data_estrazione": estrazione or oggi})
     # riscrive il foglio: stesse colonne, la colonna di aiuto _area con la formula
     ws.delete_rows(2, ws.max_row)
     r_idx = 2
