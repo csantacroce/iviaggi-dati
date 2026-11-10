@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T18:09:39Z",
-  "changed": true,
-  "message": "Pubblicata la versione 79. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T18:09:51Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 79: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 79,
@@ -27,17 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
-  },
-  "changes": {
-    "aree_servizi": {
-      "aggiunte": 5,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "correzioni_log": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
