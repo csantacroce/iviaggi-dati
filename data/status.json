@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T18:15:12Z",
-  "changed": true,
-  "message": "Pubblicata la versione 83. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T18:15:23Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 83: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 83,
@@ -27,17 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 458
-  },
-  "changes": {
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 2
-    },
-    "correzioni_log": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
