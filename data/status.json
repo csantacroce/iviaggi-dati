@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-11-10T18:27:04Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 84: non c'è nulla da pubblicare.",
+  "when": "2026-11-10T18:30:12Z",
+  "changed": true,
+  "message": "Pubblicata la versione 85. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 84,
+  "version": 85,
   "counts": {
     "aree_colonnine": 460,
     "aree_marche_carburante": 471,
@@ -14,7 +14,7 @@
     "aree_servizio": 484,
     "autostrade": 53,
     "caselli": 106,
-    "correzioni_log": 619,
+    "correzioni_log": 620,
     "da_verificare": 192,
     "gestori_ricarica": 23,
     "impianti_ministero": 530,
@@ -26,6 +26,23 @@
     "tratte": 49,
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
-    "aree_servizio_attive": 458
+    "aree_servizio_attive": 459
+  },
+  "changes": {
+    "aree_servizio": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 1
+    },
+    "correzioni_log": {
+      "aggiunte": 1,
+      "tolte": 0,
+      "modificate": 0
+    },
+    "impianti_ministero": {
+      "aggiunte": 1,
+      "tolte": 1,
+      "modificate": 0
+    }
   }
 }
