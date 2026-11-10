@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T15:24:22Z",
-  "changed": true,
-  "message": "Pubblicata la versione 64. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T15:24:34Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 64: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 64,
@@ -27,27 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
-  },
-  "changes": {
-    "aree_marche_ristorante": {
-      "aggiunte": 19,
-      "tolte": 4,
-      "modificate": 0
-    },
-    "aree_servizi": {
-      "aggiunte": 105,
-      "tolte": 8,
-      "modificate": 0
-    },
-    "correzioni_log": {
-      "aggiunte": 18,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "marche_ristorante": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
