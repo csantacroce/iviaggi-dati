@@ -1,20 +1,20 @@
 {
   "ok": true,
-  "when": "2026-11-10T19:12:05Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 90: non c'è nulla da pubblicare.",
+  "when": "2026-11-10T19:14:30Z",
+  "changed": true,
+  "message": "Pubblicata la versione 91. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 90,
+  "version": 91,
   "counts": {
-    "aree_colonnine": 464,
+    "aree_colonnine": 466,
     "aree_marche_carburante": 471,
-    "aree_marche_ristorante": 476,
+    "aree_marche_ristorante": 481,
     "aree_servizi": 3436,
     "aree_servizio": 484,
     "autostrade": 53,
     "caselli": 106,
-    "correzioni_log": 808,
+    "correzioni_log": 826,
     "da_verificare": 192,
     "gestori_ricarica": 24,
     "impianti_ministero": 530,
@@ -26,6 +26,28 @@
     "tratte": 49,
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
-    "aree_servizio_attive": 459
+    "aree_servizio_attive": 457
+  },
+  "changes": {
+    "aree_colonnine": {
+      "aggiunte": 2,
+      "tolte": 0,
+      "modificate": 0
+    },
+    "aree_marche_ristorante": {
+      "aggiunte": 6,
+      "tolte": 1,
+      "modificate": 0
+    },
+    "aree_servizio": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 8
+    },
+    "correzioni_log": {
+      "aggiunte": 18,
+      "tolte": 0,
+      "modificate": 0
+    }
   }
 }
