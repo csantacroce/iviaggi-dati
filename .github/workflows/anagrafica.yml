@@ -1,0 +1,40 @@
+name: Scarica l'anagrafica degli impianti (Ministero)
+
+# Scarica l'elenco completo dei distributori attivi (con coordinate, marchio e tipo di impianto)
+# e lo salva nel ramo "mimit-anagrafica", separato da main: non tocca i dati dell'app e non avvia la pubblicazione.
+# Serve a completare le aree di servizio (posizioni e abbinamento ai prezzi).
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/anagrafica.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scarica:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica anagrafica e prezzi
+        run: |
+          mkdir out && cd out
+          UA="Mozilla/5.0 (compatible; iVIAGGI-dati/1.0; anagrafica impianti)"
+          for f in anagrafica_impianti_attivi.csv prezzo_alle_8.csv; do
+            for n in 1 2 3; do
+              curl -fsSL --max-time 300 -A "$UA" -o "$f" "https://www.mimit.gov.it/images/exportCSV/$f" && break
+              sleep 30
+            done
+            head -3 "$f"; wc -l "$f"
+          done
+          date -u > scaricato_il.txt
+      - name: Salva nel ramo mimit-anagrafica
+        run: |
+          cd out
+          git init -q
+          git checkout -q -b mimit-anagrafica
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -qm "Anagrafica impianti e prezzi del Ministero ($(date -u +%F))"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" mimit-anagrafica
