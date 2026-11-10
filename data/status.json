@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T19:10:25Z",
-  "changed": true,
-  "message": "Pubblicata la versione 89. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T19:10:44Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 89: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 89,
@@ -27,32 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 459
-  },
-  "changes": {
-    "aree_marche_carburante": {
-      "aggiunte": 7,
-      "tolte": 7,
-      "modificate": 0
-    },
-    "aree_marche_ristorante": {
-      "aggiunte": 0,
-      "tolte": 1,
-      "modificate": 0
-    },
-    "aree_servizi": {
-      "aggiunte": 1,
-      "tolte": 3,
-      "modificate": 0
-    },
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 1
-    },
-    "correzioni_log": {
-      "aggiunte": 15,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
