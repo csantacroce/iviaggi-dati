@@ -7,6 +7,9 @@ on:
   push:
     branches: [main]
     paths: [".github/workflows/anagrafica.yml"]
+  # ogni lunedì mattina, dopo l'aggiornamento dei prezzi (il sito del Ministero di sera a volte non risponde)
+  schedule:
+    - cron: "40 6 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -20,21 +23,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install openpyxl
-      - name: Scarica anagrafica e prezzi (stesso metodo dell'aggiornamento giornaliero)
+      - name: Scarica anagrafica e prezzi
         run: |
           mkdir -p /tmp/out
           python - <<'EOF'
-          import sys, datetime
-          sys.path.insert(0, "tools")
-          from aggiorna_settimanale import scarica
+          import datetime, time, urllib.request
           base = "https://www.mimit.gov.it/images/exportCSV/"
-          for nome in ("anagrafica_impianti_attivi.csv", "prezzo_alle_8.csv"):
-              dati = scarica(base + nome)
-              open("/tmp/out/" + nome, "wb").write(dati)
-              print(nome, len(dati), "byte")
-              print(dati[:300].decode("utf-8", "replace"))
+          ua = "Mozilla/5.0 (compatible; iVIAGGI-dati/1.0; aggiornamento settimanale)"
+          ok = 0
+          for nome in ("prezzo_alle_8.csv", "anagrafica_impianti_attivi.csv"):
+              for n in range(4):
+                  try:
+                      t = time.time()
+                      req = urllib.request.Request(base + nome, headers={"User-Agent": ua, "Accept": "text/csv,text/plain,*/*"})
+                      with urllib.request.urlopen(req, timeout=300) as r:
+                          dati = r.read()
+                      open("/tmp/out/" + nome, "wb").write(dati)
+                      print(f"::notice::{nome}: {len(dati)} byte in {time.time()-t:.0f} s")
+                      ok += 1
+                      break
+                  except Exception as e:
+                      print(f"::warning::{nome}, tentativo {n+1}: {type(e).__name__}: {e} ({time.time()-t:.0f} s)")
+                      time.sleep(30)
           open("/tmp/out/scaricato_il.txt", "w").write(datetime.datetime.utcnow().isoformat() + "Z\n")
+          if not ok:
+              raise SystemExit(1)
           EOF
       - name: Salva nel ramo mimit-anagrafica
         run: |
