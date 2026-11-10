@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T18:31:13Z",
-  "changed": true,
-  "message": "Pubblicata la versione 86. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T18:31:26Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 86: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 86,
@@ -27,17 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 459
-  },
-  "changes": {
-    "aree_colonnine": {
-      "aggiunte": 0,
-      "tolte": 1,
-      "modificate": 0
-    },
-    "correzioni_log": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
