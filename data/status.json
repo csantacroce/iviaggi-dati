@@ -1,31 +1,73 @@
 {
   "ok": true,
-  "when": "2026-11-10T19:32:46Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 92: non c'è nulla da pubblicare.",
+  "when": "2026-11-10T19:34:38Z",
+  "changed": true,
+  "message": "Pubblicata la versione 93. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 92,
+  "version": 93,
   "counts": {
     "aree_colonnine": 466,
     "aree_marche_carburante": 476,
     "aree_marche_ristorante": 481,
-    "aree_servizi": 3458,
+    "aree_servizi": 3457,
     "aree_servizio": 489,
     "autostrade": 55,
     "caselli": 110,
-    "correzioni_log": 852,
-    "da_verificare": 192,
-    "gestori_ricarica": 24,
+    "correzioni_log": 879,
+    "da_verificare": 40,
+    "gestori_ricarica": 21,
     "impianti_ministero": 535,
     "info_aggiornamento": 9,
-    "marche_carburante": 22,
-    "marche_ristorante": 33,
+    "marche_carburante": 15,
+    "marche_ristorante": 30,
     "prezzi": 2085,
-    "servizi": 28,
+    "servizi": 27,
     "tratte": 49,
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
-    "aree_servizio_attive": 462
+    "aree_servizio_attive": 463
+  },
+  "changes": {
+    "aree_servizi": {
+      "aggiunte": 0,
+      "tolte": 1,
+      "modificate": 0
+    },
+    "aree_servizio": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 3
+    },
+    "correzioni_log": {
+      "aggiunte": 27,
+      "tolte": 0,
+      "modificate": 0
+    },
+    "da_verificare": {
+      "aggiunte": 14,
+      "tolte": 166,
+      "modificate": 0
+    },
+    "gestori_ricarica": {
+      "aggiunte": 0,
+      "tolte": 3,
+      "modificate": 0
+    },
+    "marche_carburante": {
+      "aggiunte": 0,
+      "tolte": 7,
+      "modificate": 0
+    },
+    "marche_ristorante": {
+      "aggiunte": 0,
+      "tolte": 3,
+      "modificate": 0
+    },
+    "servizi": {
+      "aggiunte": 0,
+      "tolte": 1,
+      "modificate": 0
+    }
   }
 }
