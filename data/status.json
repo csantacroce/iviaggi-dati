@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T17:04:17Z",
-  "changed": true,
-  "message": "Pubblicata la versione 71. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T17:04:34Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 71: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 71,
@@ -27,27 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 456
-  },
-  "changes": {
-    "aree_marche_ristorante": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "aree_servizi": {
-      "aggiunte": 8,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 1
-    },
-    "correzioni_log": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
