@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T19:01:13Z",
-  "changed": true,
-  "message": "Pubblicata la versione 87. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T19:01:41Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 87: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 87,
@@ -27,37 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 459
-  },
-  "changes": {
-    "aree_colonnine": {
-      "aggiunte": 17,
-      "tolte": 12,
-      "modificate": 0
-    },
-    "aree_marche_ristorante": {
-      "aggiunte": 38,
-      "tolte": 36,
-      "modificate": 0
-    },
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 30
-    },
-    "correzioni_log": {
-      "aggiunte": 133,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "gestori_ricarica": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "marche_ristorante": {
-      "aggiunte": 5,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
