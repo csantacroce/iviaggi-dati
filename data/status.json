@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-10T19:32:21Z",
-  "changed": true,
-  "message": "Pubblicata la versione 92. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-10T19:32:46Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 92: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 92,
@@ -27,42 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 462
-  },
-  "changes": {
-    "aree_marche_carburante": {
-      "aggiunte": 5,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "aree_servizi": {
-      "aggiunte": 22,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "aree_servizio": {
-      "aggiunte": 5,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "autostrade": {
-      "aggiunte": 2,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "caselli": {
-      "aggiunte": 4,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "correzioni_log": {
-      "aggiunte": 26,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "impianti_ministero": {
-      "aggiunte": 5,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
