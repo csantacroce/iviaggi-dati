@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-12T22:34:52Z",
-  "changed": true,
-  "message": "Pubblicata la versione 112. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-12T22:35:05Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 112: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 112,
@@ -27,37 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 474
-  },
-  "changes": {
-    "aree_marche_carburante": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "aree_servizi": {
-      "aggiunte": 2,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "aree_servizio": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "correzioni_log": {
-      "aggiunte": 4,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "da_verificare": {
-      "aggiunte": 1,
-      "tolte": 1,
-      "modificate": 0
-    },
-    "impianti_ministero": {
-      "aggiunte": 1,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
