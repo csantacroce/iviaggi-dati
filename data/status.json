@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-11-12T21:38:40Z",
+  "when": "2026-11-12T21:48:35Z",
   "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 102: non c'è nulla da pubblicare.",
+  "message": "Nessuna modifica rispetto alla versione 103: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
-  "version": 102,
+  "version": 103,
   "counts": {
     "aree_colonnine": 466,
     "aree_marche_carburante": 481,
@@ -14,7 +14,7 @@
     "aree_servizio": 494,
     "autostrade": 57,
     "caselli": 114,
-    "correzioni_log": 912,
+    "correzioni_log": 935,
     "da_verificare": 41,
     "gestori_ricarica": 21,
     "impianti_ministero": 538,
