@@ -1,22 +1,22 @@
 {
   "ok": true,
-  "when": "2026-11-12T22:04:20Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 106: non c'è nulla da pubblicare.",
+  "when": "2026-11-12T22:08:01Z",
+  "changed": true,
+  "message": "Pubblicata la versione 107. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 106,
+  "version": 107,
   "counts": {
-    "aree_colonnine": 466,
+    "aree_colonnine": 483,
     "aree_marche_carburante": 483,
     "aree_marche_ristorante": 485,
     "aree_servizi": 3481,
     "aree_servizio": 496,
     "autostrade": 59,
     "caselli": 118,
-    "correzioni_log": 960,
+    "correzioni_log": 981,
     "da_verificare": 41,
-    "gestori_ricarica": 21,
+    "gestori_ricarica": 23,
     "impianti_ministero": 538,
     "info_aggiornamento": 9,
     "marche_carburante": 16,
@@ -27,5 +27,27 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 471
+  },
+  "changes": {
+    "aree_colonnine": {
+      "aggiunte": 18,
+      "tolte": 1,
+      "modificate": 0
+    },
+    "correzioni_log": {
+      "aggiunte": 21,
+      "tolte": 0,
+      "modificate": 0
+    },
+    "da_verificare": {
+      "aggiunte": 1,
+      "tolte": 1,
+      "modificate": 0
+    },
+    "gestori_ricarica": {
+      "aggiunte": 2,
+      "tolte": 0,
+      "modificate": 0
+    }
   }
 }
