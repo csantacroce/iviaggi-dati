@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-11-11T09:55:35Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 98: non c'è nulla da pubblicare.",
+  "when": "2026-11-12T07:40:17Z",
+  "changed": true,
+  "message": "Pubblicata la versione 99. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 98,
+  "version": 99,
   "counts": {
     "aree_colonnine": 466,
     "aree_marche_carburante": 478,
@@ -21,11 +21,18 @@
     "info_aggiornamento": 9,
     "marche_carburante": 16,
     "marche_ristorante": 30,
-    "prezzi": 2113,
+    "prezzi": 2117,
     "servizi": 27,
     "tratte": 49,
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 465
+  },
+  "changes": {
+    "prezzi": {
+      "aggiunte": 4,
+      "tolte": 0,
+      "modificate": 0
+    }
   }
 }
