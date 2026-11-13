@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-11-12T22:42:09Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 114: non c'è nulla da pubblicare.",
+  "when": "2026-11-13T07:36:53Z",
+  "changed": true,
+  "message": "Pubblicata la versione 115. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 114,
+  "version": 115,
   "counts": {
     "aree_colonnine": 483,
     "aree_marche_carburante": 487,
@@ -21,11 +21,18 @@
     "info_aggiornamento": 9,
     "marche_carburante": 16,
     "marche_ristorante": 30,
-    "prezzi": 2117,
+    "prezzi": 2129,
     "servizi": 27,
     "tratte": 49,
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 475
+  },
+  "changes": {
+    "prezzi": {
+      "aggiunte": 12,
+      "tolte": 0,
+      "modificate": 0
+    }
   }
 }
