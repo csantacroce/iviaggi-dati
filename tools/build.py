@@ -56,6 +56,8 @@ RANGES = [  # (tabella, colonna, minimo, massimo)
     ("prezzi", "prezzo", 0.3, 5),
     ("tariffe_ricarica", "potenza_min_kw", 0, 1000), ("tariffe_ricarica", "potenza_max_kw", 1, 1000),
     ("tariffe_ricarica", "prezzo_kwh", 0.01, 2), ("tariffe_ricarica", "prezzo_kwh_notte", 0.01, 2),
+    ("tariffe_pedaggi", "euro_km", 0, 0.6), ("tariffe_pedaggi", "euro_fisso", 0, 60), ("tariffe_pedaggi", "lat_min", 35, 48), ("tariffe_pedaggi", "lat_max", 35, 48),
+    ("tariffe_pedaggi", "lon_min", 6, 19), ("tariffe_pedaggi", "lon_max", 6, 19),
 ]
 ALLOWED = [
     ("aree_colonnine", "tipo_corrente", {None, "AC", "DC"}),
@@ -66,8 +68,11 @@ ALLOWED = [
     ("autostrade", "tipo", {None, "autostrada", "tangenziale"}),
     ("tariffe_ricarica", "tipo_corrente", {"AC", "DC"}),
     ("tariffe_ricarica", "stato", {"verificato", "da verificare"}),
+    ("tariffe_pedaggi", "tipo", {None, "pianura", "montagna"}),
+    ("tariffe_pedaggi", "affidabilita", {"ufficiale", "ricavata", "stima"}),
 ]
-DATES = [("aree_colonnine", "data_aggiornamento"), ("tariffe_ricarica", "data_fonte"), ("tassi_cambio", "data")]
+DATES = [("aree_colonnine", "data_aggiornamento"), ("tariffe_ricarica", "data_fonte"), ("tassi_cambio", "data"),
+         ("tariffe_pedaggi", "data_fonte")]
 
 
 class Problems:

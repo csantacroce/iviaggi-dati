@@ -137,3 +137,22 @@ CREATE TABLE tassi_cambio (
   data TEXT,
   fonte TEXT
 );
+
+-- 14/11/2026: tariffe dei pedaggi (classe A, €/km con IVA e quota ANAS), una riga per autostrada o per tratto.
+-- Regola per l'app: per un tratto di percorso con sigla S nel punto (lat, lon) vale la prima riga (id più basso)
+-- con sigla S i cui limiti contengono il punto (limite vuoto = nessun limite); se nessuna riga va bene, la riga «*».
+-- Pedaggio = somma di km x euro_km sui tratti + una volta euro_fisso per ogni riga usata dal percorso.
+CREATE TABLE tariffe_pedaggi (
+  id INTEGER PRIMARY KEY,
+  sigla TEXT NOT NULL,       -- come in autostrade.sigla; «*» = tutte le altre
+  tratto TEXT,
+  gestore TEXT,
+  lat_min REAL, lat_max REAL, lon_min REAL, lon_max REAL,
+  euro_km REAL NOT NULL,     -- classe A, IVA 22% e quota ANAS incluse
+  euro_fisso REAL,           -- importo fisso (barriere), contato una volta se il percorso usa questa riga
+  tipo TEXT,                 -- pianura / montagna
+  affidabilita TEXT,         -- ufficiale / ricavata / stima
+  fonte TEXT,
+  data_fonte TEXT,           -- AAAA-MM-GG
+  note TEXT
+);
