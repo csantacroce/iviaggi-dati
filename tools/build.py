@@ -376,12 +376,19 @@ def main():
         write_json(os.path.join(DATA, "status.json"), status)
         print(status["message"])
         return
+    # data di pubblicazione dentro il database, per la schermata Info dell'app ("Dati aggiornati al", 14/11/2026).
+    # Si aggiunge DOPO l'impronta del contenuto: così non cambia l'impronta e non fa pubblicare ogni giorno.
+    con = sqlite3.connect(final)
+    con.execute("DELETE FROM info_aggiornamento WHERE chiave = 'pubblicato'")
+    con.execute("INSERT INTO info_aggiornamento (chiave, valore) VALUES ('pubblicato', ?)", (now,))
+    con.commit()
+    con.close()
     changes = diff_summary(db_path, final, schema)
     version = state["version"] + 1 if state.get("version") else FIRST_VERSION
     shutil.copyfile(final, db_path)
     data = open(db_path, "rb").read()
     manifest = {"version": version, "schema": SCHEMA_VERSION, "file": "iviaggi_database.sqlite",
-                "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}
+                "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data), "published": now}
     write_json(manifest_path, manifest)
     write_json(state_path, {"version": version, "content_hash": new_hash, "counts": {
         "aree_servizio": counts["aree_servizio_attive"], "aree_colonnine": counts["aree_colonnine"], "prezzi": counts["prezzi"]},
