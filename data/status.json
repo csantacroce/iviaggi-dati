@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-14T12:53:35Z",
-  "changed": true,
-  "message": "Pubblicata la versione 116. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-14T12:59:54Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 116: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 116,
@@ -27,22 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 475
-  },
-  "changes": {
-    "info_aggiornamento": {
-      "aggiunte": 3,
-      "tolte": 2,
-      "modificate": 0
-    },
-    "prezzi": {
-      "aggiunte": 2122,
-      "tolte": 2116,
-      "modificate": 0
-    },
-    "tassi_cambio": {
-      "aggiunte": 10,
-      "tolte": 10,
-      "modificate": 0
-    }
   }
 }
