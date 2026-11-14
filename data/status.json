@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-11-14T18:02:31Z",
+  "when": "2026-11-14T18:08:00Z",
   "changed": true,
-  "message": "Pubblicata la versione 127. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "message": "Pubblicata la versione 128. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 127,
+  "version": 128,
   "counts": {
     "aree_colonnine": 483,
     "aree_marche_carburante": 487,
@@ -26,7 +26,7 @@
     "tratte": 49,
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
-    "tariffe_pedaggi": 72,
+    "tariffe_pedaggi": 74,
     "aree_servizio_attive": 475
   },
   "changes": {
@@ -38,7 +38,7 @@
     "tariffe_pedaggi": {
       "aggiunte": 2,
       "tolte": 0,
-      "modificate": 0
+      "modificate": 2
     }
   }
 }
