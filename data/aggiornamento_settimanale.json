@@ -1,12 +1,9 @@
 {
-  "quando": "2026-11-14T07:24:34Z",
+  "quando": "2026-11-14T12:53:35Z",
   "ok": [
-    "prezzi: 2103 righe da 523/537 impianti (estrazione 2026-11-09), 26 righe vecchie tenute (fonte: copia OpenDataView.it degli open data MIMIT)"
+    "prezzi: 2122 righe da 526/537 impianti (estrazione 2026-11-14), 13 righe vecchie tenute (fonte: API Osservaprezzi del Ministero, prezzi in tempo reale: 537 impianti letti, 0 non letti)",
+    "cambi BCE del 2026-11-13: USD 1.1052, GBP 0.83559, CHF 0.9266, SEK 11.1075, NOK 10.5695, DKK 7.4756, PLN 4.4113, CZK 24.424, HUF 365.6, RON 5.3494"
   ],
-  "problemi": [
-    "Ministero non raggiungibile (download non riuscito da https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv: <urlopen error [Errno 110] Connection timed out>); provo la copia OpenDataView"
-  ],
-  "non_necessari": [
-    "cambi: aggiornati da meno di 6 giorni"
-  ]
+  "problemi": [],
+  "non_necessari": []
 }
