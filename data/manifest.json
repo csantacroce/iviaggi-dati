@@ -1,8 +1,8 @@
 {
-  "version": 119,
+  "version": 120,
   "schema": 1,
   "file": "iviaggi_database.sqlite",
-  "sha256": "d4d58cd7d078aeebbd39b8893d200d796cdf0736b9c537de54437fd2a71f962f",
-  "bytes": 806912,
-  "published": "2026-11-14T16:56:31Z"
+  "sha256": "7fdb6a670c0382e6e36e52566c7f0b99cd267fa36b544b51efac2ade991294c2",
+  "bytes": 811008,
+  "published": "2026-11-14T17:00:19Z"
 }
