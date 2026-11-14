@@ -77,7 +77,16 @@ jobs:
           git add data source
           if ! git diff --cached --quiet; then
             git commit -m "Dati: esito della pubblicazione${{ steps.aggiorna.outputs.aggiornati == '1' && ' (prezzi aggiornati)' || '' }}"
-            git pull --rebase
+            # due giri ravvicinati (es. un caricamento e un avvio a mano) possono toccare gli stessi file di esito:
+            # se il conflitto è solo in data/ vince questo giro (il più recente); se tocca altro, si ferma.
+            if ! git pull --rebase; then
+              conflitti=$(git diff --name-only --diff-filter=U)
+              echo "Conflitto in: $conflitti"
+              if printf '%s\n' "$conflitti" | grep -qv '^data/'; then git rebase --abort; exit 1; fi
+              git checkout --theirs -- $conflitti
+              git add $conflitti
+              GIT_EDITOR=true git rebase --continue
+            fi
             git push
           fi
       - name: Prepara il sito
