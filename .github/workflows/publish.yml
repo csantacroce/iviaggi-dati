@@ -21,6 +21,10 @@ on:
         description: "Consenti un calo di righe superiore al 10% (solo se è voluto)"
         type: boolean
         default: false
+      prova_keepalive:
+        description: "Prova il mantenimento dell'avvio automatico (spegne e riaccende subito questo flusso)"
+        type: boolean
+        default: false
       prova_allarme:
         description: "Prova l'allarme: apre la segnalazione allarme-dati con un problema finto (si chiude al giro successivo)"
         type: boolean
@@ -31,6 +35,7 @@ permissions:
   pages: write
   id-token: write
   issues: write     # per la segnalazione automatica "allarme-dati" (controllo di salute)
+  actions: write    # per tenere vivo l'avvio automatico (GitHub lo spegne dopo 60 giorni senza attività)
 
 concurrency:
   group: pubblica
@@ -158,6 +163,20 @@ jobs:
             fi
             echo "esito=ok" >> "$GITHUB_ENV"
           fi
+      - name: Tieni vivo l'avvio automatico (il 1° del mese)
+        # nei progetti pubblici GitHub spegne gli avvii programmati dopo 60 giorni senza attività:
+        # spegnere e riaccendere il flusso azzera il conteggio. Se la riaccensione non riesce, il job fallisce (email di GitHub).
+        if: github.event_name == 'schedule' || inputs.prova_keepalive
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROVA: ${{ inputs.prova_keepalive && '1' || '0' }}
+        run: |
+          if [ "$PROVA" != "1" ] && [ "$(date -u +%d)" != "01" ]; then echo "Non è il 1° del mese: niente da fare"; exit 0; fi
+          W=repos/${{ github.repository }}/actions/workflows/publish.yml
+          gh api -X PUT $W/disable
+          for i in 1 2 3 4 5; do gh api -X PUT $W/enable && break; sleep 5; done
+          stato=$(gh api $W --jq .state); echo "stato del flusso: $stato"
+          [ "$stato" = "active" ]
       - name: Avvisa healthchecks.io (se configurato)
         if: always()
         env:
