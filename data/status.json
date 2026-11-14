@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-13T07:36:53Z",
-  "changed": true,
-  "message": "Pubblicata la versione 115. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-14T07:24:34Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 115: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 115,
@@ -27,12 +27,5 @@
     "tariffe_ricarica": 15,
     "tassi_cambio": 10,
     "aree_servizio_attive": 475
-  },
-  "changes": {
-    "prezzi": {
-      "aggiunte": 12,
-      "tolte": 0,
-      "modificate": 0
-    }
   }
 }
