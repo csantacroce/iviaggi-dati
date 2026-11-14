@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-11-14T17:38:48Z",
+  "when": "2026-11-14T17:43:25Z",
   "changed": true,
-  "message": "Pubblicata la versione 124. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "message": "Pubblicata la versione 125. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 124,
+  "version": 125,
   "counts": {
     "aree_colonnine": 483,
     "aree_marche_carburante": 487,
@@ -36,9 +36,9 @@
       "modificate": 0
     },
     "tariffe_pedaggi": {
-      "aggiunte": 1,
+      "aggiunte": 0,
       "tolte": 0,
-      "modificate": 1
+      "modificate": 2
     }
   }
 }
