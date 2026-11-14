@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-14T18:18:31Z",
-  "changed": true,
-  "message": "Pubblicata la versione 130. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-14T23:02:30Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 130: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 130,
@@ -28,17 +28,5 @@
     "tassi_cambio": 10,
     "tariffe_pedaggi": 72,
     "aree_servizio_attive": 475
-  },
-  "changes": {
-    "info_aggiornamento": {
-      "aggiunte": 1,
-      "tolte": 1,
-      "modificate": 0
-    },
-    "tariffe_pedaggi": {
-      "aggiunte": 0,
-      "tolte": 2,
-      "modificate": 1
-    }
   }
 }
