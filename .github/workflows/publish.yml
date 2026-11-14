@@ -26,6 +26,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  issues: write     # per la segnalazione automatica "allarme-dati" (controllo di salute)
 
 concurrency:
   group: pubblica
@@ -90,3 +91,72 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Controllo di salute (14/11/2026): verifica che prezzi, cambi, database e sito funzionino come impostato.
+  # Se qualcosa non va apre una segnalazione (Issue) "allarme-dati" in italiano: GitHub la manda per email.
+  # Quando torna tutto a posto la chiude da sola. Se è impostato il segreto HEALTHCHECK_URL avvisa anche
+  # healthchecks.io, che manda una email se il controllo non arriva più (GitHub fermo o flusso disattivato).
+  controllo:
+    needs: [build, deploy]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main          # con l'esito appena salvato dal job build
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Controlla dati e sito
+        run: python tools/controllo.py
+      - name: Apri, aggiorna o chiudi la segnalazione
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ESITO_BUILD: ${{ needs.build.result }}
+          ESITO_DEPLOY: ${{ needs.deploy.result }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ "$ESITO_BUILD" != "success" ]; then echo "- Il passaggio di costruzione su GitHub non è terminato ($ESITO_BUILD)." >> controllo_problemi.md; fi
+          if [ "$ESITO_DEPLOY" != "success" ]; then echo "- La pubblicazione del sito su GitHub Pages non è terminata ($ESITO_DEPLOY)." >> controllo_problemi.md; fi
+          sed -i '/^$/d' controllo_problemi.md
+          gh label create allarme-dati --color D93F0B --description "Controllo automatico dei dati dell'app" --force >/dev/null
+          aperta=$(gh issue list --label allarme-dati --state open --json number --jq '.[0].number')
+          if [ -s controllo_problemi.md ]; then
+            # firma del problema senza i numeri (giorni, conteggi), per riconoscere lo stesso problema nei giorni dopo
+            firma=$(tr -d '0-9' < controllo_problemi.md | sha256sum | cut -c1-12)
+            {
+              echo "Il controllo automatico di oggi ha trovato questi problemi:"
+              echo
+              cat controllo_problemi.md
+              echo
+              echo "Esito completo: $RUN_URL"
+              echo "Dettagli anche in data/aggiornamento_settimanale.json e data/status.json."
+              echo
+              echo "Finché il problema c'è, l'app continua a funzionare con i dati che ha già. La segnalazione si chiude da sola quando il controllo torna a posto."
+              echo
+              echo "<!-- firma: $firma -->"
+            } > corpo.md
+            if [ -z "$aperta" ]; then
+              { echo "@csantacroce"; echo; cat corpo.md; } > corpo_nuovo.md
+              gh issue create --title "⚠️ iVIAGGI: qualcosa non funziona nell'aggiornamento dei dati" --label allarme-dati --body-file corpo_nuovo.md
+            else
+              # commenta solo se il tipo di problema è cambiato (niente email uguali ogni giorno)
+              prima=$(gh issue view "$aperta" --json body,comments --jq '[.body] + [.comments[].body] | last')
+              if ! printf '%s' "$prima" | grep -qF "firma: $firma"; then
+                gh issue comment "$aperta" --body-file corpo.md
+              fi
+            fi
+            echo "esito=problemi" >> "$GITHUB_ENV"
+          else
+            if [ -n "$aperta" ]; then
+              gh issue close "$aperta" --comment "✅ Il controllo automatico è tornato a posto: tutto funziona di nuovo come previsto. ($RUN_URL)"
+            fi
+            echo "esito=ok" >> "$GITHUB_ENV"
+          fi
+      - name: Avvisa healthchecks.io (se configurato)
+        if: always()
+        env:
+          HC: ${{ secrets.HEALTHCHECK_URL }}
+        run: |
+          if [ -z "$HC" ]; then echo "HEALTHCHECK_URL non impostato: salto"; exit 0; fi
+          if [ "$esito" = "ok" ]; then curl -fsS -m 20 --retry 3 "$HC" >/dev/null; else curl -fsS -m 20 --retry 3 "$HC/fail" >/dev/null; fi
