@@ -43,7 +43,8 @@ jobs:
       - name: Aggiorna prezzi e cambi (lunedì, a mano, o commit con "[aggiorna prezzi]")
         id: aggiorna
         continue-on-error: true      # se il Ministero non risponde si prosegue: i dati restano quelli di prima
-        if: github.event_name == 'schedule' || inputs.aggiorna_prezzi || contains(github.event.head_commit.message, '[aggiorna prezzi]')
+        # parte anche quando in source/ c'è il file dei prezzi caricato (pagina di aggiornamento o iPhone), qualunque sia il messaggio
+        if: github.event_name == 'schedule' || inputs.aggiorna_prezzi || contains(github.event.head_commit.message, '[aggiorna prezzi]') || hashFiles('source/prezzi_mimit.csv') != ''
         env:
           FORZA: ${{ github.event_name != 'schedule' && '1' || '0' }}
         run: python tools/aggiorna_settimanale.py

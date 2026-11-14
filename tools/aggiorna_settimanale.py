@@ -31,6 +31,10 @@ XLSX = os.path.join(ROOT, "source", "dati.xlsx")
 # file dei prezzi caricato a mano dalla pagina di aggiornamento (quando il Ministero non risponde a GitHub)
 CARICATO = os.path.join(ROOT, "source", "prezzi_mimit.csv")
 URL_PREZZI = "https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv"
+# API del sito Osservaprezzi Carburanti (stesso Ministero, carburanti.mise.gov.it): prezzi in tempo reale impianto
+# per impianto. Dal 14/11/2026 è la prima fonte: il file CSV di mimit.gov.it non risponde ai server di GitHub
+# (timeout dal 19/10/2026), mentre l'Osservaprezzi risponde anche dai data center.
+URL_API_IMPIANTO = "https://carburanti.mise.gov.it/ospzApi/registry/servicearea/{}"
 # copia pubblica degli stessi open data (OpenDataView.it, ripubblica il file MIMIT): si usa se il Ministero non risponde
 URL_PREZZI_RISERVA = "https://opendataview.it/api/datasets/1494206/download"
 URL_CAMBI = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
@@ -38,7 +42,7 @@ VALUTE = ["USD", "GBP", "CHF", "SEK", "NOK", "DKK", "PLN", "CZK", "HUF", "RON"] 
 MIN_COPERTURA = 0.5     # se meno della metà degli impianti abbinati è nel file, il file è sospetto: non si usa
 
 
-def scarica(url, tentativi=3):
+def scarica(url, tentativi=3, timeout=180):
     """Scarica con qualche tentativo (il sito del Ministero a volte è lento)."""
     ultimo = None
     for n in range(tentativi):
@@ -46,12 +50,57 @@ def scarica(url, tentativi=3):
             req = urllib.request.Request(url, headers={
                 "User-Agent": "Mozilla/5.0 (compatible; iVIAGGI-dati/1.0; aggiornamento settimanale)",
                 "Accept": "text/csv,text/plain,application/xml,*/*"})
-            with urllib.request.urlopen(req, timeout=180) as r:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
                 return r.read()
         except Exception as e:      # noqa: BLE001
             ultimo = e
             time.sleep(20 * (n + 1))
     raise RuntimeError(f"download non riuscito da {url}: {ultimo}")
+
+
+def _data_api(v):
+    """Data dell'API Osservaprezzi ('2026-11-12T09:30:00.000+00:00', '...Z' o senza fuso) → 'AAAA-MM-GG HH:MM'
+    in ora italiana, come nel file CSV del Ministero."""
+    s = str(v).strip().replace("Z", "+00:00")
+    try:
+        d = dt.datetime.fromisoformat(s)
+    except ValueError:
+        return data_iso(s[:19].replace("T", " "))
+    if d.tzinfo is not None:
+        from zoneinfo import ZoneInfo
+        d = d.astimezone(ZoneInfo("Europe/Rome"))
+    return d.strftime("%Y-%m-%d %H:%M")
+
+
+def prezzi_da_api(ids, pausa=0.25, timeout=30):
+    """Scarica i prezzi dall'API Osservaprezzi solo per gli impianti abbinati alle aree (uno alla volta, con una
+    piccola pausa per non pesare sul sito) e li restituisce nello stesso formato del CSV del Ministero, così
+    il resto del programma (controllo di copertura, scelta dei carburanti) non cambia."""
+    righe = [f"Estrazione del {dt.date.today().isoformat()}", "idImpianto|descCarburante|prezzo|isSelf|dtComu"]
+    ok, falliti, ultimo = 0, 0, None
+    for n, imp in enumerate(sorted(set(ids))):
+        if n >= 8 and ok == 0:      # i primi 8 tutti falliti: il sito non risponde, inutile insistere
+            break
+        try:
+            req = urllib.request.Request(URL_API_IMPIANTO.format(imp), headers={
+                "User-Agent": "Mozilla/5.0 (compatible; iVIAGGI-dati/1.0; aggiornamento quotidiano)",
+                "Accept": "application/json"})
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                dati = json.loads(r.read().decode("utf-8"))
+            for f in dati.get("fuels") or []:
+                prezzo, nome = f.get("price"), (f.get("name") or "").replace("|", " ").strip()
+                quando = f.get("insertDate") or f.get("validityDate")
+                if prezzo is None or not nome or not quando:
+                    continue
+                righe.append(f"{imp}|{nome}|{prezzo}|{1 if f.get('isSelf') else 0}|{_data_api(quando)}")
+            ok += 1
+        except Exception as e:      # noqa: BLE001  (un impianto chiuso o sparito non blocca gli altri)
+            falliti += 1
+            ultimo = e
+        time.sleep(pausa)
+    if ok == 0:
+        raise RuntimeError(f"API Osservaprezzi non raggiungibile ({ultimo})")
+    return "\n".join(righe).encode("utf-8"), f"{ok} impianti letti, {falliti} non letti"
 
 
 # ---------------------------------------------------------------- prezzi
@@ -131,6 +180,14 @@ def scegli(prezzi_impianto):
                 best = max(pool, key=lambda p: p["data"]) if esatti else min(pool, key=lambda p: p["prezzo"])
                 scelti[(app_nome, "self" if self_ else "servito")] = best
     return scelti
+
+
+def ids_abbinati(wb):
+    ws = wb["impianti_ministero"]
+    h = [c.value for c in ws[1]]
+    i_area, i_imp = h.index("id_area"), h.index("id_impianto")
+    return [int(r[i_imp]) for r in ws.iter_rows(min_row=2, values_only=True)
+            if r[i_area] is not None and r[i_imp] is not None]
 
 
 def aggiorna_prezzi(wb, raw, oggi):
@@ -253,12 +310,20 @@ def main():
             if file_prezzi:
                 raw = open(file_prezzi, "rb").read()
             else:
+                # 1) API Osservaprezzi (tempo reale)  2) file CSV del Ministero  3) copia OpenDataView (in ritardo)
+                raw = None
                 try:
-                    raw = scarica(URL_PREZZI, tentativi=2)
-                except Exception as e1:
-                    errori.append(f"Ministero non raggiungibile ({e1}); provo la copia OpenDataView")
-                    raw = scarica(URL_PREZZI_RISERVA, tentativi=2)
-                    fonte = "copia OpenDataView.it degli open data MIMIT"
+                    raw, nota = prezzi_da_api(ids_abbinati(wb))
+                    fonte = f"API Osservaprezzi del Ministero, prezzi in tempo reale: {nota}"
+                except Exception as e0:
+                    errori.append(f"{e0}; provo il file CSV del Ministero")
+                if raw is None:
+                    try:
+                        raw = scarica(URL_PREZZI, tentativi=1, timeout=60)
+                    except Exception as e1:
+                        errori.append(f"Ministero non raggiungibile ({e1}); provo la copia OpenDataView")
+                        raw = scarica(URL_PREZZI_RISERVA, tentativi=2)
+                        fonte = "copia OpenDataView.it degli open data MIMIT"
             try:
                 esiti.append(aggiorna_prezzi(wb, raw, oggi) + f" (fonte: {fonte})")
             except Exception as e2:
