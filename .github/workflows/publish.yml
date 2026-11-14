@@ -25,6 +25,10 @@ on:
         description: "Prova il mantenimento dell'avvio automatico (spegne e riaccende subito questo flusso)"
         type: boolean
         default: false
+      prova_novita:
+        description: "Prova la sorveglianza dei pedaggi aperti ART: apre e chiude subito una segnalazione novita-dati di prova"
+        type: boolean
+        default: false
       prova_allarme:
         description: "Prova l'allarme: apre la segnalazione allarme-dati con un problema finto (si chiude al giro successivo)"
         type: boolean
@@ -162,6 +166,36 @@ jobs:
               gh issue close "$aperta" --comment "✅ Il controllo automatico è tornato a posto: tutto funziona di nuovo come previsto. ($RUN_URL)"
             fi
             echo "esito=ok" >> "$GITHUB_ENV"
+          fi
+      - name: Sorveglia i pedaggi in formato aperto (catalogo ART)
+        # delibera ART 132/2024, Misura 3.2: quando l'Autorità pubblica i pedaggi per percorso, avvisa una volta sola
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NOVITA_PROVA: ${{ inputs.prova_novita && '1' || '0' }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create novita-dati --color 0E8A16 --description "Nuove fonti di dati utili all'app" --force >/dev/null
+          gh issue list --label novita-dati --state all --limit 200 --json body,comments --jq '.[] | .body, .comments[].body' > gia_segnalati.txt
+          GIA_SEGNALATI=gia_segnalati.txt python tools/novita_pedaggi.py
+          [ -s novita_pedaggi.md ] || { echo "Niente di nuovo da segnalare"; exit 0; }
+          titolo="📊 iVIAGGI: l'Autorità dei trasporti ha pubblicato dati sui pedaggi"
+          [ "$NOVITA_PROVA" = "1" ] && titolo="🧪 Prova: sorveglianza dei pedaggi in formato aperto (ART)"
+          {
+            echo "@csantacroce"
+            echo
+            echo "Nel catalogo open data dell'Autorità di regolazione dei trasporti (https://bdt.autorita-trasporti.it/catalog.rdf) sono comparsi questi dataset:"
+            echo
+            cat novita_pedaggi.md
+            echo
+            echo "Se contengono i pedaggi per percorso (delibera ART 132/2024, Misura 3.2), si può scrivere uno script che aggiorna da solo il foglio tariffe_pedaggi del database. Portale: https://bdt.autorita-trasporti.it/rapporto/autostrade/"
+            echo
+            echo "Controllo: $RUN_URL"
+          } > corpo_novita.md
+          url=$(gh issue create --title "$titolo" --label novita-dati --body-file corpo_novita.md)
+          echo "Segnalazione aperta: $url"
+          if [ "$NOVITA_PROVA" = "1" ]; then
+            gh issue close "$url" --comment "Prova riuscita: chiusa subito. Il dataset usato per la prova è uno di quelli già presenti (rete autostradale), non un dataset sui pedaggi."
           fi
       - name: Tieni vivo l'avvio automatico (il 1° del mese)
         # nei progetti pubblici GitHub spegne gli avvii programmati dopo 60 giorni senza attività:
