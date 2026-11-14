@@ -21,6 +21,10 @@ on:
         description: "Consenti un calo di righe superiore al 10% (solo se è voluto)"
         type: boolean
         default: false
+      prova_allarme:
+        description: "Prova l'allarme: apre la segnalazione allarme-dati con un problema finto (si chiude al giro successivo)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -116,6 +120,7 @@ jobs:
           ESITO_DEPLOY: ${{ needs.deploy.result }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
+          if [ "${{ inputs.prova_allarme }}" = "true" ]; then echo "- Prova dell'allarme avviata a mano: non c'è nessun problema vero, la segnalazione si chiuderà da sola al prossimo giro." >> controllo_problemi.md; fi
           if [ "$ESITO_BUILD" != "success" ]; then echo "- Il passaggio di costruzione su GitHub non è terminato ($ESITO_BUILD)." >> controllo_problemi.md; fi
           if [ "$ESITO_DEPLOY" != "success" ]; then echo "- La pubblicazione del sito su GitHub Pages non è terminata ($ESITO_DEPLOY)." >> controllo_problemi.md; fi
           sed -i '/^$/d' controllo_problemi.md
