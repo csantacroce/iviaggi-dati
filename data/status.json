@@ -1,10 +1,12 @@
 {
   "ok": true,
-  "when": "2026-11-16T21:34:16Z",
-  "changed": true,
-  "message": "Pubblicata la versione 134. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-16T22:05:19Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 134: non c'è nulla da pubblicare.",
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    "Tracciati OpenStreetMap non aggiornati (resta il file precedente): https://overpass.private.coffee/api/interpreter: HTTP Error 504: Gateway Timeout"
+  ],
   "version": 134,
   "counts": {
     "aree_colonnine": 483,
@@ -28,32 +30,5 @@
     "tassi_cambio": 10,
     "tariffe_pedaggi": 80,
     "aree_servizio_attive": 475
-  },
-  "changes": {
-    "aree_servizio": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 25
-    },
-    "autostrade": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 2
-    },
-    "caselli": {
-      "aggiunte": 0,
-      "tolte": 0,
-      "modificate": 3
-    },
-    "correzioni_log": {
-      "aggiunte": 30,
-      "tolte": 0,
-      "modificate": 0
-    },
-    "info_aggiornamento": {
-      "aggiunte": 1,
-      "tolte": 1,
-      "modificate": 0
-    }
   }
 }
