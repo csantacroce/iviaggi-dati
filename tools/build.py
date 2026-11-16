@@ -357,6 +357,19 @@ def main():
             tmp = os.path.join(tempfile.mkdtemp(), "db.sqlite")
             build_db(schema, tables, tmp)
             check = sqlite3.connect(tmp)
+            # 17/11/2026: tracciati reali delle carreggiate (tabella geometria) per il riconoscimento della posizione.
+            # Se qualcosa va storto si pubblica senza tracciati: l'app usa il motore di prima.
+            try:
+                from geometria import costruisci
+                esito = costruisci(check)
+                if esito:
+                    for a in esito["avvisi"][:10]:
+                        pb.warn("Tracciati: " + a.strip())
+            except Exception as e:
+                pb.warn(f"Tracciati delle carreggiate non costruiti: {e}")
+                print("Geometria:", e)
+                check.execute("DROP TABLE IF EXISTS geometria")
+                check.commit()
             if check.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
                 pb.error("Il database costruito non supera il controllo di integrità.")
             check.close()
@@ -383,6 +396,14 @@ def main():
     src.execute("VACUUM INTO ?", (final,))
     src.close()
     new_hash = content_hash(final, schema)
+    # la tabella geometria non è nello schema dell'Excel: entra nell'impronta a parte
+    g = sqlite3.connect(final)
+    if g.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='geometria'").fetchone()[0]:
+        h = hashlib.sha256(new_hash.encode())
+        for r in g.execute("SELECT id_autostrada, id_casello_direzione, parte, punti, aree, cippi, anello FROM geometria ORDER BY 1, 2, 3"):
+            h.update(repr(r).encode())
+        new_hash = h.hexdigest()
+    g.close()
     counts = table_counts(final, schema)
     if state.get("content_hash") == new_hash and os.path.exists(db_path):
         status.update(ok=True, changed=False, version=state["version"], counts=counts,
