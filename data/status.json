@@ -1,12 +1,10 @@
 {
   "ok": true,
-  "when": "2026-11-16T22:25:11Z",
+  "when": "2026-11-16T23:13:12Z",
   "changed": false,
   "message": "Nessuna modifica rispetto alla versione 134: non c'è nulla da pubblicare.",
   "errors": [],
-  "warnings": [
-    "Tracciati OpenStreetMap non aggiornati (resta il file precedente): Overpass troppo lento: riprovo al prossimo giro"
-  ],
+  "warnings": [],
   "version": 134,
   "counts": {
     "aree_colonnine": 483,
