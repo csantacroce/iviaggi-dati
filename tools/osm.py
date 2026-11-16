@@ -23,12 +23,13 @@ GIORNI = 30
 SERVER = ["https://overpass-api.de/api/interpreter",
           "https://overpass.kumi.systems/api/interpreter",
           "https://overpass.private.coffee/api/interpreter"]
-QUERY = """[out:json][timeout:900][maxsize:2000000000];
-area["ISO3166-1"="IT"][admin_level=2]->.it;
+# 16/11/2026: l'Italia intera in una sola richiesta va in timeout: si scarica a riquadri di 2° x 2°
+RIQUADRI = [(la, lo, la + 2, lo + 2) for la in (36.5, 38.5, 40.5, 42.5, 44.5, 46.5) for lo in (6.5, 8.5, 10.5, 12.5, 14.5, 16.5)]
+QUERY = """[out:json][timeout:300];
 (
-  way["highway"~"^(motorway|motorway_link)$"](area.it);
-  way["highway"~"^(trunk|trunk_link)$"]["ref"~"^RA"](area.it);
-  way["highway"="trunk"]["name"~"Tangenziale|Raccordo|Autostrada|Diramazione|Asse|Superstrada",i](area.it);
+  way["highway"~"^(motorway|motorway_link)$"]({b});
+  way["highway"~"^(trunk|trunk_link)$"]["ref"~"^RA"]({b});
+  way["highway"="trunk"]["name"~"Tangenziale|Raccordo|Autostrada|Diramazione|Asse|Superstrada",i]({b});
 );
 out tags geom;"""
 
@@ -71,33 +72,45 @@ def decodifica(s, prec=6):
     return punti
 
 
-def scarica():
-    dati = urllib.parse.urlencode({"data": QUERY}).encode()
+def _richiesta(query):
+    dati = urllib.parse.urlencode({"data": query}).encode()
     ultimo = None
-    for url in SERVER:
-        for tentativo in range(2):
+    for tentativo in range(3):
+        for url in SERVER:
             try:
                 req = urllib.request.Request(url, data=dati, headers={"User-Agent": "iVIAGGI-dati (github.com/csantacroce/iviaggi-dati)"})
-                with urllib.request.urlopen(req, timeout=1000) as r:
+                with urllib.request.urlopen(req, timeout=400) as r:
                     js = json.load(r)
-                vie = []
-                for el in js.get("elements", []):
-                    if el.get("type") != "way" or not el.get("geometry"):
-                        continue
-                    t = el.get("tags", {})
-                    pts = [(g["lat"], g["lon"]) for g in el["geometry"] if g]
-                    if len(pts) < 2:
-                        continue
-                    vie.append([el["id"], t.get("highway", ""), t.get("ref", ""), t.get("oneway", ""),
-                                t.get("name", ""), t.get("junction", ""), codifica(pts)])
-                if len(vie) < 5000:
-                    raise ValueError(f"risposta troppo piccola ({len(vie)} vie)")
-                return vie
+                if js.get("remark") and "error" in js["remark"].lower():
+                    raise ValueError(js["remark"][:200])
+                return js
             except Exception as e:  # server occupato, risposta incompleta…
                 ultimo = f"{url}: {e}"
                 print("Overpass:", ultimo)
-                time.sleep(30)
+                time.sleep(10 + 20 * tentativo)
     raise RuntimeError(ultimo)
+
+
+def scarica():
+    vie = {}
+    inizio = time.time()
+    for la0, lo0, la1, lo1 in RIQUADRI:
+        if time.time() - inizio > 45 * 60:
+            raise RuntimeError("Overpass troppo lento: riprovo al prossimo giro")
+        js = _richiesta(QUERY.replace("{b}", f"{la0},{lo0},{la1},{lo1}"))
+        for el in js.get("elements", []):
+            if el.get("type") != "way" or not el.get("geometry") or el["id"] in vie:
+                continue
+            t = el.get("tags", {})
+            pts = [(g["lat"], g["lon"]) for g in el["geometry"] if g]
+            if len(pts) < 2:
+                continue
+            vie[el["id"]] = [el["id"], t.get("highway", ""), t.get("ref", ""), t.get("oneway", ""),
+                             t.get("name", ""), t.get("junction", ""), codifica(pts)]
+        time.sleep(2)
+    if len(vie) < 5000:
+        raise ValueError(f"risposta troppo piccola ({len(vie)} vie)")
+    return list(vie.values())
 
 
 def aggiorna_cache(forza=False):
