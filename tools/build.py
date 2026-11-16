@@ -334,6 +334,15 @@ def main():
     state = json.load(open(state_path)) if os.path.exists(state_path) else {}
     status["version"] = state.get("version", 0)
     pb = Problems()
+    # 16/11/2026: tracciati stradali da OpenStreetMap (si riscaricano una volta al mese o con source/aggiorna_osm)
+    try:
+        from osm import aggiorna_cache
+        msg = aggiorna_cache()
+        if msg:
+            print(msg)
+    except Exception as e:
+        pb.warn(f"Tracciati OpenStreetMap non aggiornati (resta il file precedente): {e}")
+        print("OpenStreetMap:", e)
     try:
         schema = load_schema(SCHEMA)
         if not os.path.exists(XLSX):
