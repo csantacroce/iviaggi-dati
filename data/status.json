@@ -1,11 +1,16 @@
 {
   "ok": true,
-  "when": "2026-11-16T23:13:12Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 134: non c'è nulla da pubblicare.",
+  "when": "2026-11-16T23:52:40Z",
+  "changed": true,
+  "message": "Pubblicata la versione 135. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
-  "warnings": [],
-  "version": 134,
+  "warnings": [
+    "Tracciati: A1 → Milano S. Giuliano: ramo parallelo tra Aglio Est e Cantagallo Est (52.7 km, nuovi 30.2)",
+    "Tracciati: A1 → Napoli Nord: Badia Nuova Ovest → Roncobilaccio Ovest: nessun percorso",
+    "Tracciati: A1 → Napoli Nord: Roncobilaccio Ovest non è sul tracciato tra Badia Nuova Ovest e Bisenzio Ovest: collocata con i km",
+    "Tracciati: A1 → Napoli Nord: ramo parallelo tra Cantagallo Ovest e Bisenzio Ovest (78.6 km, nuovi 32.4)"
+  ],
+  "version": 135,
   "counts": {
     "aree_colonnine": 483,
     "aree_marche_carburante": 487,
@@ -28,5 +33,12 @@
     "tassi_cambio": 10,
     "tariffe_pedaggi": 80,
     "aree_servizio_attive": 475
+  },
+  "changes": {
+    "info_aggiornamento": {
+      "aggiunte": 1,
+      "tolte": 1,
+      "modificate": 0
+    }
   }
 }
