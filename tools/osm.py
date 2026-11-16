@@ -12,6 +12,8 @@ import datetime as dt
 import gzip
 import json
 import os
+import re
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -113,6 +115,53 @@ def scarica():
     return list(vie.values())
 
 
+GEOFABRIK = "https://download.geofabrik.de/europe/italy-latest.osm.pbf"
+NOMI_TRUNK = re.compile("Tangenziale|Raccordo|Autostrada|Diramazione|Asse|Superstrada", re.I)
+
+
+def scarica_geofabrik():
+    """16/11/2026: estratto italiano di Geofabrik (aggiornato ogni giorno), filtrato con pyosmium.
+    Più affidabile di Overpass, che con richieste grandi va spesso in timeout."""
+    import subprocess
+    import tempfile
+    try:
+        import osmium
+    except ImportError:
+        subprocess.run([sys.executable, "-m", "pip", "install", "-q", "osmium"], check=True)
+        import osmium
+    from osmium.filter import TagFilter
+    pbf = os.path.join(tempfile.mkdtemp(), "italia.osm.pbf")
+    req = urllib.request.Request(GEOFABRIK, headers={"User-Agent": "iVIAGGI-dati (github.com/csantacroce/iviaggi-dati)"})
+    with urllib.request.urlopen(req, timeout=600) as r, open(pbf, "wb") as f:
+        while True:
+            b = r.read(1 << 20)
+            if not b:
+                break
+            f.write(b)
+    print(f"Geofabrik: scaricati {os.path.getsize(pbf) / 1e6:.0f} MB")
+    filtro = TagFilter(("highway", "motorway"), ("highway", "motorway_link"),
+                       ("highway", "trunk"), ("highway", "trunk_link")).enable_for(osmium.osm.WAY)
+    vie = []
+    for o in osmium.FileProcessor(pbf).with_locations().with_filter(filtro):
+        if not o.is_way():
+            continue
+        t = {k.k: k.v for k in o.tags}
+        hw, ref, name = t.get("highway", ""), t.get("ref", ""), t.get("name", "")
+        if hw.startswith("trunk") and not (ref.upper().startswith("RA") or (hw == "trunk" and NOMI_TRUNK.search(name))):
+            continue
+        try:
+            pts = [(n.lat, n.lon) for n in o.nodes]
+        except Exception:     # nodo mancante nell'estratto (bordo)
+            pts = [(n.lat, n.lon) for n in o.nodes if n.location.valid()]
+        if len(pts) < 2:
+            continue
+        vie.append([o.id, hw, ref, t.get("oneway", ""), name, t.get("junction", ""), codifica(pts)])
+    os.remove(pbf)
+    if len(vie) < 5000:
+        raise ValueError(f"estratto troppo piccolo ({len(vie)} vie)")
+    return vie
+
+
 def aggiorna_cache(forza=False):
     """Restituisce un messaggio (o None se non c'era niente da fare)."""
     eta = None
@@ -124,7 +173,11 @@ def aggiorna_cache(forza=False):
             eta = None
     if not (forza or os.path.exists(TRIGGER) or eta is None or eta >= GIORNI):
         return None
-    vie = scarica()
+    try:
+        vie = scarica_geofabrik()
+    except Exception as e:
+        print("Geofabrik:", e, "- provo con Overpass")
+        vie = scarica()
     vie.sort(key=lambda v: v[0])
     ora = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
     with gzip.GzipFile(CACHE, "wb", mtime=0) as f:
