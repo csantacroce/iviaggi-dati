@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "when": "2026-11-16T09:10:46Z",
-  "changed": false,
-  "message": "Nessuna modifica rispetto alla versione 133: non c'è nulla da pubblicare.",
+  "when": "2026-11-16T21:34:16Z",
+  "changed": true,
+  "message": "Pubblicata la versione 134. Gli utenti la ricevono alla prossima apertura dell'app.",
   "errors": [],
   "warnings": [],
-  "version": 133,
+  "version": 134,
   "counts": {
     "aree_colonnine": 483,
     "aree_marche_carburante": 487,
@@ -14,7 +14,7 @@
     "aree_servizio": 500,
     "autostrade": 60,
     "caselli": 120,
-    "correzioni_log": 1024,
+    "correzioni_log": 1054,
     "da_verificare": 40,
     "gestori_ricarica": 23,
     "impianti_ministero": 540,
@@ -28,5 +28,32 @@
     "tassi_cambio": 10,
     "tariffe_pedaggi": 80,
     "aree_servizio_attive": 475
+  },
+  "changes": {
+    "aree_servizio": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 25
+    },
+    "autostrade": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 2
+    },
+    "caselli": {
+      "aggiunte": 0,
+      "tolte": 0,
+      "modificate": 3
+    },
+    "correzioni_log": {
+      "aggiunte": 30,
+      "tolte": 0,
+      "modificate": 0
+    },
+    "info_aggiornamento": {
+      "aggiunte": 1,
+      "tolte": 1,
+      "modificate": 0
+    }
   }
 }
