@@ -72,35 +72,60 @@ def _data_api(v):
     return d.strftime("%Y-%m-%d %H:%M")
 
 
-def prezzi_da_api(ids, pausa=0.25, timeout=30):
+def prezzi_da_api(ids, pausa=0.25, timeout=30, ripassi=((60, 1.0), (180, 2.0))):
     """Scarica i prezzi dall'API Osservaprezzi solo per gli impianti abbinati alle aree (uno alla volta, con una
     piccola pausa per non pesare sul sito) e li restituisce nello stesso formato del CSV del Ministero, così
-    il resto del programma (controllo di copertura, scelta dei carburanti) non cambia."""
+    il resto del programma (controllo di copertura, scelta dei carburanti) non cambia.
+    Gli impianti che non rispondono vengono riprovati dopo un'attesa, più lentamente (`ripassi`: secondi di
+    attesa, pausa tra le richieste). Il 15/11/2026 il sito aveva risposto solo per 454 impianti su 537 e
+    l'allarme era rimasto aperto un giorno: erano rifiuti temporanei, il giorno dopo rispondevano tutti."""
     righe = [f"Estrazione del {dt.date.today().isoformat()}", "idImpianto|descCarburante|prezzo|isSelf|dtComu"]
-    ok, falliti, ultimo = 0, 0, None
-    for n, imp in enumerate(sorted(set(ids))):
-        if n >= 8 and ok == 0:      # i primi 8 tutti falliti: il sito non risponde, inutile insistere
+    ok, ultimo = 0, None
+
+    def leggi(imp):
+        req = urllib.request.Request(URL_API_IMPIANTO.format(imp), headers={
+            "User-Agent": "Mozilla/5.0 (compatible; iVIAGGI-dati/1.0; aggiornamento quotidiano)",
+            "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            dati = json.loads(r.read().decode("utf-8"))
+        for f in dati.get("fuels") or []:
+            prezzo, nome = f.get("price"), (f.get("name") or "").replace("|", " ").strip()
+            quando = f.get("insertDate") or f.get("validityDate")
+            if prezzo is None or not nome or not quando:
+                continue
+            righe.append(f"{imp}|{nome}|{prezzo}|{1 if f.get('isSelf') else 0}|{_data_api(quando)}")
+
+    da_leggere = sorted(set(ids))
+    giri = [(0, pausa)] + list(ripassi)
+    recuperati = 0
+    for g, (attesa, pausa_giro) in enumerate(giri):
+        if not da_leggere:
             break
-        try:
-            req = urllib.request.Request(URL_API_IMPIANTO.format(imp), headers={
-                "User-Agent": "Mozilla/5.0 (compatible; iVIAGGI-dati/1.0; aggiornamento quotidiano)",
-                "Accept": "application/json"})
-            with urllib.request.urlopen(req, timeout=timeout) as r:
-                dati = json.loads(r.read().decode("utf-8"))
-            for f in dati.get("fuels") or []:
-                prezzo, nome = f.get("price"), (f.get("name") or "").replace("|", " ").strip()
-                quando = f.get("insertDate") or f.get("validityDate")
-                if prezzo is None or not nome or not quando:
-                    continue
-                righe.append(f"{imp}|{nome}|{prezzo}|{1 if f.get('isSelf') else 0}|{_data_api(quando)}")
-            ok += 1
-        except Exception as e:      # noqa: BLE001  (un impianto chiuso o sparito non blocca gli altri)
-            falliti += 1
-            ultimo = e
-        time.sleep(pausa)
+        if g > 0:
+            if ok == 0:             # il sito non risponde proprio: inutile riprovare
+                break
+            time.sleep(attesa)
+        falliti = []
+        for n, imp in enumerate(da_leggere):
+            if g == 0 and n >= 8 and ok == 0:   # i primi 8 tutti falliti: il sito non risponde, inutile insistere
+                falliti.extend(da_leggere[n:])
+                break
+            try:
+                leggi(imp)
+                ok += 1
+                if g > 0:
+                    recuperati += 1
+            except Exception as e:      # noqa: BLE001  (un impianto chiuso o sparito non blocca gli altri)
+                falliti.append(imp)
+                ultimo = e
+            time.sleep(pausa_giro)
+        da_leggere = falliti
     if ok == 0:
         raise RuntimeError(f"API Osservaprezzi non raggiungibile ({ultimo})")
-    return "\n".join(righe).encode("utf-8"), f"{ok} impianti letti, {falliti} non letti"
+    nota = f"{ok} impianti letti, {len(da_leggere)} non letti"
+    if recuperati:
+        nota += f" ({recuperati} letti al secondo o terzo tentativo)"
+    return "\n".join(righe).encode("utf-8"), nota
 
 
 # ---------------------------------------------------------------- prezzi
