@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-16T08:57:20Z",
-  "changed": true,
-  "message": "Pubblicata la versione 133. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-16T09:10:46Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 133: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [],
   "version": 133,
@@ -28,17 +28,5 @@
     "tassi_cambio": 10,
     "tariffe_pedaggi": 80,
     "aree_servizio_attive": 475
-  },
-  "changes": {
-    "info_aggiornamento": {
-      "aggiunte": 2,
-      "tolte": 2,
-      "modificate": 0
-    },
-    "prezzi": {
-      "aggiunte": 2122,
-      "tolte": 2122,
-      "modificate": 0
-    }
   }
 }
