@@ -1,10 +1,9 @@
 {
-  "quando": "2026-11-18T07:28:14Z",
+  "quando": "2026-11-19T15:51:19Z",
   "ok": [
-    "prezzi: 2122 righe da 526/537 impianti (estrazione 2026-11-18), 13 righe vecchie tenute (fonte: API Osservaprezzi del Ministero, prezzi in tempo reale: 537 impianti letti, 0 non letti)"
+    "prezzi: 2124 righe da 526/537 impianti (estrazione 2026-11-19), 13 righe vecchie tenute (fonte: API Osservaprezzi del Ministero, prezzi in tempo reale: 537 impianti letti, 0 non letti)",
+    "cambi BCE del 2026-11-19: USD 1.0992, GBP 0.83581, CHF 0.9262, SEK 11.147, NOK 10.6475, DKK 7.4742, PLN 4.417, CZK 24.427, HUF 369.43, RON 5.3473"
   ],
   "problemi": [],
-  "non_necessari": [
-    "cambi: aggiornati da meno di 6 giorni"
-  ]
+  "non_necessari": []
 }
