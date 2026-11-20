@@ -10,3 +10,13 @@ Volkswagen,T-Roc,Ibrida benzina,50,,https://www.volkswagen.it/idhub/content/dam/
 Dacia,Sandero,,50,,https://www.user-manual.dacia.com/en/content/sandero-sandero-stepway/getting-know-your-vehicle/fuel-tank,Manuale d'uso Dacia: circa 50 l benzina e gasolio
 Dacia,Sandero,GPL,50,40,https://www.user-manual.dacia.com/en/content/sandero-sandero-stepway/getting-know-your-vehicle/fuel-tank,GPL 40 o 50 l secondo il veicolo: si usa il valore più basso
 Peugeot,208,,44,,https://www.peugeot.it/content/dam/peugeot/italy/b2c/our-range/info-and-price-pdf/208.pdf,Listino 10/11/2026: un solo valore per la gamma termica e ibrida
+Toyota,C-HR,Ibrida benzina,43,,https://www.toyota.it/content/dam/toyota/nmsc/italy/gamma/pdf/listino-e-specifiche/Toyota-C-HR-Listino-Specifiche.pdf,Listino e specifiche Toyota (unico valore per la gamma ibrida; plug-in non verificato)
+Hyundai,Tucson,Benzina,54,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27
+Hyundai,Tucson,Ibrida gasolio,54,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27 (1.6 CRDi 48V)
+Hyundai,Tucson,Gasolio,54,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27
+Hyundai,Tucson,Ibrida benzina,52,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27 (HEV)
+Hyundai,Tucson,Plug-in benzina,42,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27 (PHEV; uguale alla gemella Kia Sportage)
+Fiat,Panda,,37,,https://www.alvolante.it/listino_auto/fiat-pandina/1.0_hybrid_icon-caratteristiche,Al Volante: Pandina 1.0 Hybrid (sito Fiat non leggibile in automatico)
+Jeep,Avenger,,44,,https://www.quotidianomotori.com/test-drive/jeep-avenger-e-hybrid-summit-prova-consumi-prezzo/,Quotidiano Motori: prova Avenger e-Hybrid (sito Jeep non leggibile in automatico)
+Citroën,C3,,44,,https://www.citroen.fr/content/dam/citroen/france/showroom/b2c/technical-file/09-25/C3etEC3-SEPTEMBRE-25.pdf,Scheda tecnica ufficiale Citroën Francia 09/2025 (benzina e Hybrid)
+Nissan,Qashqai,,55,,https://www.nissan.it/content/dam/Nissan/it/brochures/Scheda_Tecnica/Nissan_Qashqai_ST_IT.pdf,Scheda tecnica Nissan Italia (mild hybrid ed e-POWER)
