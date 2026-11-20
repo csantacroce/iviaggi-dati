@@ -152,13 +152,27 @@ def costruisci(con):
             marca, modello = k.split("|", 1)
             con.execute("UPDATE veicoli SET serbatoio = ?, fonte_serbatoio = ? WHERE marca = ? AND modello = ? "
                         "AND alimentazione <> 'Elettrica'", (v["litri"], "Wikipedia: " + v["url"], marca, modello))
-    # 1) valori presi a mano (precedenza): riga senza alimentazione = tutto il modello, poi le righe specifiche
+    # 1) valori presi a mano (precedenza), dal più generico al più specifico:
+    #    riga senza alimentazione = tutto il modello tranne GPL e metano (serbatoi diversi, servono righe proprie);
+    #    poi le righe con alimentazione; per ultime quelle limitate per potenza (colonne kw_da / kw_a, estremi inclusi)
     manuali = list(csv.DictReader(open(MANUALI, encoding="utf-8"))) if os.path.exists(MANUALI) else []
-    for r in sorted(manuali, key=lambda r: bool(r["alimentazione"])):
+
+    def ordine(r):
+        return (bool(r["alimentazione"]), bool((r.get("kw_da") or "") + (r.get("kw_a") or "")))
+
+    for r in sorted(manuali, key=ordine):
         dove, par = "marca = ? AND modello = ? AND alimentazione <> 'Elettrica'", [r["marca"], r["modello"]]
         if r["alimentazione"]:
             dove += " AND alimentazione = ?"
             par.append(r["alimentazione"])
+        else:
+            dove += " AND alimentazione NOT IN ('GPL', 'Metano')"
+        if r.get("kw_da"):
+            dove += " AND kw >= ?"
+            par.append(float(r["kw_da"]))
+        if r.get("kw_a"):
+            dove += " AND kw <= ?"
+            par.append(float(r["kw_a"]))
         con.execute(f"UPDATE veicoli SET serbatoio = ?, serbatoio_gpl = ?, fonte_serbatoio = ? WHERE {dove}",
                     [float(r["litri"]), float(r["litri_gpl"]) if r["litri_gpl"] else None, r["fonte"]] + par)
     con.commit()

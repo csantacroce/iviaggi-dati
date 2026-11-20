@@ -1,22 +1,57 @@
-marca,modello,alimentazione,litri,litri_gpl,fonte,note
-Toyota,Yaris Cross,,36,,https://www.toyota.it/content/dam/toyota/nmsc/italy/gamma/pdf/listino-e-specifiche/Yaris-Cross-Listino-Specifiche.pdf,Listino e specifiche 3/26 (FWD e AWD-i)
-Toyota,Yaris,,36,,https://www.toyota.it/content/dam/toyota/nmsc/italy/gamma/pdf/listino-e-specifiche/Yaris-Listino-e-Specifiche.pdf,1.5 Hybrid 115 e 130
-Kia,Sportage,Benzina,54,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,Listino 02/01/2026
-Kia,Sportage,GPL,54,48,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,benzina 54 l + GPL 48 l
-Kia,Sportage,Ibrida gasolio,54,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,diesel mild hybrid
-Kia,Sportage,Ibrida benzina,52,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,full hybrid
-Kia,Sportage,Plug-in benzina,42,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,plug-in hybrid
-Volkswagen,T-Roc,Ibrida benzina,50,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/dimensioni/Dimensioni-Volkswagen-Nuovo-T-Roc.pdf,Nuovo T-Roc MY27: 1.5 eTSI circa 50 l (2.0 eTSI 4MOTION 55 l; 1.5 TSI Hybrid 40 l)
-Dacia,Sandero,,50,,https://www.user-manual.dacia.com/en/content/sandero-sandero-stepway/getting-know-your-vehicle/fuel-tank,Manuale d'uso Dacia: circa 50 l benzina e gasolio
-Dacia,Sandero,GPL,50,40,https://www.user-manual.dacia.com/en/content/sandero-sandero-stepway/getting-know-your-vehicle/fuel-tank,GPL 40 o 50 l secondo il veicolo: si usa il valore più basso
-Peugeot,208,,44,,https://www.peugeot.it/content/dam/peugeot/italy/b2c/our-range/info-and-price-pdf/208.pdf,Listino 10/11/2026: un solo valore per la gamma termica e ibrida
-Toyota,C-HR,Ibrida benzina,43,,https://www.toyota.it/content/dam/toyota/nmsc/italy/gamma/pdf/listino-e-specifiche/Toyota-C-HR-Listino-Specifiche.pdf,Listino e specifiche Toyota (unico valore per la gamma ibrida; plug-in non verificato)
-Hyundai,Tucson,Benzina,54,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27
-Hyundai,Tucson,Ibrida gasolio,54,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27 (1.6 CRDi 48V)
-Hyundai,Tucson,Gasolio,54,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27
-Hyundai,Tucson,Ibrida benzina,52,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27 (HEV)
-Hyundai,Tucson,Plug-in benzina,42,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27 (PHEV; uguale alla gemella Kia Sportage)
-Fiat,Panda,,37,,https://www.alvolante.it/listino_auto/fiat-pandina/1.0_hybrid_icon-caratteristiche,Al Volante: Pandina 1.0 Hybrid (sito Fiat non leggibile in automatico)
-Jeep,Avenger,,44,,https://www.quotidianomotori.com/test-drive/jeep-avenger-e-hybrid-summit-prova-consumi-prezzo/,Quotidiano Motori: prova Avenger e-Hybrid (sito Jeep non leggibile in automatico)
-Citroën,C3,,44,,https://www.citroen.fr/content/dam/citroen/france/showroom/b2c/technical-file/09-25/C3etEC3-SEPTEMBRE-25.pdf,Scheda tecnica ufficiale Citroën Francia 09/2025 (benzina e Hybrid)
-Nissan,Qashqai,,55,,https://www.nissan.it/content/dam/Nissan/it/brochures/Scheda_Tecnica/Nissan_Qashqai_ST_IT.pdf,Scheda tecnica Nissan Italia (mild hybrid ed e-POWER)
+marca,modello,alimentazione,litri,litri_gpl,fonte,note,kw_da,kw_a
+Toyota,Yaris Cross,,36,,https://www.toyota.it/content/dam/toyota/nmsc/italy/gamma/pdf/listino-e-specifiche/Yaris-Cross-Listino-Specifiche.pdf,Listino e specifiche 3/26 (FWD e AWD-i),,
+Toyota,Yaris,,36,,https://www.toyota.it/content/dam/toyota/nmsc/italy/gamma/pdf/listino-e-specifiche/Yaris-Listino-e-Specifiche.pdf,1.5 Hybrid 115 e 130,,
+Kia,Sportage,Benzina,54,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,Listino 02/01/2026,,
+Kia,Sportage,GPL,54,48,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,benzina 54 l + GPL 48 l,,
+Kia,Sportage,Ibrida gasolio,54,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,diesel mild hybrid,,
+Kia,Sportage,Ibrida benzina,52,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,full hybrid,,
+Kia,Sportage,Plug-in benzina,42,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,plug-in hybrid,,
+Volkswagen,T-Roc,Ibrida benzina,50,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/dimensioni/Dimensioni-Volkswagen-Nuovo-T-Roc.pdf,Nuovo T-Roc MY27: 1.5 eTSI circa 50 l (2.0 eTSI 4MOTION 55 l; 1.5 TSI Hybrid 40 l),,
+Dacia,Sandero,,50,,https://www.user-manual.dacia.com/en/content/sandero-sandero-stepway/getting-know-your-vehicle/fuel-tank,Manuale d'uso Dacia: circa 50 l benzina e gasolio,,
+Dacia,Sandero,GPL,50,40,https://www.user-manual.dacia.com/en/content/sandero-sandero-stepway/getting-know-your-vehicle/fuel-tank,GPL 40 o 50 l secondo il veicolo: si usa il valore più basso,,
+Peugeot,208,,44,,https://www.peugeot.it/content/dam/peugeot/italy/b2c/our-range/info-and-price-pdf/208.pdf,Listino 10/11/2026: un solo valore per la gamma termica e ibrida,,
+Toyota,C-HR,Ibrida benzina,43,,https://www.toyota.it/content/dam/toyota/nmsc/italy/gamma/pdf/listino-e-specifiche/Toyota-C-HR-Listino-Specifiche.pdf,Listino e specifiche Toyota (unico valore per la gamma ibrida; plug-in non verificato),,
+Hyundai,Tucson,Benzina,54,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27,,
+Hyundai,Tucson,Ibrida gasolio,54,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27 (1.6 CRDi 48V),,
+Hyundai,Tucson,Gasolio,54,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27,,
+Hyundai,Tucson,Ibrida benzina,52,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27 (HEV),,
+Hyundai,Tucson,Plug-in benzina,42,,https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_HyundaiVTucson_MY27pdf,Scheda tecnica Hyundai MY27 (PHEV; uguale alla gemella Kia Sportage),,
+Fiat,Panda,,37,,https://www.alvolante.it/listino_auto/fiat-pandina/1.0_hybrid_icon-caratteristiche,Al Volante: Pandina 1.0 Hybrid (sito Fiat non leggibile in automatico),,
+Jeep,Avenger,,44,,https://www.quotidianomotori.com/test-drive/jeep-avenger-e-hybrid-summit-prova-consumi-prezzo/,Quotidiano Motori: prova Avenger e-Hybrid (sito Jeep non leggibile in automatico),,
+Citroën,C3,,44,,https://www.citroen.fr/content/dam/citroen/france/showroom/b2c/technical-file/09-25/C3etEC3-SEPTEMBRE-25.pdf,Scheda tecnica ufficiale Citroën Francia 09/2025 (benzina e Hybrid),,
+Nissan,Qashqai,,55,,https://www.nissan.it/content/dam/Nissan/it/brochures/Scheda_Tecnica/Nissan_Qashqai_ST_IT.pdf,Scheda tecnica Nissan Italia (mild hybrid ed e-POWER),,
+Renault,Captur,Benzina,48,,https://cdn.group.renault.com/ren/gb/transversal-assets/brochures/mobile-brochure-tech-spec/mobile-tech-spec-captur.pdf,Scheda tecnica Renault UK,,
+Renault,Captur,Ibrida benzina,48,,https://cdn.group.renault.com/ren/gb/transversal-assets/brochures/mobile-brochure-tech-spec/mobile-tech-spec-captur.pdf,Scheda tecnica Renault UK (E-Tech full hybrid),,
+Nissan,Juke,,46,,https://www.nissan.co.uk/vehicles/new-vehicles/juke/prices-specifications.html,Nissan UK: DIG-T e Hybrid,,
+Suzuki,Swift,Ibrida benzina,37,,https://www.carexpert.com.au/suzuki/swift/2024-gl-js8fagso20240614,CarExpert: Swift 2024 1.2,,
+Suzuki,Ignis,Ibrida benzina,32,,https://www.suzuki.co.nz/Specifications/Ignis,Scheda Suzuki Nuova Zelanda,,
+Dacia,Duster,,50,,https://www.parkers.co.uk/dacia/duster/suv-2024/16-hybrid-140-journey-5dr-auto/specs/,Parkers: Duster 2024 Hybrid 140; benzina 50 l anche nella prova Patentati,,
+Dacia,Duster,GPL,50,40,https://www.patentati.it/prove/dacia-duster-eco-g-100-gpl-prova-prezzo-consumi-serbatoio-pregi-difetti.html,Patentati: benzina 50 l + GPL 50 l (40 utili),,
+Skoda,Karoq,,55,,https://cdn.skoda-storyboard.com/2025/06/TD-Karoq-cz_7e1b3587.pdf,"Dati tecnici Škoda 06/2025: 50 l solo 1.0 TSI, 55 l gli altri",,
+Skoda,Karoq,Benzina,50,,https://cdn.skoda-storyboard.com/2025/06/TD-Karoq-cz_7e1b3587.pdf,Dati tecnici Škoda 06/2025: 1.0 TSI 85 kW,,85
+MG,ZS,Ibrida benzina,41,,https://www.topgear.com/car-reviews/106599/MG%20MOTOR%20UK/ZS%20HATCHBACK/1.5%20Hybrid%2B%20SE%205dr%20Auto/spec,Top Gear: ZS Hybrid+,,
+Ford,Puma,,42,,https://www.ford.co.uk/content/dam/guxeu/uk/documents/feature-pdfs/FT-Puma_new.pdf,Scheda Ford UK: 1.0 EcoBoost mHEV,,
+Ford,Puma,Benzina,45,,https://www.ford.co.uk/content/dam/guxeu/uk/documents/feature-pdfs/FT-Puma_new.pdf,Scheda Ford UK: Puma ST 1.5,140,
+Opel,Corsa,,44,,https://www.vauxhall.co.uk/hub/datasheet/corsa-my26-gb.html,Scheda Vauxhall/Opel MY26: benzina e Hybrid,,
+Lancia,Ypsilon,Ibrida benzina,44,,https://www.alvolante.it/listino_auto/lancia-ypsilon/1.2_hybrid_110_cv-automatica-caratteristiche,Al Volante: nuova Ypsilon 1.2 Hybrid (la vecchia 1.0 non verificata),70,
+Toyota,Aygo X,Ibrida benzina,30,,https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/260216-Aygo-X-Tech-Specs.pdf,"Toyota UK, dati tecnici 02/2026",,
+BMW,X1,,54,,https://bmw.co.za/en/all-models/x-series/x1/bmw-x1-technical-data.html,BMW Sudafrica: sDrive18i e 18d,,
+BMW,X1,Plug-in benzina,47,,https://bmw.co.za/en/all-models/x-series/x1/bmw-x1-technical-data.html,BMW Sudafrica: xDrive30e,,
+Peugeot,2008,,44,,https://www.topgear.com/car-reviews/107750/PEUGEOT/2008%20ESTATE/1.2%20Hybrid%20145%20Allure%205dr%20e-DSC6/spec,Top Gear: 2008 1.2 Hybrid 145,,
+Hyundai,i10,Benzina,36,,https://dmassets.hyundai.com/is/content/hyundaiautoever/i10_Tech_Specpdf,Scheda tecnica Hyundai UK MY25,,
+Volkswagen,Polo,,40,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino gamma Volkswagen Italia MY26 (escluso metano),,
+Volkswagen,T-Cross,,40,,https://www.carexpert.com.au/volkswagen/t-cross/2024-life-js8kmwaw20240614,CarExpert: T-Cross 2024,,
+Volkswagen,Golf,,45,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26: motori < 149 CV 45 l,,
+Volkswagen,Golf,,50,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26: motori > 149 CV e GTI 50 l,100,
+Volkswagen,Golf,,55,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26: Golf R 55 l,230,
+Volkswagen,Golf,Plug-in benzina,40,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26: eHybrid e GTE 40 l,,
+Volkswagen,Tiguan,Benzina,55,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26,,
+Volkswagen,Tiguan,Gasolio,55,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26,,
+Volkswagen,Tiguan,Ibrida benzina,55,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26,,
+Volkswagen,Touran,,58,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26,,
+Volkswagen,Tayron,Gasolio,55,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26,,
+Volkswagen,Tayron,Ibrida benzina,55,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Gamma-Volkswagen_MY26.pdf,Listino VW Italia MY26,,
+Mercedes-Benz,GLA,Benzina,43,,https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gla/247-facelift/331699/,ADAC (dato del costruttore): GLA 200,,
+Mercedes-Benz,GLA,Ibrida benzina,43,,https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gla/247-facelift/331699/,ADAC (dato del costruttore): GLA 200 mild hybrid,,
+Kia,Picanto,Benzina,35,,https://press.kia.com/content/dam/kiapress/IT/Archivio/comunicati-2024/kia-nuova-picanto-compie-20-anni/listino-kia-picanto.pdf,Listino Kia Italia 2024,,
+Alfa Romeo,Tonale,Ibrida benzina,55,,https://www.parkers.co.uk/alfa-romeo/tonale/suv-2022/15-mhev-veloce-5dr-auto/specs/,Parkers: Tonale 1.5 mild hybrid,,
