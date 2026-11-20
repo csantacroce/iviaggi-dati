@@ -344,6 +344,37 @@ def unisci_doppioni(righe):
     return unite
 
 
+def nomi_brevi(righe):
+    """Allestimento: la versione senza la parte uguale per tutte le versioni dello stesso motore
+    ("Yaris Cross 1.5L (116 CV) Hybrid 2WD Trail MY21" → "2WD Trail MY21"). Con una sola versione resta intera."""
+    gruppi = {}
+    for r in righe:
+        gruppi.setdefault((r["marca"], r["modello"], r["motore"]), []).append(r)
+    for elenco in gruppi.values():
+        for r in elenco:
+            r["allestimento"] = r["versione"]
+        parole = [(r["versione"] or "").split() for r in elenco]
+        if len(elenco) < 2 or any(not p for p in parole):
+            continue
+        comuni = 0
+        while all(len(p) > comuni + 1 and p[comuni] == parole[0][comuni] for p in parole):
+            comuni += 1
+        if comuni == 0:
+            continue
+        brevi = [" ".join(p[comuni:]).strip(" -/·,") for p in parole]
+        if all(brevi) and len(set(brevi)) == len(brevi):
+            for r, b in zip(elenco, brevi):
+                r["allestimento"] = b
+    # stesso nome con cambio diverso (Mini One manuale e automatica): si aggiunge il cambio
+    for elenco in gruppi.values():
+        conta = {}
+        for r in elenco:
+            conta[r["allestimento"]] = conta.get(r["allestimento"], 0) + 1
+        for r in elenco:
+            if conta[r["allestimento"]] > 1 and r["cambio"] and r["allestimento"]:
+                r["allestimento"] += " · " + r["cambio"]
+
+
 def costruisci(con):
     """Tabella veicoli nel database dell'app. Restituisce un riassunto (o None se mancano i dati)."""
     ademe = _leggi_cache(CACHE_ADEME)
@@ -408,14 +439,15 @@ def costruisci(con):
     for r in righe:
         r["motore"] = motore_testo(r["cilindrata"], r["kw"], r["alimentazione"], r["versione"])
     righe = unisci_doppioni(righe)
+    nomi_brevi(righe)
     righe.sort(key=lambda r: (norm(r["marca"]), norm(r["modello"]), r["alimentazione"], r["kw"] or 0, r["versione"] or ""))
     con.execute("DROP TABLE IF EXISTS veicoli")
     con.execute("""CREATE TABLE veicoli (
         id INTEGER PRIMARY KEY, marca TEXT NOT NULL, modello TEXT NOT NULL, motore TEXT NOT NULL,
-        versione TEXT, alimentazione TEXT NOT NULL, cilindrata INTEGER, kw INTEGER, cambio TEXT,
+        versione TEXT, allestimento TEXT, alimentazione TEXT NOT NULL, cilindrata INTEGER, kw INTEGER, cambio TEXT,
         consumo_misto REAL, consumo_extra_alto REAL, consumo_elettrico REAL, autonomia_elettrica INTEGER,
         immatricolate_it INTEGER, fonte TEXT NOT NULL)""")
-    campi = ["marca", "modello", "motore", "versione", "alimentazione", "cilindrata", "kw", "cambio", "consumo_misto",
+    campi = ["marca", "modello", "motore", "versione", "allestimento", "alimentazione", "cilindrata", "kw", "cambio", "consumo_misto",
              "consumo_extra_alto", "consumo_elettrico", "autonomia_elettrica", "immatricolate_it", "fonte"]
     con.executemany(f"INSERT INTO veicoli ({','.join(campi)}) VALUES ({','.join('?' * len(campi))})",
                     [tuple(r[c] for c in campi) for r in righe])
