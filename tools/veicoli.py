@@ -309,7 +309,10 @@ SIGLE = {"BMW", "MG", "DS", "BYD", "GWM", "BAIC", "JAC", "SWM", "DR", "EVO", "NI
 MARCHE = {"B M W": "BMW", "M G": "MG", "LAMBORGHIN": "Lamborghini", "ROLLS ROYC": "Rolls-Royce",
           "CITROEN": "Citroën", "MERCEDES": "Mercedes-Benz", "MERCEDES BENZ": "Mercedes-Benz",
           "LAND ROVER": "Land Rover", "ALFA ROMEO": "Alfa Romeo", "ASTON MART": "Aston Martin",
-          "ASTON MARTIN": "Aston Martin", "SSANGYONG": "SsangYong", "KGM": "KGM", "DS": "DS"}
+          "ASTON MARTIN": "Aston Martin", "SSANGYONG": "KG Mobility", "KGM": "KG Mobility", "KG MOBILITY": "KG Mobility",
+          "DS": "DS", "DS AUTOMOBILES": "DS", "AUTOMOBILI LAMBORGHINI S P A": "Lamborghini", "LAMBORGHINI": "Lamborghini",
+          "MERCEDES AMG": "Mercedes-Benz", "FORD CNG TECHNIK": "Ford", "LYNK CO": "Lynk & Co",
+          "SHINERAY SWM JINBEI SRM": "SWM", "DR AUTOMOBILES": "DR", "INEOS GRENADIER": "Ineos", "INEOS": "Ineos"}
 
 
 def ripara(t):
@@ -391,6 +394,76 @@ def motore_testo(cc, kw, alimentazione, versione=None):
     return " ".join(parti)
 
 
+CODA = re.compile(r"^(\d+\s?kw|kw|hybrid|e-?hybrid|ehybrid|phev|plug-?in|electric|elettrica|ev|4matic\+?|xdrive|"
+                  r"sdrive|edrive\d*|4x4|awd|fwd|pro|pure|performance|competition|tourer|lr|s|\+)$", re.I)
+
+
+def famiglia(marca, modello):
+    """Nome della famiglia del modello, uguale per ADEME ed EEA (20/11/2026): l'EEA chiama "modello" anche la versione
+    ("320D Xdrive", "Glc 220 D 4MATIC", "ID.3 Pro 150 KW"). Esempi: BMW 320D → Serie 3, IX1 EDRIVE20 → iX1;
+    Mercedes C 220 D → Classe C, Glc 300 → GLC, AMG A 35 → Classe A; VW ID.3 Pro → ID.3; Toyota Yaris → Yaris."""
+    m = " ".join(str(modello or "").split())
+    if norm(m).startswith(norm(marca) + " "):
+        m = m[len(marca):].strip()
+    m = re.sub(r"^AMG\s+", "", m, flags=re.I)
+    t = m.split()
+    if not t:
+        return modello
+    b = norm(marca)
+    p0 = t[0].upper()
+    if b == "BMW":
+        if re.match(r"^\d{3}", p0):
+            return "Serie " + p0[0]
+        r = re.match(r"^M(\d)(\d\d)", p0)
+        if r:
+            return "Serie " + r.group(1)
+        if re.match(r"^M\d$", p0):
+            return p0
+        if re.match(r"^(X\d|Z\d|XM)$", p0):
+            return p0
+        if re.match(r"^I(X\d?|\d)$", p0):
+            return "i" + p0[1:]
+        return m
+    if b == "MERCEDES BENZ":
+        if norm(m).startswith("CLASSE "):
+            resto = m.split(None, 1)[1]
+            return resto.upper() if len(resto) > 1 else "Classe " + resto.upper()
+        if p0 in ("V-KLASSE", "V-CLASS"):
+            return "Classe V"
+        if "T-CLASS" in m.upper():
+            return "Classe T"
+        if p0 in ("A", "B", "C", "E", "S", "G", "V"):
+            return "Classe " + p0
+        if re.match(r"^(CLA|CLE|CLS|GLA|GLB|GLC|GLE|GLS|EQA|EQB|EQC|EQE|EQS|EQV|SL|GT)\+?$", p0.rstrip("+")):
+            return p0.rstrip("+")
+        if re.match(r"^(EQA|EQB|EQE|EQS)\d", p0):
+            return p0[:3]
+        return t[0] if len(t) > 1 and t[0].lower() in ("sprinter", "vito", "citan") else m
+    if b == "VOLKSWAGEN":
+        r = re.match(r"^ID\.?\s?(\d|BUZZ)", m.upper().replace("ID. ", "ID."))
+        if r:
+            return "ID." + (r.group(1) if r.group(1).isdigit() else " Buzz")
+    if b == "AUDI":
+        r = re.match(r"^((?:RS|SQ|S|A|Q)\s?\d)(?:\s+(E-?TRON))?", m, re.I)
+        if r:
+            return r.group(1).upper().replace(" ", "") + (" e-tron" if r.group(2) else "")
+    # tutte le altre: tolte le parole finali di versione (Hybrid, Phev, Electric, 150 KW…)
+    while len(t) > 1 and CODA.match(t[-1]):
+        t.pop()
+    while len(t) > 2 and re.match(r"^\d+$", t[-1]) and t[-2].upper() == "KW":
+        t = t[:-2]
+    return " ".join(t)
+
+
+def famiglia_ademe(marca, modello, versione):
+    """ADEME raggruppa alcune famiglie ("BMW Serie X" = X1…X7): in quel caso la famiglia viene dalla versione."""
+    if norm(marca) == "BMW" and norm(modello) in ("SERIE X", "SERIE Z", "SERIE I") and versione:
+        fam = famiglia(marca, versione)
+        if fam != versione:
+            return fam
+    return famiglia(marca, modello)
+
+
 def unisci_doppioni(righe):
     """Versioni con lo stesso nome (in ADEME cambiano solo pneumatici o massa): una riga sola, consumi medi."""
     gruppi = {}
@@ -454,7 +527,9 @@ def costruisci(con):
         kw = _num(r.get("kw"))
         if not kw:
             continue
-        k = (norm(nome_marca(r.get("marca"))), norm(r.get("modello")), alimentazione_eea(r.get("carburante"), r.get("modo")))
+        mc = nome_marca(r.get("marca"))
+        k = (norm(mc), norm(famiglia(mc, marca_leggibile(ripara(r.get("modello"))))),
+             alimentazione_eea(r.get("carburante"), r.get("modo")))
         italia.setdefault(k, []).append((kw, int(_num(r.get("auto")) or 0), r))
     righe = []
     usate = set()
@@ -475,7 +550,9 @@ def costruisci(con):
         elettr = _media(r.get("Conso_elec_Min"), r.get("Conso_elec_Max"))
         righe.append(dict(
             marca=nome_marca(marca),
-            modello=marca_leggibile(ripara(modello)), versione=pulisci_versione(r.get("Description_Commerciale")),
+            modello=famiglia_ademe(nome_marca(marca), marca_leggibile(ripara(modello)),
+                                   pulisci_versione(r.get("Description_Commerciale"))),
+            versione=pulisci_versione(r.get("Description_Commerciale")),
             alimentazione=alim, cilindrata=int(cc) if cc else None, kw=int(kw) if kw else None,
             cambio={"AUTOMATIQUE": "Automatico", "MECANIQUE": "Manuale"}.get(norm(r.get("Type_de_boite"))),
             consumo_misto=None if plug or alim == "Elettrica" else _media(r.get("Conso_vitesse_mixte_Min"), r.get("Conso_vitesse_mixte_Max")),
@@ -483,21 +560,24 @@ def costruisci(con):
             consumo_elettrico=round(elettr / 10, 1) if elettr else None,     # Wh/km → kWh/100 km
             autonomia_elettrica=int(_num(r.get("Autonomie_elec_Max")) or 0) or None,
             immatricolate_it=auto_it, fonte="ADEME"))
-    # versioni vendute in Italia che ADEME non ha (solo dati EEA: niente fasi WLTP, niente versione commerciale)
-    modelli_ademe = {(norm(r["marca"]), norm(r["modello"])) for r in righe}
+    # versioni vendute in Italia che ADEME non ha (solo dati EEA: consumo WLTP misto, niente fasi né descrizione
+    # commerciale; il nome commerciale EEA, se dice più della famiglia, diventa l'allestimento: "320D Xdrive")
     for chiave, elenco in italia.items():
-        if chiave[:2] in modelli_ademe:
-            continue
         for kw_it, n, rif in elenco:
-            if n < 100:
+            if id(rif) in usate or n < 100:
                 continue
             alim = chiave[2]
             fc = _num(rif.get("fc"))
             z = _num(rif.get("z"))
             cc = _num(rif.get("cc"))
+            mc = nome_marca(rif.get("marca"))
+            nome = marca_leggibile(ripara(rif.get("modello")))
+            if norm(nome).startswith(norm(mc) + " "):
+                nome = nome[len(mc):].strip()
+            fam = famiglia(mc, nome)
             righe.append(dict(
-                marca=nome_marca(rif.get("marca")), modello=marca_leggibile(ripara(rif.get("modello"))),
-                versione=None, alimentazione=alim, cilindrata=int(cc) if cc else None, kw=int(kw_it),
+                marca=mc, modello=fam, versione=None if norm(nome) == norm(fam) else nome,
+                alimentazione=alim, cilindrata=int(cc) if cc else None, kw=int(kw_it),
                 cambio=None,
                 consumo_misto=None if alim.startswith("Plug-in") or alim == "Elettrica" else (round(fc, 2) if fc else None),
                 consumo_extra_alto=None,
