@@ -54,6 +54,17 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install openpyxl
+      # 20/11/2026: foto dei modelli in stile studio (ritaglio dell'auto con rembg); il modello di ritaglio
+      # (circa 180 MB) resta nella cache di GitHub. Se l'installazione non riesce, le foto restano com'erano.
+      - name: Strumenti per le foto dei modelli
+        continue-on-error: true
+        run: pip install pillow "rembg[cpu]"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.u2net
+            ~/.rembg
+          key: rembg-isnet-general-use-v1
       - name: Aggiorna prezzi e cambi (lunedì, a mano, o commit con "[aggiorna prezzi]")
         id: aggiorna
         continue-on-error: true      # se il Ministero non risponde si prosegue: i dati restano quelli di prima

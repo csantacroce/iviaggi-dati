@@ -30,7 +30,9 @@ CARTELLA = os.path.join(ROOT, "site", "foto_modelli")
 REGISTRO = os.path.join(ROOT, "source", "foto_modelli.json")
 TRIGGER = os.path.join(ROOT, "source", "aggiorna_foto")
 GIORNI_RIPROVA = 30
-LARGHEZZA = 480
+LARGHEZZA = 1280        # originale scaricato da Commons (per un ritaglio pulito); la foto pubblicata è 480x300
+# Scelte a mano quando la ricerca automatica prende una foto sbagliata: "Marca|Modello": "Nome del file su Commons"
+SCELTE = {}
 AGENTE = "iVIAGGI-dati/1.0 (https://github.com/csantacroce/iviaggi-dati; app iVIAGGI Autostrade Italiane)"
 LIBERE = re.compile(r"^(cc0|public domain|pd|cc[ -]by(-sa)?([ -]\d(\.\d)?)?.*)$", re.I)
 
@@ -209,6 +211,13 @@ def cerca_commons(nome):
 
 
 def trova(marca, modello):
+    # 0) scelta a mano
+    scelta = SCELTE.get(f"{marca}|{modello}")
+    if scelta:
+        lic = licenza_commons(scelta.replace("File:", ""))
+        if lic:
+            lic["cercato"] = "scelta a mano"
+            return lic, None
     # 1) Commons: la foto più recente con il nome del modello
     for nome in nomi_da_cercare(marca, modello):
         lic = cerca_commons(nome)
@@ -234,6 +243,35 @@ def trova(marca, modello):
     return lic, None
 
 
+def prepara(url, nome_file):
+    """Scarica l'originale e lo mette in stile studio (studio_foto.py). Se il ritaglio non è disponibile
+    (rembg non installato) o non riesce, pubblica la foto ridotta così com'è. Restituisce lo stile usato."""
+    import tempfile
+    dati = leggi(url, binario=True)
+    dest = os.path.join(CARTELLA, nome_file)
+    with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as t:
+        t.write(dati)
+        sorgente = t.name
+    try:
+        try:
+            import studio_foto
+            if studio_foto.studio(sorgente, dest):
+                return studio_foto.STILE
+        except Exception as e:
+            print(f"Stile studio non riuscito per {nome_file}: {e}")
+        try:
+            from PIL import Image
+            im = Image.open(sorgente).convert("RGB")
+            im.thumbnail((480, 300))
+            im.save(dest, quality=88)
+        except Exception:
+            with open(dest, "wb") as f:
+                f.write(dati)
+        return "originale"
+    finally:
+        os.remove(sorgente)
+
+
 def aggiorna(con):
     """Cerca le foto mancanti, aggiorna il registro e la colonna veicoli.foto. Restituisce un riassunto."""
     os.makedirs(CARTELLA, exist_ok=True)
@@ -244,12 +282,38 @@ def aggiorna(con):
     oggi = dt.date.today()
     modelli = con.execute("SELECT DISTINCT marca, modello FROM veicoli ORDER BY marca, modello").fetchall()
     nuove = errori = 0
+    try:
+        import studio_foto
+        stile_attuale = studio_foto.STILE
+        import rembg  # noqa: F401  (solo per sapere se il ritaglio è disponibile)
+    except Exception:
+        stile_attuale = None
+    attuali = {f"{m}|{n}" for m, n in modelli}
+    for chiave in [k for k in registro if k not in attuali]:   # modelli non più nel catalogo
+        del registro[chiave]
+    rifatte = 0
     for marca, modello in modelli:
         chiave = f"{marca}|{modello}"
         voce = registro.get(chiave)
-        if voce and not forza:
-            if voce.get("file") and os.path.exists(os.path.join(CARTELLA, voce["file"])):
+        if voce and not forza and voce.get("file") and os.path.exists(os.path.join(CARTELLA, voce["file"])):
+            if stile_attuale and voce.get("stile") != stile_attuale and not SCELTE.get(chiave):
+                # stessa foto di Commons, rifatta nello stile attuale dall'originale grande
+                try:
+                    lic = licenza_commons(voce["file_commons"].replace("File:", ""))
+                    if lic:
+                        nuovo = f"{slug(marca)}__{slug(modello)}.jpg"
+                        stile = prepara(lic.pop("miniatura"), nuovo)
+                        lic.pop("mime", None)
+                        if nuovo != voce["file"] and os.path.exists(os.path.join(CARTELLA, voce["file"])):
+                            os.remove(os.path.join(CARTELLA, voce["file"]))
+                        registro[chiave] = {**voce, **lic, "file": nuovo, "stile": stile}
+                        rifatte += 1
+                except Exception as e:
+                    errori += 1
+                    print(f"Foto {marca} {modello} (stile): {e}")
+            if not SCELTE.get(chiave) or voce.get("cercato") == "scelta a mano":
                 continue
+        if voce and not forza and not SCELTE.get(chiave):
             if not voce.get("file"):
                 provato = dt.date.fromisoformat(voce.get("provato", "2000-01-01"))
                 if (oggi - provato).days < GIORNI_RIPROVA:
@@ -257,12 +321,10 @@ def aggiorna(con):
         try:
             lic, motivo = trova(marca, modello)
             if lic:
-                est = {"image/png": "png", "image/webp": "webp"}.get(lic.pop("mime"), "jpg")
-                nome_file = f"{slug(marca)}__{slug(modello)}.{est}"
-                dati = leggi(lic.pop("miniatura"), binario=True)
-                with open(os.path.join(CARTELLA, nome_file), "wb") as f:
-                    f.write(dati)
-                registro[chiave] = {"file": nome_file, "provato": oggi.isoformat(), **lic}
+                lic.pop("mime", None)
+                nome_file = f"{slug(marca)}__{slug(modello)}.jpg"
+                stile = prepara(lic.pop("miniatura"), nome_file)
+                registro[chiave] = {"file": nome_file, "provato": oggi.isoformat(), "stile": stile, **lic}
                 nuove += 1
             else:
                 registro[chiave] = {"file": None, "provato": oggi.isoformat(), "motivo": motivo}
@@ -294,7 +356,8 @@ def aggiorna(con):
     con.commit()
     scrivi_crediti(registro)
     con_foto = con.execute("SELECT COUNT(DISTINCT marca || modello) FROM veicoli WHERE foto IS NOT NULL").fetchone()[0]
-    riassunto = {"modelli": len(modelli), "con_foto": con_foto, "nuove": nuove, "errori": errori}
+    riassunto = {"modelli": len(modelli), "con_foto": con_foto, "nuove": nuove, "rifatte_in_stile": rifatte,
+                 "stile": stile_attuale or "originale (rembg non disponibile)", "errori": errori}
     print("Foto dei modelli:", json.dumps(riassunto))
     return riassunto
 
@@ -320,7 +383,7 @@ table{{border-collapse:collapse;width:100%}}td{{border-bottom:1px solid #ddd;pad
 @media (prefers-color-scheme:dark){{body{{background:#111;color:#eee}}td{{border-color:#333}}a{{color:#6af}}}}</style></head><body>
 <h1>Foto dei modelli</h1>
 <p>Le foto delle automobili mostrate nell'app iVIAGGI Autostrade Italiane vengono da Wikimedia Commons, con le licenze
-indicate qui sotto. Sono state ridotte di dimensione. I marchi appartengono ai rispettivi proprietari.</p>
+indicate qui sotto. Sono state modificate: l'auto è ritagliata e messa su uno sfondo uniforme con l'ombra, e la foto è ridotta di dimensione. I marchi appartengono ai rispettivi proprietari.</p>
 <table><tr><td><b>Modello</b></td><td><b>File</b></td><td><b>Autore</b></td><td><b>Licenza</b></td></tr>
 {chr(10).join(righe)}
 </table></body></html>
