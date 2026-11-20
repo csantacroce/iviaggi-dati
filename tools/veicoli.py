@@ -116,7 +116,70 @@ def interroga_eea(sql, pagina_righe=10000, pagine=60):
     return righe
 
 
+EEA_API = "https://co2cars.apps.eea.europa.eu/tools/api"
+
+
+def interroga_api_eea(anno):
+    """Riassunto delle auto immatricolate in Italia in un anno (20/11/2026): l'interfaccia pubblica del
+    visualizzatore co2cars dell'EEA accetta le aggregazioni; una riga per marca, modello, carburante, modo,
+    cilindrata e potenza, con le immatricolazioni e il consumo medio. Pagine da 1000 (aggregazione "composite")."""
+    righe, dopo = [], None
+    for _ in range(100):
+        comp = {"size": 1000, "sources": [
+            {"marca": {"terms": {"field": "Mk"}}}, {"modello": {"terms": {"field": "Cn"}}},
+            {"carburante": {"terms": {"field": "Ft"}}}, {"modo": {"terms": {"field": "Fm", "missing_bucket": True}}},
+            {"cc": {"terms": {"field": "ec__cm3_", "missing_bucket": True}}},
+            {"kw": {"terms": {"field": "ep__KW_", "missing_bucket": True}}}]}
+        if dopo:
+            comp["after"] = dopo
+        q = {"size": 0, "query": {"bool": {"must": [{"term": {"year": anno}}, {"term": {"MS": "IT"}}]}},
+             "aggs": {"v": {"composite": comp, "aggs": {"auto": {"sum": {"field": "r"}}, "fc": {"avg": {"field": "Fc"}},
+                                                         "z": {"avg": {"field": "z__Wh_km_"}}}}}}
+        r = leggi(EEA_API, {"source": json.dumps(q, separators=(",", ":"))})
+        agg = r.get("aggregations", {}).get("v", {})
+        for b in agg.get("buckets", []):
+            k = b["key"]
+            if not k.get("marca") or not k.get("modello"):
+                continue
+            righe.append({**k, "auto": b["auto"]["value"], "fc": b["fc"]["value"], "z": b["z"]["value"], "anno": anno})
+        dopo = agg.get("after_key")
+        if not dopo or not agg.get("buckets"):
+            break
+    return righe
+
+
 def scarica_eea():
+    """Versioni immatricolate in Italia negli ultimi anni (EEA, CC BY 4.0). Prima l'interfaccia del visualizzatore
+    co2cars (funziona dal 20/11/2026); se non risponde, le vecchie prove su DISCODATA (respinte dal filtro di sicurezza)."""
+    anno = dt.date.today().year
+    righe = []
+    for a in range(anno, anno - 4, -1):          # es. 2026 (se c'è), 2025, 2024, 2023
+        try:
+            nuove = interroga_api_eea(a)
+            print(f"EEA {a} (co2cars): {len(nuove)} versioni immatricolate in Italia")
+            righe += nuove
+        except Exception as e:
+            print(f"EEA {a} (co2cars): non riuscita: {e}")
+        if len({r["anno"] for r in righe}) >= 2:  # bastano i due anni più recenti pubblicati
+            break
+    if righe:
+        # stessa versione in più anni: si sommano le immatricolazioni e si tiene il consumo più recente
+        unite = {}
+        for r in sorted(righe, key=lambda r: r["anno"]):
+            k = (r["marca"], r["modello"], r["carburante"], r.get("modo"), r.get("cc"), r.get("kw"))
+            if k in unite:
+                v = unite[k]
+                v["auto"] = (v["auto"] or 0) + (r["auto"] or 0)
+                v["fc"] = r["fc"] if r["fc"] is not None else v["fc"]
+                v["z"] = r["z"] if r["z"] is not None else v["z"]
+                v["anno"] = r["anno"]
+            else:
+                unite[k] = dict(r)
+        return list(unite.values())
+    return scarica_eea_discodata()
+
+
+def scarica_eea_discodata():
     """Versioni immatricolate in Italia dal 2021 (somma delle immatricolazioni R). Il filtro di sicurezza del
     sito EEA respinge alcune interrogazioni (403): si provano forme diverse, dalla più precisa alla più semplice,
     e nel registro resta l'esito di ognuna."""
@@ -142,6 +205,8 @@ def scarica_eea():
             return righe
         print(f"EEA ({nome}): risposta vuota")
     raise RuntimeError("EEA: nessuna interrogazione riuscita")
+
+
 
 
 # ---------------------------------------------------------------- cache
@@ -302,6 +367,8 @@ def alimentazione_eea(ft, fm):
         return "Metano"
     if ft in ("E85",):
         return "Bioetanolo"
+    if "HYDROGEN" in ft:
+        return "Idrogeno"
     return "Ibrida benzina" if fm == "H" else "Benzina"
 
 
