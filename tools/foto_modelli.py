@@ -141,6 +141,11 @@ SCARTA = re.compile(r"interior|innenraum|innen|interieur|cockpit|dashboard|armat
                     r"rear|heck|back\b|badge|logo|emblem|wheel|felge|rad\b|seat|sitz|lenkrad|steering|detail|"
                     r"light|leuchte|scheinwerfer|trunk|kofferraum|grill|tail|collage|montage|mosaic|"
                     r"\s[-–]\s?r\b|\(r\)|_r_|\bri\b|mirror|spiegel|key|schlüssel|display|screen|charging port", re.I)
+# foto che non sono l'auto di serie di oggi (20/11/2026: provino con auto da rally, moto, modelli d'epoca)
+NON_DI_SERIE = re.compile(r"rally|racing|\brace\b|dtm|wrc|gt3|gt4|polic|polizei|polizia|carabinieri|taxi|ambulan|"
+                          r"feuerwehr|tuning|classic|oldtimer|vintage|concept|prototyp|museum|wreck|crash|unfall|"
+                          r"topolino|motorrad|motorcycle|motorbike|scooter|ducati|steering|volant|rendering|model car|"
+                          r"modellauto|toy|lego|\b(19\d\d|200\d|201[0-4])\b", re.I)
 FRONTE = re.compile(r"front|vorn|\s[-–]\s?f\b|\(f\)|frontansicht|vorderansicht|\bfl\b", re.I)
 
 
@@ -192,7 +197,8 @@ def cerca_commons(nome):
         lic = (meta.get("LicenseShortName", {}).get("value") or "").strip()
         w, h = info.get("width", 0), info.get("height", 1)
         if (info.get("mime") not in ("image/jpeg", "image/png") or meta.get("NonFree", {}).get("value")
-                or not LIBERE.match(lic) or w < 1000 or not 1.25 <= w / h <= 2.1 or SCARTA.search(titolo)):
+                or not LIBERE.match(lic) or w < 1000 or not 1.25 <= w / h <= 2.1 or SCARTA.search(titolo)
+                or NON_DI_SERIE.search(titolo)):
             continue
         if norm(nome) not in norm(titolo):
             continue
@@ -203,28 +209,25 @@ def cerca_commons(nome):
                                  "autore": autore or "sconosciuto", "file_commons": "File:" + titolo,
                                  "pagina_commons": info.get("descriptionurl"), "anno": a,
                                  "miniatura": info.get("thumburl") or info.get("url"), "mime": info.get("mime")}))
-    if not migliori:
-        return None
     migliori.sort(key=lambda t: -t[0])
-    punti, scelta = migliori[0]
-    return scelta if (scelta["anno"] or 0) >= 2015 else None
+    return [c for _, c in migliori if (c["anno"] or 0) >= 2015][:8]
 
 
 def trova(marca, modello):
-    # 0) scelta a mano
+    """Foto candidate in ordine di preferenza (le prova aggiorna() finché il ritaglio ha la forma di un'auto)."""
     scelta = SCELTE.get(f"{marca}|{modello}")
     if scelta:
         lic = licenza_commons(scelta.replace("File:", ""))
         if lic:
             lic["cercato"] = "scelta a mano"
-            return lic, None
-    # 1) Commons: la foto più recente con il nome del modello
+            return [lic], None
     for nome in nomi_da_cercare(marca, modello):
-        lic = cerca_commons(nome)
-        if lic:
-            lic["cercato"] = nome
-            return lic, None
-    # 2) riserva: immagine principale della pagina Wikipedia
+        candidate = cerca_commons(nome)
+        if candidate:
+            for c in candidate:
+                c["cercato"] = nome
+            return candidate, None
+    # riserva: immagine principale della pagina Wikipedia
     provati = []
     for lingua, titolo in titoli(marca, modello):
         p = pagina(lingua, titolo, marca)
@@ -234,16 +237,18 @@ def trova(marca, modello):
     else:
         p = cerca("it", f"{marca} {modello}", marca) or cerca("en", f"{marca} {modello}", marca)
         if not p:
-            return None, "nessuna pagina (" + ", ".join(provati) + ")"
+            return [], "nessuna pagina (" + ", ".join(provati) + ")"
     nome = nome_da_url(p["originalimage"]["source"])
+    if NON_DI_SERIE.search(nome):
+        return [], f"foto di Wikipedia non adatta ({nome})"
     lic = licenza_commons(nome)
     if not lic:
-        return None, f"immagine non libera o non su Commons ({nome})"
+        return [], f"immagine non libera o non su Commons ({nome})"
     lic["pagina_wikipedia"] = p.get("content_urls", {}).get("desktop", {}).get("page")
-    return lic, None
+    return [lic], None
 
 
-def prepara(url, nome_file):
+def prepara(url, nome_file, verifica=False):
     """Scarica l'originale e lo mette in stile studio (studio_foto.py). Se il ritaglio non è disponibile
     (rembg non installato) o non riesce, pubblica la foto ridotta così com'è. Restituisce lo stile usato."""
     import tempfile
@@ -255,8 +260,11 @@ def prepara(url, nome_file):
     try:
         try:
             import studio_foto
-            if studio_foto.studio(sorgente, dest):
+            esito = studio_foto.studio(sorgente, dest, verifica=verifica)
+            if esito:
                 return studio_foto.STILE
+            if verifica:
+                return None          # la sagoma non ha la forma di un'auto: si prova la foto successiva
         except Exception as e:
             print(f"Stile studio non riuscito per {nome_file}: {e}")
         try:
@@ -319,11 +327,19 @@ def aggiorna(con):
                 if (oggi - provato).days < GIORNI_RIPROVA:
                     continue
         try:
-            lic, motivo = trova(marca, modello)
+            candidate, motivo = trova(marca, modello)
+            nome_file = f"{slug(marca)}__{slug(modello)}.jpg"
+            lic = None
+            for c in candidate:
+                c = dict(c)
+                c.pop("mime", None)
+                stile = prepara(c.pop("miniatura"), nome_file, verifica=bool(stile_attuale))
+                if stile:
+                    lic = c
+                    break
+            if candidate and not lic:
+                motivo = f"nessuna delle {len(candidate)} foto ha la forma di un'auto dopo il ritaglio"
             if lic:
-                lic.pop("mime", None)
-                nome_file = f"{slug(marca)}__{slug(modello)}.jpg"
-                stile = prepara(lic.pop("miniatura"), nome_file)
                 registro[chiave] = {"file": nome_file, "provato": oggi.isoformat(), "stile": stile, **lic}
                 nuove += 1
             else:

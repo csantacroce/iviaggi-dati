@@ -35,7 +35,21 @@ def fondo():
     im = Image.composite(Image.new("RGB", (W, H), (120, 124, 130)), im, luce)
     return im
 
-def studio(src, dst):
+def forma_da_auto(alfa, larghezza, altezza):
+    """True se il ritaglio sembra un'auto intera: più larga che alta, abbastanza grande nella foto, piena."""
+    bbox = alfa.getbbox()
+    if not bbox:
+        return False
+    w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    if not 1.15 <= w / max(1, h) <= 3.6:
+        return False
+    if w * h < 0.10 * larghezza * altezza:          # auto minuscola in un paesaggio
+        return False
+    pieni = sum(alfa.crop(bbox).point(lambda v: 1 if v > 128 else 0).getdata())
+    return pieni >= 0.45 * w * h                     # una sagoma d'auto riempie gran parte del suo rettangolo
+
+
+def studio(src, dst, verifica=False):
     orig = Image.open(src).convert("RGB")
     from rembg import remove
     rit = remove(orig, session=_sessione(), post_process_mask=True)
@@ -43,6 +57,8 @@ def studio(src, dst):
     alfa = rit.getchannel("A").point(lambda v: 255 if v > 140 else 0).filter(ImageFilter.MinFilter(5)).filter(ImageFilter.GaussianBlur(0.9))
     rit.putalpha(alfa)
     a = alfa.point(lambda v: 255 if v > 128 else 0)
+    if verifica and not forma_da_auto(a, *orig.size):
+        return False
     bbox = a.getbbox()
     if not bbox: return False
     auto = rit.crop(bbox)

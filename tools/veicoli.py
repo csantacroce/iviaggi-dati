@@ -394,7 +394,7 @@ def motore_testo(cc, kw, alimentazione, versione=None):
     return " ".join(parti)
 
 
-CODA = re.compile(r"^(\d+\s?kw|kw|hybrid|e-?hybrid|ehybrid|phev|plug-?in|electric|elettrica|ev|4matic\+?|xdrive|"
+CODA = re.compile(r"^(\d+\s?kw|kw|hybrid|e-?hybrid\d*|ehybrid|phev|plug-?in|electric|elettrica|ev|gpl|lpg|bi-?fuel|h|4matic\+?|xdrive|"
                   r"sdrive|edrive\d*|4x4|awd|fwd|pro|pure|performance|competition|tourer|lr|s|\+)$", re.I)
 
 
@@ -403,10 +403,30 @@ def famiglia(marca, modello):
     ("320D Xdrive", "Glc 220 D 4MATIC", "ID.3 Pro 150 KW"). Esempi: BMW 320D → Serie 3, IX1 EDRIVE20 → iX1;
     Mercedes C 220 D → Classe C, Glc 300 → GLC, AMG A 35 → Classe A; VW ID.3 Pro → ID.3; Toyota Yaris → Yaris."""
     m = " ".join(str(modello or "").split())
+    m = re.split(r"\s*[,;]\s*", m)[0]                      # "Kona, Kauai" → "Kona"; "TUCSON,IX35" → "TUCSON"
     if norm(m).startswith(norm(marca) + " "):
         m = m[len(marca):].strip()
+    sigla = re.sub(r"[^A-Z]", "", marca.upper())
+    if sigla and re.match(rf"^{sigla}\d", m.upper()):           # "DS4" → "4", "DR3.0" → "3.0"
+        m = m[len(sigla):].strip()
     m = re.sub(r"^AMG\s+", "", m, flags=re.I)
     t = m.split()
+    # dati tecnici dentro il nome: si taglia dal primo ("Born 170 KW 60/63 Kwh", "Friday 1.5T Dct", "Leaf 40kWh")
+    for i in range(1, len(t)):
+        if re.match(r"^(\d+\s?kwh?|kwh?|\d\.\dt?|\d+/\d+|e-?hybrid\d*|dct|dual-?.*)$", t[i], re.I):
+            t = t[:i]
+            break
+    if len(t) > 1 and re.match(r"^\d+$", t[-1]) and re.match(r"^\d+\s?kw", " ".join(m.split()[len(t) - 1:len(t) + 1]), re.I):
+        t = t[:-1]                                              # "Born 170 KW" → "Born"
+    if norm(marca) == "LEXUS" and t and re.match(r"^[A-Z]{2,3}\d", t[0].upper()):
+        return re.match(r"^[A-Z]{2,3}", t[0].upper()).group(0)   # "RX450H+" → "RX"
+    m = " ".join(t)
+    if m.isupper() and len(m) > 3:
+        m = marca_leggibile(m)                                  # "TUCSON" → "Tucson"
+        t = m.split()
+    if len(sigla) <= 2 and re.match(r"^\d", m):
+        m = f"{sigla} {m}"                                      # DS 4, DR 5.0 (il nome del modello comprende la marca)
+        t = m.split()
     if not t:
         return modello
     b = norm(marca)
@@ -447,6 +467,18 @@ def famiglia(marca, modello):
         r = re.match(r"^((?:RS|SQ|S|A|Q)\s?\d)(?:\s+(E-?TRON))?", m, re.I)
         if r:
             return r.group(1).upper().replace(" ", "") + (" e-tron" if r.group(2) else "")
+    if b == "HYUNDAI":
+        m2 = re.sub(r"IX35|KAUAI", "", " ".join(t), flags=re.I).strip()
+        m2 = re.sub(r"^I\s?(\d+)", lambda r: "i" + r.group(1), m2, flags=re.I)        # I 10, I10 → i10
+        m2 = re.sub(r"^IONIQ\s?(\d)", lambda r: "Ioniq " + r.group(1), m2, flags=re.I)
+        m2 = re.sub(r"^TUCSON", "Tucson", m2, flags=re.I).replace("Santa FE", "Santa Fe")
+        t = m2.split() or t
+    if b == "DR":
+        m2 = re.sub(r"^DR (\d)H?$", lambda r: f"DR {r.group(1)}.0", " ".join(t))      # DR 6, DR 7H → DR 6.0, DR 7.0
+        t = m2.split()
+    if b == "RENAULT" and len(t) >= 2 and norm(t[1]) == "E TECH" and t[0].lower() in (
+            "clio", "captur", "arkana", "austral", "espace", "rafale", "symbioz"):
+        t = t[:1]                                   # Clio E-Tech = Clio ibrida (Megane, Scenic, 4, 5 E-Tech restano modelli)
     # tutte le altre: tolte le parole finali di versione (Hybrid, Phev, Electric, 150 KW…)
     while len(t) > 1 and CODA.match(t[-1]):
         t.pop()
