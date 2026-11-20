@@ -390,6 +390,14 @@ def main():
                 print("Veicoli:", e)
                 check.execute("DROP TABLE IF EXISTS veicoli")
                 check.commit()
+            # 20/11/2026: foto dei modelli da Wikimedia Commons (solo licenze libere), colonna veicoli.foto
+            try:
+                if check.execute("SELECT COUNT(*) FROM sqlite_master WHERE name = 'veicoli'").fetchone()[0]:
+                    from foto_modelli import aggiorna as aggiorna_foto
+                    aggiorna_foto(check)
+            except Exception as e:
+                pb.warn(f"Foto dei modelli non aggiornate: {e}")
+                print("Foto:", e)
             if check.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
                 pb.error("Il database costruito non supera il controllo di integrità.")
             check.close()
