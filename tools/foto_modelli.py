@@ -63,7 +63,7 @@ def titoli(marca, modello):
     m = re.match(r"^Classe (\w+)$", modello, re.I)
     if m:
         en.insert(0, f"{marca} {m.group(1)}-Class")
-    return [("it", t) for t in it] + [("en", t) for t in en]
+    return [("en", t) for t in en] + [("it", t) for t in it]
 
 
 def pagina(lingua, titolo, marca):
@@ -126,7 +126,96 @@ def nome_da_url(url):
     return parti[-1]
 
 
+# Nomi da cercare su Commons quando quello del catalogo non basta (gruppi ADEME, nomi francesi).
+NOMI_COMMONS = {
+    "Mini|Mini": "Mini Cooper", "BMW|Serie X": "BMW X3", "BMW|Serie Z": "BMW Z4", "MG|MG ZS": "MG ZS EV",
+    "Mercedes-Benz|Classe Eqa": "Mercedes-Benz EQA", "Mercedes-Benz|Classe Eqb": "Mercedes-Benz EQB",
+    "Hyundai|I 10": "Hyundai i10", "Hyundai|I 30": "Hyundai i30", "Nissan|LEAF 40kWh": "Nissan Leaf",
+    "Nissan|LEAF 62kWh": "Nissan Leaf", "Honda|Honda E": "Honda e", "Audi|A3 40 Tfsie": "Audi A3 Sportback",
+    "Audi|A3 45 Tfsie": "Audi A3 Sportback", "Citroën|Jumpy Space Tourer": "Citroën SpaceTourer",
+    "Peugeot|Expert Traveller": "Peugeot Traveller", "DS|DS 9": "DS 9",
+}
+SCARTA = re.compile(r"interior|innenraum|innen|interieur|cockpit|dashboard|armaturen|engine|motor\b|motorraum|"
+                    r"rear|heck|back\b|badge|logo|emblem|wheel|felge|rad\b|seat|sitz|lenkrad|steering|detail|"
+                    r"light|leuchte|scheinwerfer|trunk|kofferraum|grill|tail|collage|montage|mosaic|"
+                    r"\s[-–]\s?r\b|\(r\)|_r_|\bri\b|mirror|spiegel|key|schlüssel|display|screen|charging port", re.I)
+FRONTE = re.compile(r"front|vorn|\s[-–]\s?f\b|\(f\)|frontansicht|vorderansicht|\bfl\b", re.I)
+
+
+def nomi_da_cercare(marca, modello):
+    """"Mazda|Mazda CX-5" → "Mazda CX-5"; "BMW|Serie 3" → "BMW 3 Series"; "Porsche|911 Carrera 4 Gts" → … "Porsche 911"."""
+    chiave = f"{marca}|{modello}"
+    if chiave in NOMI_COMMONS:
+        return [NOMI_COMMONS[chiave]]
+    m = modello
+    if norm(m).startswith(norm(marca) + " "):
+        m = m[len(marca):].strip()
+    nomi = []
+    r = re.match(r"^Serie (\w+)$", m, re.I)
+    if r:
+        nomi.append(f"{marca} {r.group(1)} Series")
+    r = re.match(r"^Classe (\w+)$", m, re.I)
+    if r:
+        nomi.append(f"{marca} {r.group(1).upper()}-Class")
+    parole = m.split()
+    for n in range(len(parole), 0, -1):          # 911 Carrera 4 Gts → 911 Carrera 4 → 911 Carrera → 911
+        if n < len(parole) and parole[n - 1].lower() in ("serie", "classe", "e-tech", "plug-in", "space"):
+            continue                             # mai "BMW Serie" o "Renault Megane E-Tech" da solo
+        nomi.append(f"{marca} {' '.join(parole[:n])}")
+    return list(dict.fromkeys(nomi))
+
+
+def anno(meta, titolo):
+    for testo in ((meta.get("DateTimeOriginal", {}).get("value") or ""), titolo):
+        r = re.search(r"(19[89]\d|20[0-3]\d)", re.sub(r"<[^>]+>", "", testo))
+        if r:
+            return int(r.group(1))
+    return None
+
+
+def cerca_commons(nome):
+    """Foto più recente e frontale di Commons con "nome" nel titolo del file; None se non ce n'è una adatta."""
+    url = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6"
+           "&gsrlimit=50&gsrsearch=" + urllib.parse.quote(f'intitle:"{nome}" filetype:bitmap')
+           + f"&prop=imageinfo&iiprop=url|extmetadata|mime|size&iiurlwidth={LARGHEZZA}"
+           + "&iiextmetadatafilter=LicenseShortName|LicenseUrl|Artist|DateTimeOriginal|NonFree")
+    r = leggi(url)
+    migliori = []
+    for p in r.get("query", {}).get("pages", {}).values():
+        if not p.get("imageinfo"):
+            continue
+        info = p["imageinfo"][0]
+        titolo = p.get("title", "")[5:]
+        meta = info.get("extmetadata", {})
+        lic = (meta.get("LicenseShortName", {}).get("value") or "").strip()
+        w, h = info.get("width", 0), info.get("height", 1)
+        if (info.get("mime") not in ("image/jpeg", "image/png") or meta.get("NonFree", {}).get("value")
+                or not LIBERE.match(lic) or w < 1000 or not 1.25 <= w / h <= 2.1 or SCARTA.search(titolo)):
+            continue
+        if norm(nome) not in norm(titolo):
+            continue
+        a = anno(meta, titolo)
+        punti = (a or 2005) + (3 if FRONTE.search(titolo) else 0)
+        autore = re.sub(r"<[^>]+>", "", html.unescape(meta.get("Artist", {}).get("value") or "")).strip()
+        migliori.append((punti, {"licenza": lic, "url_licenza": meta.get("LicenseUrl", {}).get("value"),
+                                 "autore": autore or "sconosciuto", "file_commons": "File:" + titolo,
+                                 "pagina_commons": info.get("descriptionurl"), "anno": a,
+                                 "miniatura": info.get("thumburl") or info.get("url"), "mime": info.get("mime")}))
+    if not migliori:
+        return None
+    migliori.sort(key=lambda t: -t[0])
+    punti, scelta = migliori[0]
+    return scelta if (scelta["anno"] or 0) >= 2015 else None
+
+
 def trova(marca, modello):
+    # 1) Commons: la foto più recente con il nome del modello
+    for nome in nomi_da_cercare(marca, modello):
+        lic = cerca_commons(nome)
+        if lic:
+            lic["cercato"] = nome
+            return lic, None
+    # 2) riserva: immagine principale della pagina Wikipedia
     provati = []
     for lingua, titolo in titoli(marca, modello):
         p = pagina(lingua, titolo, marca)
@@ -183,6 +272,10 @@ def aggiorna(con):
             if errori >= 15:
                 print("Foto: troppi errori di rete, mi fermo e riprovo al prossimo giro")
                 break
+    usati = {v.get("file") for v in registro.values()}
+    for f in os.listdir(CARTELLA):
+        if f not in usati and f not in ("crediti.html", ".gitkeep"):
+            os.remove(os.path.join(CARTELLA, f))
     if forza:
         try:
             os.remove(TRIGGER)
