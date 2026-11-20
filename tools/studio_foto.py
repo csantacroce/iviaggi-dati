@@ -4,7 +4,7 @@
 nei crediti è scritto che le foto sono ritagliate e messe su sfondo uniforme."""
 from PIL import Image, ImageChops, ImageDraw, ImageFilter
 W, H = 480, 300
-STILE = "studio-scuro-1"
+STILE = "studio-scuro-2"   # 20/11/2026 sera: studio ancora più scuro (Carlo)
 _sess = None
 
 
@@ -16,13 +16,13 @@ def _sessione():
     return _sess
 
 def fondo():
-    """Studio grigio scuro (20/11/2026, Carlo): parete antracite, pavimento appena più chiaro, luce morbida dall'alto a destra."""
+    """Studio grigio molto scuro (20/11/2026, Carlo; più scuro la sera): parete antracite, pavimento appena più chiaro, luce morbida dall'alto a destra."""
     im = Image.new("RGB", (W, H)); d = ImageDraw.Draw(im)
     oriz = int(H * 0.60)
     def parete(y):
-        t = min(1, y / oriz); return (34 + 22*t, 36 + 23*t, 40 + 24*t)
+        t = min(1, y / oriz); return (14 + 12*t, 15 + 13*t, 18 + 14*t)
     def pavimento(y):
-        t = max(0, (y - oriz) / (H - oriz)); return (64 - 18*t, 66 - 18*t, 70 - 18*t)
+        t = max(0, (y - oriz) / (H - oriz)); return (34 - 14*t, 35 - 14*t, 39 - 14*t)
     banda = H * 0.10    # passaggio morbido tra parete e pavimento (niente linea netta)
     for y in range(H):
         k = min(1, max(0, (y - (oriz - banda / 2)) / banda))
@@ -32,7 +32,7 @@ def fondo():
     luce = Image.new("L", (W, H), 0); dl = ImageDraw.Draw(luce)
     dl.ellipse([W*0.18, H*0.30, W*0.82, H*0.95], fill=60)              # pozza di luce dove sta l'auto
     luce = luce.filter(ImageFilter.GaussianBlur(45))
-    im = Image.composite(Image.new("RGB", (W, H), (120, 124, 130)), im, luce)
+    im = Image.composite(Image.new("RGB", (W, H), (78, 82, 88)), im, luce)
     return im
 
 def forma_da_auto(alfa, larghezza, altezza):
