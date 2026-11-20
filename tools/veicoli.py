@@ -226,7 +226,7 @@ def alimentazione_ademe(e):
     if "ELEC" in t or "ELECTRIC" in t or "ELECTRIQUE" in t:
         base = "gasolio" if ("GAZOLE" in t or "GAZ" in t or "GO" in t or "DIESEL" in t) else "benzina"
         return ("Plug-in " if "HR" in t else "Ibrida ") + base
-    if "GPL" in t:
+    if "GPL" in t or "G P L" in e:
         return "GPL"
     if "GNV" in t or "NAT" in t or "GN" in t:
         return "Metano"
@@ -238,6 +238,41 @@ def alimentazione_ademe(e):
 
 
 SIGLE = {"BMW", "MG", "DS", "BYD", "GWM", "BAIC", "JAC", "SWM", "DR", "EVO", "NIO", "XEV", "KGM", "VW", "AMG", "GMC"}
+
+
+# ADEME tronca le marche a 10 caratteri e usa i punti nelle sigle
+MARCHE = {"B M W": "BMW", "M G": "MG", "LAMBORGHIN": "Lamborghini", "ROLLS ROYC": "Rolls-Royce",
+          "CITROEN": "Citroën", "MERCEDES": "Mercedes-Benz", "MERCEDES BENZ": "Mercedes-Benz",
+          "LAND ROVER": "Land Rover", "ALFA ROMEO": "Alfa Romeo", "ASTON MART": "Aston Martin",
+          "ASTON MARTIN": "Aston Martin", "SSANGYONG": "SsangYong", "KGM": "KGM", "DS": "DS"}
+
+
+def ripara(t):
+    """Testo UTF-8 letto due volte come Latin-1 nella fonte ("Ã " → "à")."""
+    t = str(t or "")
+    if "Ã" in t or "Â" in t:
+        try:
+            t = t.encode("latin-1").decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            pass
+    return " ".join(t.split())
+
+
+def nome_marca(m):
+    m = ripara(m)
+    return MARCHE.get(norm(m)) or marca_leggibile(m)
+
+
+def pulisci_versione(v):
+    """Descrizione commerciale ADEME più leggibile: niente gamma di pneumatici, "ch" (chevaux) → "CV"."""
+    v = ripara(v)
+    if not v:
+        return None
+    v = v.replace("Ã ", "à ")   # in alcune righe della fonte il secondo byte della "à" è già perso
+    v = re.sub(r"\s*\bpn\s+de\s+\d+\s*''?\s*(à|a)\s*\d+\s*''?", "", v, flags=re.I)
+    v = re.sub(r"\((\d+)\s*ch\)", r"(\1 CV)", v)
+    v = re.sub(r"\b(\d+)\s*ch\b", r"\1 CV", v)
+    return " ".join(v.split()) or None
 
 
 def marca_leggibile(m):
@@ -270,15 +305,43 @@ def alimentazione_eea(ft, fm):
     return "Ibrida benzina" if fm == "H" else "Benzina"
 
 
-def motore_testo(cc, kw, alimentazione):
-    """"1.2 Ibrida benzina 136 CV", "Elettrica 156 CV"."""
+def motore_testo(cc, kw, alimentazione, versione=None):
+    """"1.2 Ibrida benzina 136 CV", "Elettrica 156 CV". Cilindrata e cavalli come li scrive la casa quando la
+    descrizione commerciale li riporta (2143 cm³ = "2.2 Diesel", 148 kW = "200 CV"; Yaris Hybrid 116 CV e non
+    i 92 del solo motore termico), altrimenti calcolati."""
     parti = []
     if cc and cc > 0 and alimentazione != "Elettrica":
-        parti.append(f"{cc / 1000:.1f}")
+        litri = cc / 1000
+        m = re.search(r"(?<![\d.])(\d\.\d)(?![\d.])", versione or "")
+        parti.append(m.group(1) if m and abs(float(m.group(1)) - litri) <= 0.15 else f"{litri:.1f}")
     parti.append(alimentazione)
     if kw:
-        parti.append(f"{round(kw * 1.35962)} CV")
+        cv = round(kw * 1.35962)
+        m = re.search(r"\((\d+) CV\)", versione or "")
+        if m and 20 <= int(m.group(1)) <= 2000:
+            cv = int(m.group(1))   # per le ibride è la potenza di sistema, quella che conosce chi guida
+        parti.append(f"{cv} CV")
     return " ".join(parti)
+
+
+def unisci_doppioni(righe):
+    """Versioni con lo stesso nome (in ADEME cambiano solo pneumatici o massa): una riga sola, consumi medi."""
+    gruppi = {}
+    for r in righe:
+        k = (r["marca"], r["modello"], r["motore"], r["versione"], r["alimentazione"], r["cambio"], r["fonte"])
+        gruppi.setdefault(k, []).append(r)
+    unite = []
+    for elenco in gruppi.values():
+        r = dict(elenco[0])
+        for c in ("consumo_misto", "consumo_extra_alto", "consumo_elettrico"):
+            valori = [x[c] for x in elenco if x[c] is not None]
+            r[c] = round(sum(valori) / len(valori), 2) if valori else None
+        autonomie = [x["autonomia_elettrica"] for x in elenco if x["autonomia_elettrica"]]
+        r["autonomia_elettrica"] = min(autonomie) if autonomie else None   # la più prudente
+        immatricolate = [x["immatricolate_it"] for x in elenco if x["immatricolate_it"]]
+        r["immatricolate_it"] = max(immatricolate) if immatricolate else None
+        unite.append(r)
+    return unite
 
 
 def costruisci(con):
@@ -293,7 +356,7 @@ def costruisci(con):
         kw = _num(r.get("kw"))
         if not kw:
             continue
-        k = (norm(r.get("marca")), norm(r.get("modello")), alimentazione_eea(r.get("carburante"), r.get("modo")))
+        k = (norm(nome_marca(r.get("marca"))), norm(r.get("modello")), alimentazione_eea(r.get("carburante"), r.get("modo")))
         italia.setdefault(k, []).append((kw, int(_num(r.get("auto")) or 0), r))
     righe = []
     usate = set()
@@ -306,17 +369,17 @@ def costruisci(con):
         cc = _num(r.get("Cylindrée"))
         auto_it = None
         if italia:
-            for kw_it, n, rif in italia.get((norm(marca), norm(modello), alim), []):
+            for kw_it, n, rif in italia.get((norm(nome_marca(marca)), norm(modello), alim), []):
                 if kw and abs(kw_it - kw) <= 2:
                     auto_it = (auto_it or 0) + n
                     usate.add(id(rif))
         plug = alim.startswith("Plug-in")
         elettr = _media(r.get("Conso_elec_Min"), r.get("Conso_elec_Max"))
         righe.append(dict(
-            marca=marca_leggibile(marca),
-            modello=marca_leggibile(modello), versione=(r.get("Description_Commerciale") or "").strip() or None,
+            marca=nome_marca(marca),
+            modello=marca_leggibile(ripara(modello)), versione=pulisci_versione(r.get("Description_Commerciale")),
             alimentazione=alim, cilindrata=int(cc) if cc else None, kw=int(kw) if kw else None,
-            cambio=(r.get("Type_de_boite") or "").strip().capitalize() or None,
+            cambio={"AUTOMATIQUE": "Automatico", "MECANIQUE": "Manuale"}.get(norm(r.get("Type_de_boite"))),
             consumo_misto=None if plug or alim == "Elettrica" else _media(r.get("Conso_vitesse_mixte_Min"), r.get("Conso_vitesse_mixte_Max")),
             consumo_extra_alto=None if alim == "Elettrica" else _media(r.get("Conso_T-haute_vitesse_Min"), r.get("Conso_T-haute_vitesse_Max")),
             consumo_elettrico=round(elettr / 10, 1) if elettr else None,     # Wh/km → kWh/100 km
@@ -335,7 +398,7 @@ def costruisci(con):
             z = _num(rif.get("z"))
             cc = _num(rif.get("cc"))
             righe.append(dict(
-                marca=marca_leggibile(rif.get("marca")), modello=marca_leggibile(rif.get("modello")),
+                marca=nome_marca(rif.get("marca")), modello=marca_leggibile(ripara(rif.get("modello"))),
                 versione=None, alimentazione=alim, cilindrata=int(cc) if cc else None, kw=int(kw_it),
                 cambio=None,
                 consumo_misto=None if alim.startswith("Plug-in") or alim == "Elettrica" else (round(fc, 2) if fc else None),
@@ -343,7 +406,8 @@ def costruisci(con):
                 consumo_elettrico=round(z / 10, 1) if z else None,
                 autonomia_elettrica=None, immatricolate_it=n, fonte="EEA"))
     for r in righe:
-        r["motore"] = motore_testo(r["cilindrata"], r["kw"], r["alimentazione"])
+        r["motore"] = motore_testo(r["cilindrata"], r["kw"], r["alimentazione"], r["versione"])
+    righe = unisci_doppioni(righe)
     righe.sort(key=lambda r: (norm(r["marca"]), norm(r["modello"]), r["alimentazione"], r["kw"] or 0, r["versione"] or ""))
     con.execute("DROP TABLE IF EXISTS veicoli")
     con.execute("""CREATE TABLE veicoli (
