@@ -1,0 +1,12 @@
+marca,modello,alimentazione,litri,litri_gpl,fonte,note
+Toyota,Yaris Cross,,36,,https://www.toyota.it/content/dam/toyota/nmsc/italy/gamma/pdf/listino-e-specifiche/Yaris-Cross-Listino-Specifiche.pdf,Listino e specifiche 3/26 (FWD e AWD-i)
+Toyota,Yaris,,36,,https://www.toyota.it/content/dam/toyota/nmsc/italy/gamma/pdf/listino-e-specifiche/Yaris-Listino-e-Specifiche.pdf,1.5 Hybrid 115 e 130
+Kia,Sportage,Benzina,54,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,Listino 02/01/2026
+Kia,Sportage,GPL,54,48,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,benzina 54 l + GPL 48 l
+Kia,Sportage,Ibrida gasolio,54,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,diesel mild hybrid
+Kia,Sportage,Ibrida benzina,52,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,full hybrid
+Kia,Sportage,Plug-in benzina,42,,https://www.kia.com/content/dam/kwcms/kme/it/it/assets/contents/utility/price-list/2026/listino-kia-sportage-pe-pubblico-02_01_2026.pdf,plug-in hybrid
+Volkswagen,T-Roc,Ibrida benzina,50,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/dimensioni/Dimensioni-Volkswagen-Nuovo-T-Roc.pdf,Nuovo T-Roc MY27: 1.5 eTSI circa 50 l (2.0 eTSI 4MOTION 55 l; 1.5 TSI Hybrid 40 l)
+Dacia,Sandero,,50,,https://www.user-manual.dacia.com/en/content/sandero-sandero-stepway/getting-know-your-vehicle/fuel-tank,Manuale d'uso Dacia: circa 50 l benzina e gasolio
+Dacia,Sandero,GPL,50,40,https://www.user-manual.dacia.com/en/content/sandero-sandero-stepway/getting-know-your-vehicle/fuel-tank,GPL 40 o 50 l secondo il veicolo: si usa il valore più basso
+Peugeot,208,,44,,https://www.peugeot.it/content/dam/peugeot/italy/b2c/our-range/info-and-price-pdf/208.pdf,Listino 10/11/2026: un solo valore per la gamma termica e ibrida
