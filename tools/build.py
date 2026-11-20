@@ -343,6 +343,17 @@ def main():
     except Exception as e:
         pb.warn(f"Tracciati OpenStreetMap non aggiornati (resta il file precedente): {e}")
         print("OpenStreetMap:", e)
+    # 20/11/2026: catalogo veicoli e consumi WLTP (ADEME, EEA), una volta al mese o con source/aggiorna_veicoli
+    try:
+        from veicoli import aggiorna_cache as aggiorna_veicoli
+        msg = aggiorna_veicoli()
+        if msg:
+            print(msg)
+            if "non aggiornato" in msg:
+                pb.warn(msg + " (resta il catalogo precedente)")
+    except Exception as e:
+        pb.warn(f"Catalogo veicoli non aggiornato (resta il file precedente): {e}")
+        print("Veicoli:", e)
     try:
         schema = load_schema(SCHEMA)
         if not os.path.exists(XLSX):
@@ -369,6 +380,15 @@ def main():
                 pb.warn(f"Tracciati delle carreggiate non costruiti: {e}")
                 print("Geometria:", e)
                 check.execute("DROP TABLE IF EXISTS geometria")
+                check.commit()
+            # 20/11/2026: catalogo veicoli (tabella veicoli) per le Impostazioni veicolo; se manca l'app chiede i dati a mano.
+            try:
+                from veicoli import costruisci as costruisci_veicoli
+                costruisci_veicoli(check)
+            except Exception as e:
+                pb.warn(f"Catalogo veicoli non costruito: {e}")
+                print("Veicoli:", e)
+                check.execute("DROP TABLE IF EXISTS veicoli")
                 check.commit()
             if check.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
                 pb.error("Il database costruito non supera il controllo di integrità.")
@@ -401,6 +421,12 @@ def main():
     if g.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='geometria'").fetchone()[0]:
         h = hashlib.sha256(new_hash.encode())
         for r in g.execute("SELECT id_autostrada, id_casello_direzione, parte, punti, aree, cippi, anello FROM geometria ORDER BY 1, 2, 3"):
+            h.update(repr(r).encode())
+        new_hash = h.hexdigest()
+    # anche il catalogo veicoli è fuori dallo schema dell'Excel
+    if g.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='veicoli'").fetchone()[0]:
+        h = hashlib.sha256(new_hash.encode())
+        for r in g.execute("SELECT * FROM veicoli ORDER BY id"):
             h.update(repr(r).encode())
         new_hash = h.hexdigest()
     g.close()
