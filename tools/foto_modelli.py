@@ -142,10 +142,43 @@ SCARTA = re.compile(r"interior|innenraum|innen|interieur|cockpit|dashboard|armat
                     r"light|leuchte|scheinwerfer|trunk|kofferraum|grill|tail|collage|montage|mosaic|"
                     r"\s[-–]\s?r\b|\(r\)|_r_|\bri\b|mirror|spiegel|key|schlüssel|display|screen|charging port", re.I)
 # foto che non sono l'auto di serie di oggi (20/11/2026: provino con auto da rally, moto, modelli d'epoca)
-NON_DI_SERIE = re.compile(r"rally|racing|\brace\b|dtm|wrc|gt3|gt4|polic|polizei|polizia|carabinieri|taxi|ambulan|"
-                          r"feuerwehr|tuning|classic|oldtimer|vintage|concept|prototyp|museum|wreck|crash|unfall|"
-                          r"topolino|motorrad|motorcycle|motorbike|scooter|ducati|steering|volant|rendering|model car|"
-                          r"modellauto|toy|lego|\b(19\d\d|200\d|201[0-4])\b", re.I)
+NON_DI_SERIE = re.compile(r"rally|racing|\brace\b|dtm|wrc|gt3|gt4|\bcup\b|motorsport|festival|grand final|tour de|"
+                          r"polic|polit|polizei|polizia|carabinieri|guardia|handhaving|taxi|ambulan|\brtw\b|johanniter|"
+                          r"rettung|feuerwehr|tuning|classic|oldtimer|vintage|concept|prototyp|museum|wreck|crash|unfall|"
+                          r"topolino|motorrad|motorcycle|motorbike|scooter|ducati|steering|volant|instrument|dashboard|"
+                          r"compartment|frunk|panzer|\btank\b|bundesarchiv|rendering|model car|modellauto|\btoys?\b|"
+                          r"lego|\b(19\d\d|200\d|201[0-4])\b", re.I)
+# foto già viste e sbagliate (provino del 20/11/2026): non si usano più, si prende la successiva
+SCARTATE = {
+    "File:BMW M3 (E30) of Peter Brock at the 2025 Adelaide Grand Final.jpg",  # BMW|M3
+    "File:Fiat 500 BW 2025-04-27 11-02-15.jpg",  # Fiat|500
+    "File:Fiat 600 181407808.jpg",  # Fiat|600
+    "File:2023 Ford Mustang Mach-E GT Front Compartment.jpg",  # Ford|Mustang Mach-E
+    "File:Golczewo - Tour de Pologne - Kia Ceed III SW - HPW-A922 - 04.08.2026 13-41-20.jpg",  # Kia|Ceed
+    "File:MB_W124_million_miles.jpg",  # Mercedes-Benz|GT
+    "File:DSC05462 2x RTW Johanniter Wien, Mercedes-Benz Sprinter, Front Left, 2023-10.jpg",  # Mercedes-Benz|Sprinter
+    "File:MERCEDES-BENZ E-CLASS SEDAN LWB (V212) China (14).jpg",  # Mercedes-Benz|Classe E
+    "File:Mitsubishi Colt at the 2026 Adelaide Motorsport Festival (DSCF2572).jpg",  # Mitsubishi|Colt
+    "File:Opel Astra F 182833.jpg",  # Opel|Astra
+    "File:Opel Corsa en Vilanova de Arousa.jpg",  # Opel|Corsa
+    "File:Opel Frontera A 090458144.jpg",  # Opel|Frontera
+    "File:Nissan Micra 1.3 GX.jpg",  # Nissan|Micra
+    "File:Renault CAPTUR espirt ALPINE MILD HYBRID (3AA-HJBH5HH) (5).jpg",  # Renault|Captur
+    "File:2015 Renault Clio Expression DCi Grandtour (Front ).png",  # Renault|Clio
+    "File:Renault Mégane (third generation).jpg",  # Renault|Megane
+    "File:2023 Renault Zoe Handhaving (54564687249).jpg",  # Renault|Zoe
+    "File:Mat_Jackson_2006_SEAT_Cupra_Oulton_Park.jpg",  # Seat|Leon SP
+    "File:Skoda Fabia 1.0T Ambition 2024 (54783080361).jpg",  # Skoda|Fabia
+    "File:Suzuki Ignis HYBRID MV 2022 JAPAN Instrument panel.jpg",  # Suzuki|Ignis
+    "File:Bundesarchiv_Bild_101I-299-1805-16,_Nordfrankreich,_Panzer_VI_(Tiger_I).2.jpg",  # Tiger|Six
+    "File:Volkswagen Kombi rose.jpg",  # Volkswagen|Kombi
+    "File:Volkswagen Transporter Caravelle from Germany.jpg",  # Volkswagen|Transporter Caravelle
+    "File:97. Feier Buchwoche, Posta MPL Volkswagen Caddy, 2026 Belváros-Lipótváros.jpg",  # Volkswagen|Caddy
+    "File:Lamborghini Aventador LP 700-4.jpg",  # Lamborghini|Aventador
+    "File:Volvo XC90 B6 AWD Ultra SPA FL Crystal White (5).jpg",  # Volvo|XC90
+    "File:Lancia Ypsilon (2024) Front 1 (cropped) (cropped).jpg",  # Lancia|Ypsilon
+    "File:VOLKSWAGEN TOUAREG (7P) China (18).jpg",  # Volkswagen|Touareg
+}
 FRONTE = re.compile(r"front|vorn|\s[-–]\s?f\b|\(f\)|frontansicht|vorderansicht|\bfl\b", re.I)
 
 
@@ -198,7 +231,7 @@ def cerca_commons(nome):
         w, h = info.get("width", 0), info.get("height", 1)
         if (info.get("mime") not in ("image/jpeg", "image/png") or meta.get("NonFree", {}).get("value")
                 or not LIBERE.match(lic) or w < 1000 or not 1.25 <= w / h <= 2.1 or SCARTA.search(titolo)
-                or NON_DI_SERIE.search(titolo)):
+                or NON_DI_SERIE.search(titolo) or ("File:" + titolo) in SCARTATE):
             continue
         if norm(nome) not in norm(titolo):
             continue
@@ -239,7 +272,7 @@ def trova(marca, modello):
         if not p:
             return [], "nessuna pagina (" + ", ".join(provati) + ")"
     nome = nome_da_url(p["originalimage"]["source"])
-    if NON_DI_SERIE.search(nome):
+    if NON_DI_SERIE.search(nome) or ("File:" + nome) in SCARTATE:
         return [], f"foto di Wikipedia non adatta ({nome})"
     lic = licenza_commons(nome)
     if not lic:

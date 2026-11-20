@@ -394,8 +394,8 @@ def motore_testo(cc, kw, alimentazione, versione=None):
     return " ".join(parti)
 
 
-CODA = re.compile(r"^(\d+\s?kw|kw|hybrid|e-?hybrid\d*|ehybrid|phev|plug-?in|electric|elettrica|ev|gpl|lpg|bi-?fuel|h|4matic\+?|xdrive|"
-                  r"sdrive|edrive\d*|4x4|awd|fwd|pro|pure|performance|competition|tourer|lr|s|\+)$", re.I)
+CODA = re.compile(r"^(\d+\s?kw|kw|hybrid\+?|e-?hybrid\d*|ehybrid|phev|plug-?in|electric|elettrica|ev|gpl|lpg|bi-?fuel|h|4matic\+?|xdrive|"
+                  r"sdrive|edrive\d*|4x4|awd|fwd|pro|pure|performance|competition|tourer|lr|\+)$", re.I)
 
 
 def famiglia(marca, modello):
@@ -476,6 +476,24 @@ def famiglia(marca, modello):
     if b == "DR":
         m2 = re.sub(r"^DR (\d)H?$", lambda r: f"DR {r.group(1)}.0", " ".join(t))      # DR 6, DR 7H → DR 6.0, DR 7.0
         t = m2.split()
+    if b == "MINI":
+        testo = " ".join(t).lower()
+        for fam in ("countryman", "aceman", "clubman", "paceman"):
+            if fam in testo:
+                return fam.capitalize()
+        if "jcw" in testo or "john cooper works" in testo:
+            return "John Cooper Works"
+        return "Cooper"                              # Mini, Cooper C, Cooper SE… = la Mini 3/5 porte
+    if b == "SKODA" and len(t) >= 2 and re.match(r"^\d{2}X?$", t[-1], re.I):
+        t = t[:-1]                                   # Elroq 85, Enyaq 85X → Elroq, Enyaq
+    if b == "PORSCHE" and t:
+        return " ".join(t[:2]) if t[0] == "718" and len(t) > 1 else t[0]   # 911, 718 Cayman, Cayenne, Macan…
+    if b == "MASERATI" and t:
+        return t[0]                                  # Grecale, Levante, Ghibli (le versioni sono allestimenti)
+    for i in range(1, len(t)):                       # "SX4 Suzuki SX4 S-C" → "SX4"
+        if norm(t[i]) == b:
+            t = t[:i]
+            break
     if b == "RENAULT" and len(t) >= 2 and norm(t[1]) == "E TECH" and t[0].lower() in (
             "clio", "captur", "arkana", "austral", "espace", "rafale", "symbioz"):
         t = t[:1]                                   # Clio E-Tech = Clio ibrida (Megane, Scenic, 4, 5 E-Tech restano modelli)
