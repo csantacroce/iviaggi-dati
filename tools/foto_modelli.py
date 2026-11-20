@@ -147,9 +147,23 @@ NON_DI_SERIE = re.compile(r"rally|racing|\brace\b|dtm|wrc|gt3|gt4|\bcup\b|motors
                           r"rettung|feuerwehr|tuning|classic|oldtimer|vintage|concept|prototyp|museum|wreck|crash|unfall|"
                           r"topolino|motorrad|motorcycle|motorbike|scooter|ducati|steering|volant|instrument|dashboard|"
                           r"compartment|frunk|panzer|\btank\b|bundesarchiv|rendering|model car|modellauto|\btoys?\b|"
-                          r"lego|\b(19\d\d|200\d|201[0-4])\b", re.I)
+                          r"pace car|safety car|gazoo|livery|lego|\b(19\d\d|200\d|201[0-4])\b", re.I)
 # foto già viste e sbagliate (provino del 20/11/2026): non si usano più, si prende la successiva
 SCARTATE = {
+    "File:BMW M3, BAS 24, Brussels (P1170489).jpg",  # BMW|M3 (secondo provino)
+    "File:Fiat 500, EMS 2023, Essen (P1090537).jpg",  # Fiat|500 (secondo provino)
+    "File:Lamborghini Aventador SV Roadster MS Motors.jpg",  # Lamborghini|Aventador (secondo provino)
+    "File:Lancia Ypsilon no Pino.jpg",  # Lancia|Ypsilon (secondo provino)
+    "File:Mitsubishi Colt 600 Convertible replica.jpg",  # Mitsubishi|Colt (secondo provino)
+    "File:Nissan Micra 1.3 Super S 02.jpg",  # Nissan|Micra (secondo provino)
+    "File:Opel Astra F Cabrio.jpg",  # Opel|Astra (secondo provino)
+    "File:Discos de freno de Renault Clio - (1).jpg",  # Renault|Clio (secondo provino)
+    "File:Renault Mégane 174451.jpg",  # Renault|Megane (secondo provino)
+    "File:Renault Zoe 142726.jpg",  # Renault|Zoe (secondo provino)
+    "File:2026 The LiUNA! Toyota Camry Pace Car.jpg",  # Toyota|Camry (secondo provino)
+    "File:2025 Focused Health 302 Toyota Supra Pace Car.jpg",  # Toyota|Supra (secondo provino)
+    "File:Volkswagen Kombi (17336625046).jpg",  # Volkswagen|Kombi (secondo provino)
+    "File:Volkswagen Transporter T4.jpg",  # Volkswagen|Transporter Caravelle (secondo provino)
     "File:BMW M3 (E30) of Peter Brock at the 2025 Adelaide Grand Final.jpg",  # BMW|M3
     "File:Fiat 500 BW 2025-04-27 11-02-15.jpg",  # Fiat|500
     "File:Fiat 600 181407808.jpg",  # Fiat|600
@@ -236,7 +250,11 @@ def cerca_commons(nome):
         if norm(nome) not in norm(titolo):
             continue
         a = anno(meta, titolo)
-        punti = (a or 2005) + (3 if FRONTE.search(titolo) else 0)
+        r_t = re.search(r"\b(20[12]\d)\b", titolo)
+        # l'anno nel titolo dice la generazione dell'auto; la data dello scatto no (una 500 del 1957 fotografata
+        # nel 2024): senza anno nel titolo la foto conta come se fosse di 6 anni prima
+        anno_auto = int(r_t.group(1)) if r_t else (a or 2005) - 6
+        punti = anno_auto + (3 if FRONTE.search(titolo) else 0)
         autore = re.sub(r"<[^>]+>", "", html.unescape(meta.get("Artist", {}).get("value") or "")).strip()
         migliori.append((punti, {"licenza": lic, "url_licenza": meta.get("LicenseUrl", {}).get("value"),
                                  "autore": autore or "sconosciuto", "file_commons": "File:" + titolo,

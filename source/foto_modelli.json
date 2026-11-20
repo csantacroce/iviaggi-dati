@@ -460,18 +460,6 @@
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
- "BMW|M3": {
-  "anno": 2024,
-  "autore": "Matti Blume",
-  "cercato": "BMW M3",
-  "file": "bmw__m3.jpg",
-  "file_commons": "File:BMW M3, BAS 24, Brussels (P1170489).jpg",
-  "licenza": "CC BY-SA 4.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_M3,_BAS_24,_Brussels_(P1170489).jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
- },
  "BMW|M4": {
   "anno": 2026,
   "autore": "HJUdall",
@@ -1693,18 +1681,6 @@
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
- "Fiat|500": {
-  "anno": 2023,
-  "autore": "Matti Blume",
-  "cercato": "Fiat 500",
-  "file": "fiat__500.jpg",
-  "file_commons": "File:Fiat 500, EMS 2023, Essen (P1090537).jpg",
-  "licenza": "CC BY-SA 4.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Fiat_500,_EMS_2023,_Essen_(P1090537).jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
- },
  "Fiat|500C": {
   "anno": 2026,
   "autore": "Elise240SX",
@@ -2589,18 +2565,6 @@
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
- "Lamborghini|Aventador": {
-  "anno": 2025,
-  "autore": "Calreyn88",
-  "cercato": "Lamborghini Aventador",
-  "file": "lamborghini__aventador.jpg",
-  "file_commons": "File:Lamborghini Aventador SV Roadster MS Motors.jpg",
-  "licenza": "CC BY-SA 4.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Lamborghini_Aventador_SV_Roadster_MS_Motors.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
- },
  "Lamborghini|Huracan": {
   "anno": 2026,
   "autore": "Юрий Д.К.",
@@ -2624,18 +2588,6 @@
   "provato": "2026-11-20",
   "stile": "studio-scuro-1",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
- },
- "Lancia|Ypsilon": {
-  "anno": 2026,
-  "autore": "Bene Riobó",
-  "cercato": "Lancia Ypsilon",
-  "file": "lancia__ypsilon.jpg",
-  "file_commons": "File:Lancia Ypsilon no Pino.jpg",
-  "licenza": "CC BY-SA 4.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Lancia_Ypsilon_no_Pino.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Land Rover|Defender": {
   "anno": 2023,
@@ -3441,18 +3393,6 @@
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
- "Mitsubishi|Colt": {
-  "anno": 2025,
-  "autore": "TTTNIS",
-  "cercato": "Mitsubishi Colt",
-  "file": "mitsubishi__colt.jpg",
-  "file_commons": "File:Mitsubishi Colt 600 Convertible replica.jpg",
-  "licenza": "CC0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mitsubishi_Colt_600_Convertible_replica.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
- },
  "Mitsubishi|Space Star": {
   "anno": 2026,
   "autore": "Raf24~commonswiki",
@@ -3500,18 +3440,6 @@
   "provato": "2026-11-20",
   "stile": "studio-scuro-1",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
- },
- "Nissan|Micra": {
-  "anno": 2026,
-  "autore": "Bene Riobó",
-  "cercato": "Nissan Micra",
-  "file": "nissan__micra.jpg",
-  "file_commons": "File:Nissan Micra 1.3 Super S 02.jpg",
-  "licenza": "CC BY-SA 4.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Nissan_Micra_1.3_Super_S_02.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Nissan|Primastar": {
   "anno": 2026,
@@ -3584,18 +3512,6 @@
   "provato": "2026-11-20",
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
- },
- "Opel|Astra": {
-  "anno": 2025,
-  "autore": "Vachy93",
-  "cercato": "Opel Astra",
-  "file": "opel__astra.jpg",
-  "file_commons": "File:Opel Astra F Cabrio.jpg",
-  "licenza": "CC0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Opel_Astra_F_Cabrio.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
  "Opel|Astra Sports": {
   "anno": 2025,
@@ -4028,18 +3944,6 @@
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/2.0"
  },
- "Renault|Clio": {
-  "anno": 2026,
-  "autore": "Just a Man",
-  "cercato": "Renault Clio",
-  "file": "renault__clio.jpg",
-  "file_commons": "File:Discos de freno de Renault Clio - (1).jpg",
-  "licenza": "CC BY 4.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Discos_de_freno_de_Renault_Clio_-_(1).jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
- },
  "Renault|Espace": {
   "anno": 2026,
   "autore": "Alexander Migl",
@@ -4075,18 +3979,6 @@
   "provato": "2026-11-20",
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
- },
- "Renault|Megane": {
-  "anno": 2024,
-  "autore": "Trop86",
-  "cercato": "Renault Megane",
-  "file": "renault__megane.jpg",
-  "file_commons": "File:Renault Mégane 174451.jpg",
-  "licenza": "CC0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Renault_M%C3%A9gane_174451.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
  "Renault|Megane E-Tech": {
   "anno": 2024,
@@ -4183,18 +4075,6 @@
   "provato": "2026-11-20",
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
- },
- "Renault|Zoe": {
-  "anno": 2025,
-  "autore": "Trop86",
-  "cercato": "Renault Zoe",
-  "file": "renault__zoe.jpg",
-  "file_commons": "File:Renault Zoe 142726.jpg",
-  "licenza": "CC0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Renault_Zoe_142726.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
  "Rolls-Royce|Cullinan": {
   "anno": 2025,
@@ -4751,18 +4631,6 @@
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
- "Toyota|Camry": {
-  "anno": 2026,
-  "autore": "TaurusEmerald",
-  "cercato": "Toyota Camry",
-  "file": "toyota__camry.jpg",
-  "file_commons": "File:2026 The LiUNA! Toyota Camry Pace Car.jpg",
-  "licenza": "CC BY-SA 4.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2026_The_LiUNA!_Toyota_Camry_Pace_Car.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
- },
  "Toyota|Corolla": {
   "anno": 2026,
   "autore": "TTTNIS",
@@ -4857,18 +4725,6 @@
   "provato": "2026-11-20",
   "stile": "studio-scuro-1",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
- },
- "Toyota|Supra": {
-  "anno": 2025,
-  "autore": "TaurusEmerald",
-  "cercato": "Toyota Supra",
-  "file": "toyota__supra.jpg",
-  "file_commons": "File:2025 Focused Health 302 Toyota Supra Pace Car.jpg",
-  "licenza": "CC BY-SA 4.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2025_Focused_Health_302_Toyota_Supra_Pace_Car.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Toyota|Yaris": {
   "anno": 2025,
@@ -4977,18 +4833,6 @@
   "provato": "2026-11-20",
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by/3.0"
- },
- "Volkswagen|Kombi": {
-  "anno": 2015,
-  "autore": "order_242 from Chile",
-  "cercato": "Volkswagen Kombi",
-  "file": "volkswagen__kombi.jpg",
-  "file_commons": "File:Volkswagen Kombi (17336625046).jpg",
-  "licenza": "CC BY-SA 2.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Volkswagen_Kombi_(17336625046).jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by-sa/2.0"
  },
  "Volkswagen|Multivan": {
   "anno": 2026,
@@ -5109,18 +4953,6 @@
   "provato": "2026-11-20",
   "stile": "studio-scuro-1",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
- },
- "Volkswagen|Transporter Caravelle": {
-  "anno": 2026,
-  "autore": "Bene Riobó",
-  "cercato": "Volkswagen Transporter",
-  "file": "volkswagen__transporter_caravelle.jpg",
-  "file_commons": "File:Volkswagen Transporter T4.jpg",
-  "licenza": "CC BY-SA 4.0",
-  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Volkswagen_Transporter_T4.jpg",
-  "provato": "2026-11-20",
-  "stile": "studio-scuro-1",
-  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Volkswagen|Up!": {
   "anno": 2026,
