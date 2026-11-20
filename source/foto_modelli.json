@@ -54,6 +54,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
+ "Alfa Romeo|Junior": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Alfa Romeo Junior",
+  "file": "alfa_romeo__junior.jpg",
+  "file_commons": "File:Alfa Romeo Junior Ibrida Speciale – f 12042026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Alfa_Romeo_Junior_Ibrida_Speciale_%E2%80%93_f_12042026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
  "Alfa Romeo|Stelvio": {
   "anno": 2025,
   "autore": "Tokumeigakarinoaoshima",
@@ -120,6 +131,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Audi|A1": {
+  "anno": 2025,
+  "autore": "© M 93",
+  "cercato": "Audi A1",
+  "file": "audi__a1.jpg",
+  "file_commons": "File:Audi A1 allstreet 35 TFSI (II) – f 23022025.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_A1_allstreet_35_TFSI_(II)_%E2%80%93_f_23022025.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
  "Audi|A1 Allstreet": {
   "anno": 2026,
   "autore": "© M 93",
@@ -141,6 +163,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_A1_allstreet_35_TFSI_(II)_%E2%80%93_f_23022025.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Audi|A3": {
+  "anno": 2026,
+  "autore": "Юрий Д.К.",
+  "cercato": "Audi A3",
+  "file": "audi__a3.jpg",
+  "file_commons": "File:Moscow - 2026 - Audi A3 on Zatonnaya street.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Moscow_-_2026_-_Audi_A3_on_Zatonnaya_street.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
  "Audi|A3 40 Tfsie": {
   "file": null,
@@ -229,6 +262,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
+ "Audi|A4": {
+  "anno": 2024,
+  "autore": "Alexander-93",
+  "cercato": "Audi A4",
+  "file": "audi__a4.jpg",
+  "file_commons": "File:Audi A4 B9 sedans (FL) 1X7A2439.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_A4_B9_sedans_(FL)_1X7A2439.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Audi|A4 Allroad Quattro": {
   "anno": 2026,
   "autore": "Dinkun Chen",
@@ -259,6 +303,17 @@
   "file_commons": "File:Audi A4 B9 sedans (FL) 1X7A2439.jpg",
   "licenza": "CC BY-SA 4.0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_A4_B9_sedans_(FL)_1X7A2439.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Audi|A5": {
+  "anno": 2024,
+  "autore": "Alexander-93",
+  "cercato": "Audi A5",
+  "file": "audi__a5.jpg",
+  "file_commons": "File:Audi A5 Cabriolet F5 FL 1X7A1782.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_A5_Cabriolet_F5_FL_1X7A1782.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -325,6 +380,17 @@
   "file_commons": "File:Audi A5 Cabriolet F5 FL 1X7A1782.jpg",
   "licenza": "CC BY-SA 4.0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_A5_Cabriolet_F5_FL_1X7A1782.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Audi|A6": {
+  "anno": 2026,
+  "autore": "Alexander Migl",
+  "cercato": "Audi A6",
+  "file": "audi__a6.jpg",
+  "file_commons": "File:Audi A6 Avant C9 IMG 5088.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_A6_Avant_C9_IMG_5088.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -402,6 +468,17 @@
   "file_commons": "File:Audi A6 Limousine.jpg",
   "licenza": "CC BY-SA 4.0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_A6_Limousine.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Audi|A7": {
+  "anno": 2024,
+  "autore": "Alexander-93",
+  "cercato": "Audi A7",
+  "file": "audi__a7.jpg",
+  "file_commons": "File:Audi A7 C8 IMG 0089.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_A7_C8_IMG_0089.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -559,6 +636,28 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Audi|Q3 e-tron": {
+  "anno": 2024,
+  "autore": "玄史生",
+  "cercato": "Audi Q3 e-tron",
+  "file": "audi__q3_e_tron.jpg",
+  "file_commons": "File:Audi Q3 e-tron right side and Taipei Nangang Exhibition Center Station elevator 20240127.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_Q3_e-tron_right_side_and_Taipei_Nangang_Exhibition_Center_Station_elevator_20240127.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Audi|Q4": {
+  "anno": 2026,
+  "autore": "Alexander Migl",
+  "cercato": "Audi Q4",
+  "file": "audi__q4.jpg",
+  "file_commons": "File:2027 Audi Q4 e-tron IMG 7155.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2027_Audi_Q4_e-tron_IMG_7155.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Audi|Q4 45 E-Tron": {
   "anno": 2025,
   "autore": "Damian B Oh",
@@ -690,6 +789,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2026_Audi_Q5_Sports_Illustrated_Montr%C3%A9al.jpg",
   "provato": "2026-11-20",
   "url_licenza": null
+ },
+ "Audi|Q6": {
+  "anno": 2026,
+  "autore": "Ssu",
+  "cercato": "Audi Q6",
+  "file": "audi__q6.jpg",
+  "file_commons": "File:2026 Audi Q6.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2026_Audi_Q6.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Audi|Q6 SB E-Tron Performance": {
   "anno": 2026,
@@ -911,6 +1021,50 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
+ "Audi|RS3": {
+  "anno": 2025,
+  "autore": "Alexander-93",
+  "cercato": "Audi RS3",
+  "file": "audi__rs3.jpg",
+  "file_commons": "File:2025 Audi RS3 8Y DSC 0540.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2025_Audi_RS3_8Y_DSC_0540.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Audi|RS4": {
+  "anno": 2024,
+  "autore": "Alexander-93",
+  "cercato": "Audi RS4",
+  "file": "audi__rs4.jpg",
+  "file_commons": "File:Audi RS4 Avant B9 (FL) DSC 5983.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_RS4_Avant_B9_(FL)_DSC_5983.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Audi|RS6": {
+  "anno": 2026,
+  "autore": "Damian B Oh",
+  "cercato": "Audi RS6",
+  "file": "audi__rs6.jpg",
+  "file_commons": "File:Audi RS6 Avant C5 Mugello Blue (2).jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_RS6_Avant_C5_Mugello_Blue_(2).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Audi|S3": {
+  "anno": 2026,
+  "autore": "Aethonatic",
+  "cercato": "Audi S3",
+  "file": "audi__s3.jpg",
+  "file_commons": "File:Audi S3 (A3 GNJ) - 7 June 2026.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_S3_(A3_GNJ)_-_7_June_2026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "Audi|S3 Sportback": {
   "anno": 2026,
   "autore": "Aethonatic",
@@ -919,6 +1073,17 @@
   "file_commons": "File:Audi S3 (A3 GNJ) - 7 June 2026.jpg",
   "licenza": "CC0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_S3_(A3_GNJ)_-_7_June_2026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Audi|S5": {
+  "anno": 2026,
+  "autore": "Aethonatic",
+  "cercato": "Audi S5",
+  "file": "audi__s5.jpg",
+  "file_commons": "File:Audi S5 - 7 June 2026.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_S5_-_7_June_2026.jpg",
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
@@ -944,6 +1109,17 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Audi|S6": {
+  "anno": 2025,
+  "autore": "Calreyn88",
+  "cercato": "Audi S6",
+  "file": "audi__s6.jpg",
+  "file_commons": "File:1996 Audi S6 Avant 1.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:1996_Audi_S6_Avant_1.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Audi|S6 Avant": {
   "anno": 2025,
   "autore": "Calreyn88",
@@ -952,6 +1128,28 @@
   "file_commons": "File:1996 Audi S6 Avant 1.jpg",
   "licenza": "CC BY-SA 4.0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:1996_Audi_S6_Avant_1.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Audi|SQ5": {
+  "anno": 2025,
+  "autore": "Alexandre Prevot",
+  "cercato": "Audi SQ5",
+  "file": "audi__sq5.jpg",
+  "file_commons": "File:Audi SQ5.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_SQ5.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Audi|SQ6": {
+  "anno": 2024,
+  "autore": "Alexander-93",
+  "cercato": "Audi SQ6",
+  "file": "audi__sq6.jpg",
+  "file_commons": "File:Audi SQ6 e-tron front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Audi_SQ6_e-tron_front.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -1879,6 +2077,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
+ "BMW|Serie 7": {
+  "anno": 2024,
+  "autore": "Alexander-93",
+  "cercato": "BMW 7 Series",
+  "file": "bmw__serie_7.jpg",
+  "file_commons": "File:BMW 7-Series (G70) 750e 1X7A1893.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_7-Series_(G70)_750e_1X7A1893.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "BMW|Serie 8": {
   "anno": 2026,
   "autore": "Dinkun Chen",
@@ -1911,6 +2120,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_Z4_(G29,_facelift)_M40i_DSC_7273.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "BMW|X1": {
+  "anno": 2026,
+  "autore": "HJUdall",
+  "cercato": "BMW X1",
+  "file": "bmw__x1.jpg",
+  "file_commons": "File:24 BMW X1 M35i.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:24_BMW_X1_M35i.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
  "BMW|X1 M35I Xdrive": {
   "anno": 2026,
@@ -2022,6 +2242,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
+ "BMW|X2": {
+  "anno": 2026,
+  "autore": "Aos.1905",
+  "cercato": "BMW X2",
+  "file": "bmw__x2.jpg",
+  "file_commons": "File:BMW X2 (U10) (front three-quarter view) in Osaka, Japan.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_X2_(U10)_(front_three-quarter_view)_in_Osaka,_Japan.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
  "BMW|X2 M35I Xdrive": {
   "anno": 2024,
   "autore": "Calreyn88",
@@ -2076,6 +2307,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_X2_xDrive20d_M_Sport_%2726_(1).jpg",
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "BMW|X3": {
+  "anno": 2024,
+  "autore": "Alexander-93",
+  "cercato": "BMW X3",
+  "file": "bmw__x3.jpg",
+  "file_commons": "File:BMW X3 M (G01) FL IMG 2069.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_X3_M_(G01)_FL_IMG_2069.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "BMW|X3 20 Xdrive": {
   "anno": 2024,
@@ -2220,6 +2462,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "BMW|X4": {
+  "anno": 2023,
+  "autore": "Alexander Migl",
+  "cercato": "BMW X4",
+  "file": "bmw__x4.jpg",
+  "file_commons": "File:BMW X4 M Competition (G02) FL 1X7A6446.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_X4_M_Competition_(G02)_FL_1X7A6446.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "BMW|X4 M": {
   "anno": 2023,
   "autore": "Alexander Migl",
@@ -2286,6 +2539,17 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "BMW|X5": {
+  "anno": 2026,
+  "autore": "HJUdall",
+  "cercato": "BMW X5",
+  "file": "bmw__x5.jpg",
+  "file_commons": "File:18 BMW X5 xDrive35i.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:18_BMW_X5_xDrive35i.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "BMW|X5 M60I Xdrive": {
   "anno": 2026,
   "autore": "HJUdall",
@@ -2340,6 +2604,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_X5_xDrive50e_M_Sportpaket_Pro_(G05,_Facelift)_%E2%80%93_f_18052025.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "BMW|X6": {
+  "anno": 2025,
+  "autore": "Oleg Yunakov",
+  "cercato": "BMW X6",
+  "file": "bmw__x6.jpg",
+  "file_commons": "File:2020 BMW X6 M Competition - 01.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2020_BMW_X6_M_Competition_-_01.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "BMW|X6 M Competition": {
   "anno": 2025,
@@ -2396,6 +2671,17 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "BMW|X7": {
+  "anno": 2024,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "BMW X7",
+  "file": "bmw__x7.jpg",
+  "file_commons": "File:BMW X7 xDrive40d M Sport (3CA-22EN30) front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_X7_xDrive40d_M_Sport_(3CA-22EN30)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "BMW|X7 XDRIVE40D": {
   "anno": 2026,
   "autore": "LuvsMG481",
@@ -2426,6 +2712,17 @@
   "file_commons": "File:2025 BMW XM 50e PHEV Auto.jpg",
   "licenza": "CC BY-SA 4.0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2025_BMW_XM_50e_PHEV_Auto.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "BMW|Z4": {
+  "anno": 2024,
+  "autore": "Alexander Migl",
+  "cercato": "BMW Z4",
+  "file": "bmw__z4.jpg",
+  "file_commons": "File:BMW Z4 (G29, facelift) M40i DSC 7273.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_Z4_(G29,_facelift)_M40i_DSC_7273.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -2461,6 +2758,83 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_Z4_sDrive30i_(G29,_2022)_(55255382140).jpg",
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "BMW|i4": {
+  "anno": 2026,
+  "autore": "Wikisympathisant",
+  "cercato": "BMW i4",
+  "file": "bmw__i4.jpg",
+  "file_commons": "File:2026-08 BMW i4.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2026-08_BMW_i4.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "BMW|i5": {
+  "anno": 2025,
+  "autore": "© M 93",
+  "cercato": "BMW i5",
+  "file": "bmw__i5.jpg",
+  "file_commons": "File:BMW i5 eDrive40 Touring M Sportpaket Pro (G61) – f 01032025.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_i5_eDrive40_Touring_M_Sportpaket_Pro_(G61)_%E2%80%93_f_01032025.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "BMW|iX": {
+  "anno": 2026,
+  "autore": "Retired electrician",
+  "cercato": "BMW iX",
+  "file": "bmw__ix.jpg",
+  "file_commons": "File:Moscow, Ducati motorcycle, BMW IX grey, May 2026 03.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Moscow,_Ducati_motorcycle,_BMW_IX_grey,_May_2026_03.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "BMW|iX1": {
+  "anno": 2024,
+  "autore": "© M 93",
+  "cercato": "BMW iX1",
+  "file": "bmw__ix1.jpg",
+  "file_commons": "File:BMW iX1 xDrive30 (U11) – f 05052024.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_iX1_xDrive30_(U11)_%E2%80%93_f_05052024.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "BMW|iX2": {
+  "anno": 2024,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "BMW iX2",
+  "file": "bmw__ix2.jpg",
+  "file_commons": "File:BMW iX2 xDrive30 M Sport (U10) front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_iX2_xDrive30_M_Sport_(U10)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "BMW|iX3": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "BMW iX3",
+  "file": "bmw__ix3.jpg",
+  "file_commons": "File:BMW iX3 50 xDrive M Sportpaket Pro (NA5) – f 17052026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BMW_iX3_50_xDrive_M_Sportpaket_Pro_(NA5)_%E2%80%93_f_17052026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "BYD|Atto 2": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "BYD Atto 2",
+  "file": "byd__atto_2.jpg",
+  "file_commons": "File:BYD Atto 2 DM-i Comfort – f 04062026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BYD_Atto_2_DM-i_Comfort_%E2%80%93_f_04062026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
  "BYD|Atto 3": {
   "anno": 2026,
@@ -2561,6 +2935,28 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
+ "BYD|Dolphin Surf": {
+  "anno": 2026,
+  "autore": "Alexander Migl",
+  "cercato": "BYD Dolphin Surf",
+  "file": "byd__dolphin_surf.jpg",
+  "file_commons": "File:BYD Dolphin Surf IMG 5209.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BYD_Dolphin_Surf_IMG_5209.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "BYD|Seal": {
+  "anno": 2026,
+  "autore": "JustAnotherCarDesigner",
+  "cercato": "BYD Seal",
+  "file": "byd__seal.jpg",
+  "file_commons": "File:BYD Seal 07 facelift 004.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BYD_Seal_07_facelift_004.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "BYD|Seal 6 DM-I": {
   "anno": 2025,
   "autore": "Matti Blume",
@@ -2582,6 +2978,54 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:BYD_Seal_6_DM-i_Touring,_IAA_Summit_2025,_Munich_(20250908-P1049850).jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+ },
+ "BYD|Seal U": {
+  "anno": 2025,
+  "autore": "Raf24~commonswiki",
+  "cercato": "BYD Seal U",
+  "file": "byd__seal_u.jpg",
+  "file_commons": "File:BYD SEAL U, Warsaw (front).jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BYD_SEAL_U,_Warsaw_(front).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "BYD|Seal U DM-I": {
+  "anno": 2026,
+  "autore": "Aethonatic",
+  "cercato": "BYD Seal U DM-I",
+  "file": "byd__seal_u_dm_i.jpg",
+  "file_commons": "File:BYD Seal U DM-i - 7 June 2026.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BYD_Seal_U_DM-i_-_7_June_2026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "BYD|Sealion 7": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "BYD Sealion 7",
+  "file": "byd__sealion_7.jpg",
+  "file_commons": "File:BYD Sealion 7 Performance – f 09012026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:BYD_Sealion_7_Performance_%E2%80%93_f_09012026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Cirelli|5": {
+  "autore": "Michael Miller",
+  "file": "cirelli__5.jpg",
+  "file_commons": "File:Anthony_Cirelli_2018-05-21.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Anthony_Cirelli_2018-05-21.jpg",
+  "pagina_wikipedia": "https://en.wikipedia.org/wiki/Anthony_Cirelli",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Cirelli|5 Bifuel": {
+  "file": null,
+  "motivo": "nessuna pagina (en:Cirelli 5 Bifuel, it:Cirelli 5 Bifuel)",
+  "provato": "2026-11-20"
  },
  "Cirelli|Cirelli 5": {
   "file": null,
@@ -2747,6 +3191,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
+ "Citroën|Jumpy Space": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Citroën Jumpy",
+  "file": "citroen__jumpy_space.jpg",
+  "file_commons": "File:Citroën Jumpy Kastenwagen M (III, Facelift) – f 28022026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_Jumpy_Kastenwagen_M_(III,_Facelift)_%E2%80%93_f_28022026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
  "Citroën|Jumpy Space Tourer": {
   "anno": 2025,
   "autore": "Bene Riobó",
@@ -2768,6 +3223,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_Spacetourer.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Cupra|Ateca": {
+  "anno": 2025,
+  "autore": "© M 93",
+  "cercato": "Cupra Ateca",
+  "file": "cupra__ateca.jpg",
+  "file_commons": "File:Cupra Ateca (Facelift) – f 24052025.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Ateca_(Facelift)_%E2%80%93_f_24052025.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
  "Cupra|Born 150 KW 60 63 Kwh": {
   "anno": 2025,
@@ -2923,6 +3389,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Cupra|Formentor VZ": {
+  "anno": 2026,
+  "autore": "Alexander Migl",
+  "cercato": "Cupra Formentor VZ",
+  "file": "cupra__formentor_vz.jpg",
+  "file_commons": "File:Cupra Formentor VZ Tribe Edition Abt-Power-Paket Facelift IMG 8133.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Formentor_VZ_Tribe_Edition_Abt-Power-Paket_Facelift_IMG_8133.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Cupra|Formentor VZ E-Hybrid": {
   "anno": 2026,
   "autore": "Alexander Migl",
@@ -2933,6 +3410,83 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Formentor_VZ_Tribe_Edition_Abt-Power-Paket_Facelift_IMG_8133.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Cupra|Leon": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Cupra Leon",
+  "file": "cupra__leon.jpg",
+  "file_commons": "File:Cupra Leon Sportstourer (Facelift) – f 14022026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Leon_Sportstourer_(Facelift)_%E2%80%93_f_14022026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Cupra|Leon E-HYBRID150": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Cupra Leon",
+  "file": "cupra__leon_e_hybrid150.jpg",
+  "file_commons": "File:Cupra Leon Sportstourer (Facelift) – f 14022026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Leon_Sportstourer_(Facelift)_%E2%80%93_f_14022026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Cupra|Leon E-HYBRID180": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Cupra Leon",
+  "file": "cupra__leon_e_hybrid180.jpg",
+  "file_commons": "File:Cupra Leon Sportstourer (Facelift) – f 14022026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Leon_Sportstourer_(Facelift)_%E2%80%93_f_14022026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Cupra|Leon E-HYBRID200": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Cupra Leon",
+  "file": "cupra__leon_e_hybrid200.jpg",
+  "file_commons": "File:Cupra Leon Sportstourer (Facelift) – f 14022026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Leon_Sportstourer_(Facelift)_%E2%80%93_f_14022026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Cupra|Leon SP": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Cupra Leon",
+  "file": "cupra__leon_sp.jpg",
+  "file_commons": "File:Cupra Leon Sportstourer (Facelift) – f 14022026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Leon_Sportstourer_(Facelift)_%E2%80%93_f_14022026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Cupra|Leon SP E-HYBRID150": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Cupra Leon",
+  "file": "cupra__leon_sp_e_hybrid150.jpg",
+  "file_commons": "File:Cupra Leon Sportstourer (Facelift) – f 14022026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Leon_Sportstourer_(Facelift)_%E2%80%93_f_14022026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Cupra|Leon SP E-HYBRID180": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Cupra Leon",
+  "file": "cupra__leon_sp_e_hybrid180.jpg",
+  "file_commons": "File:Cupra Leon Sportstourer (Facelift) – f 14022026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Leon_Sportstourer_(Facelift)_%E2%80%93_f_14022026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
  "Cupra|Tavascan": {
   "anno": 2026,
@@ -2966,6 +3520,104 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Cupra_Terramar_1.5_eTSI_%E2%80%93_f_25012026.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "DR|3.0": {
+  "anno": 2024,
+  "autore": "Corvettec6r",
+  "cercato": "DR 3.0",
+  "file": "dr__3_0.jpg",
+  "file_commons": "File:2024 DR 3.0 front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2024_DR_3.0_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "DR|4.0": {
+  "anno": 2024,
+  "autore": "Corvettec6r",
+  "cercato": "DR 4.0",
+  "file": "dr__4_0.jpg",
+  "file_commons": "File:DR 4.0 front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DR_4.0_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "DR|5.0": {
+  "anno": 2024,
+  "autore": "Corvettec6r",
+  "cercato": "DR 5.0",
+  "file": "dr__5_0.jpg",
+  "file_commons": "File:2022 DR 5.0.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2022_DR_5.0.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "DR|5.0 H": {
+  "anno": 2024,
+  "autore": "Corvettec6r",
+  "cercato": "DR 5.0",
+  "file": "dr__5_0_h.jpg",
+  "file_commons": "File:2022 DR 5.0.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2022_DR_5.0.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "DR|6": {
+  "anno": 2039,
+  "autore": "Santini, Paolo",
+  "cercato": "DR 6",
+  "file": "dr__6.jpg",
+  "file_commons": "File:6. Etat de la Seigneurie et Republique de Venise. (IA dr 6-etat-de-la-seigneurie-et-republique-de-venise-12039084).jpg",
+  "licenza": "Public domain",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:6._Etat_de_la_Seigneurie_et_Republique_de_Venise._(IA_dr_6-etat-de-la-seigneurie-et-republique-de-venise-12039084).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": null
+ },
+ "DR|6.0": {
+  "anno": 2024,
+  "autore": "Corvettec6r",
+  "cercato": "DR 6.0",
+  "file": "dr__6_0.jpg",
+  "file_commons": "File:DR 6.0 front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DR_6.0_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "DR|6.0 H": {
+  "anno": 2024,
+  "autore": "Corvettec6r",
+  "cercato": "DR 6.0",
+  "file": "dr__6_0_h.jpg",
+  "file_commons": "File:DR 6.0 front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DR_6.0_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "DR|7.0": {
+  "anno": 2024,
+  "autore": "AbacRiot",
+  "cercato": "DR 7.0",
+  "file": "dr__7_0.jpg",
+  "file_commons": "File:DR 7.0 1.5 Turbo.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DR_7.0_1.5_Turbo.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "DR|7H": {
+  "autore": "AbacRiot",
+  "file": "dr__7h.jpg",
+  "file_commons": "File:DR_7.0_1.5_Turbo.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DR_7.0_1.5_Turbo.jpg",
+  "pagina_wikipedia": "https://it.wikipedia.org/wiki/DR_7.0",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "DR|DR 3.0": {
   "anno": 2024,
@@ -3095,6 +3747,16 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "DR|EQ1": {
+  "autore": "Corvettec6r",
+  "file": "dr__eq1.jpg",
+  "file_commons": "File:2011_DR1_1.3_Ecopower_front.JPG",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2011_DR1_1.3_Ecopower_front.JPG",
+  "pagina_wikipedia": "https://it.wikipedia.org/wiki/DR_1_(2009)",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "DR|EVO 5": {
   "file": null,
   "motivo": "immagine non libera o non su Commons (DR_Automobiles_logo.svg)",
@@ -3119,6 +3781,61 @@
   "file": null,
   "motivo": "nessuna pagina (en:DS Automobiles DS 3, it:DS Automobiles DS 3)",
   "provato": "2026-11-20"
+ },
+ "DS|3": {
+  "anno": 2025,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "DS 3",
+  "file": "ds__3.jpg",
+  "file_commons": "File:DS 3 OPERA BlueHDi (3DA-D34YH01) front.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DS_3_OPERA_BlueHDi_(3DA-D34YH01)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "DS|3 Crossback": {
+  "anno": 2025,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "DS 3",
+  "file": "ds__3_crossback.jpg",
+  "file_commons": "File:DS 3 OPERA BlueHDi (3DA-D34YH01) front.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DS_3_OPERA_BlueHDi_(3DA-D34YH01)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "DS|4": {
+  "anno": 2026,
+  "autore": "Trop86",
+  "cercato": "DS 4",
+  "file": "ds__4.jpg",
+  "file_commons": "File:DS 4 182025777.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DS_4_182025777.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "DS|7 Crossback": {
+  "anno": 2025,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "DS 7",
+  "file": "ds__7_crossback.jpg",
+  "file_commons": "File:DS 7 OPERA E-TENSE 4×4 (3LA-X745G06H) front.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DS_7_OPERA_E-TENSE_4%C3%974_(3LA-X745G06H)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "DS|9": {
+  "anno": 2023,
+  "autore": "Harvey Bold",
+  "cercato": "DS 9",
+  "file": "ds__9.jpg",
+  "file_commons": "File:2022 DS 9 Rivoli Plus E-Tense PHEV - 1598cc 1.6 (225PS) Petrol Hybrid - Black - 05-2023, Front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2022_DS_9_Rivoli_Plus_E-Tense_PHEV_-_1598cc_1.6_(225PS)_Petrol_Hybrid_-_Black_-_05-2023,_Front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
  "DS|DS 3": {
   "anno": 2025,
@@ -3327,6 +4044,28 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
+ "EVO|5": {
+  "anno": 2025,
+  "autore": "Corvettec6r",
+  "cercato": "EVO 5",
+  "file": "evo__5.jpg",
+  "file_commons": "File:Evo 5 front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Evo_5_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "EVO|6": {
+  "anno": 2025,
+  "autore": "Corvettec6r",
+  "cercato": "EVO 6",
+  "file": "evo__6.jpg",
+  "file_commons": "File:2025 Evo 6 1.5 Turbo.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2025_Evo_6_1.5_Turbo.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
  "EVO|EVO 5": {
   "anno": 2025,
   "autore": "Corvettec6r",
@@ -3369,6 +4108,26 @@
   "motivo": "nessuna pagina (en:Emc Emc Sette, it:Emc Emc Sette)",
   "provato": "2026-11-20"
  },
+ "Emc|Sei": {
+  "autore": "Bubba73",
+  "file": "emc__sei.jpg",
+  "file_commons": "File:EMC_Symmetrix_in_Computer_Museum_of_America_(1).jpg",
+  "licenza": "CC BY-SA 3.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:EMC_Symmetrix_in_Computer_Museum_of_America_(1).jpg",
+  "pagina_wikipedia": "https://en.wikipedia.org/wiki/EMC_Symmetrix",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0"
+ },
+ "Emc|Sei Gpl": {
+  "file": null,
+  "motivo": "nessuna pagina (en:Emc Sei Gpl, it:Emc Sei Gpl)",
+  "provato": "2026-11-20"
+ },
+ "Emc|Sette": {
+  "file": null,
+  "motivo": "nessuna pagina (en:Emc Sette, it:Emc Sette)",
+  "provato": "2026-11-20"
+ },
  "Emc|Wave 2": {
   "anno": 2026,
   "autore": "Corvettec6r",
@@ -3401,6 +4160,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:EMC_Wave_3_2025.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Ferrari|12CILINDRI": {
+  "anno": 2025,
+  "autore": "Mr.choppers",
+  "cercato": "Ferrari 12CILINDRI",
+  "file": "ferrari__12cilindri.jpg",
+  "file_commons": "File:2025 Ferrari 12Cilindri in Rosso Imola, front left.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2025_Ferrari_12Cilindri_in_Rosso_Imola,_front_left.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Ferrari|296 Gtb": {
   "anno": 2026,
@@ -3512,6 +4282,39 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Ferrari|Purosangue": {
+  "anno": 2026,
+  "autore": "Milliped",
+  "cercato": "Ferrari Purosangue",
+  "file": "ferrari__purosangue.jpg",
+  "file_commons": "File:Ferrari Purosangue Amsterdam Sep 2026 01.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Ferrari_Purosangue_Amsterdam_Sep_2026_01.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Ferrari|Roma": {
+  "anno": 2026,
+  "autore": "Xnatedawgx",
+  "cercato": "Ferrari Roma",
+  "file": "ferrari__roma.jpg",
+  "file_commons": "File:2021–2024 Ferrari Roma, white, Golden Super Cruise 2026-09-05.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2021%E2%80%932024_Ferrari_Roma,_white,_Golden_Super_Cruise_2026-09-05.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Ferrari|Roma Spider": {
+  "anno": 2025,
+  "autore": "Pangalau",
+  "cercato": "Ferrari Roma Spider",
+  "file": "ferrari__roma_spider.jpg",
+  "file_commons": "File:2024 Ferrari Roma Spider in Adelaide, Australia.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2024_Ferrari_Roma_Spider_in_Adelaide,_Australia.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Fiat|500": {
   "anno": 2025,
   "autore": "TTTNIS",
@@ -3589,6 +4392,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Fiat|Ducato": {
+  "anno": 2023,
+  "autore": "Aciarium",
+  "cercato": "Fiat Ducato",
+  "file": "fiat__ducato.jpg",
+  "file_commons": "File:DSC00716 Fiat Ducato Carabinieri, Front Left.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:DSC00716_Fiat_Ducato_Carabinieri,_Front_Left.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
  "Fiat|Fiat 500": {
   "anno": 2025,
   "autore": "TTTNIS",
@@ -3632,6 +4446,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2012_FIAT_Panda_Easy_-_1242cc_1.2_(69PS)_Petrol_-_White_-_04-2024,_Front.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Fiat|Tipo": {
+  "anno": 2025,
+  "autore": "© M 93",
+  "cercato": "Fiat Tipo",
+  "file": "fiat__tipo.jpg",
+  "file_commons": "File:Fiat Tipo (II, Facelift) – f 05072025.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Fiat_Tipo_(II,_Facelift)_%E2%80%93_f_05072025.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
  "Fiat|Ulysse": {
   "anno": 2026,
@@ -3913,6 +4738,17 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Honda|E": {
+  "anno": 2025,
+  "autore": "© M 93",
+  "cercato": "Honda E",
+  "file": "honda__e.jpg",
+  "file_commons": "File:Honda e-Ny1 – f 18042025.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Honda_e-Ny1_%E2%80%93_f_18042025.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
  "Honda|HR-V": {
   "anno": 2023,
   "autore": "© M 93",
@@ -4191,6 +5027,17 @@
   "motivo": "nessuna pagina (en:Ineos Grenadier Ineos Grenadier, it:Ineos Grenadier Ineos Grenadier)",
   "provato": "2026-11-20"
  },
+ "Ineos|Grenadier": {
+  "anno": 2025,
+  "autore": "LuvsMG481",
+  "cercato": "Ineos Grenadier",
+  "file": "ineos__grenadier.jpg",
+  "file_commons": "File:2023 Ineos Grenadier Fieldmaster Edition front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Ineos_Grenadier_Fieldmaster_Edition_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Jaecoo|JAECOO5": {
   "file": null,
   "motivo": "nessuna pagina (en:Jaecoo JAECOO5, it:Jaecoo JAECOO5)",
@@ -4205,6 +5052,39 @@
   "file": null,
   "motivo": "nessuna pagina (en:Jaecoo JAECOO7 Phev, it:Jaecoo JAECOO7 Phev)",
   "provato": "2026-11-20"
+ },
+ "Jaguar|E-Pace": {
+  "anno": 2025,
+  "autore": "Charles from Port Chester, New York",
+  "cercato": "Jaguar E-Pace",
+  "file": "jaguar__e_pace.jpg",
+  "file_commons": "File:Jaguar E-Pace P250 AWD R-Dynamic HSE (2018) (54856807362).jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Jaguar_E-Pace_P250_AWD_R-Dynamic_HSE_(2018)_(54856807362).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Jaguar|F-Pace": {
+  "anno": 2026,
+  "autore": "MercurySable99",
+  "cercato": "Jaguar F-Pace",
+  "file": "jaguar__f_pace.jpg",
+  "file_commons": "File:2018 Jaguar F-PACE Portfolio, front left, 06-14-2026.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2018_Jaguar_F-PACE_Portfolio,_front_left,_06-14-2026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Jaguar|F-Type": {
+  "anno": 2022,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "Jaguar F-Type",
+  "file": "jaguar__f_type.jpg",
+  "file_commons": "File:Jaguar F-TYPE R-DYNAMIC BLACK COUPE (3BA-J608C) front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Jaguar_F-TYPE_R-DYNAMIC_BLACK_COUPE_(3BA-J608C)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Jaguar|Jaguar E-Pace": {
   "anno": 2025,
@@ -4297,6 +5177,26 @@
  "KG Mobility|KG Mobility Korando": {
   "file": null,
   "motivo": "nessuna pagina (en:KG Mobility KG Mobility Korando, it:KG Mobility KG Mobility Korando)",
+  "provato": "2026-11-20"
+ },
+ "KG Mobility|Korando": {
+  "file": null,
+  "motivo": "nessuna pagina (en:KG Mobility Korando, it:KG Mobility Korando)",
+  "provato": "2026-11-20"
+ },
+ "KG Mobility|Ssangyong Korando": {
+  "file": null,
+  "motivo": "nessuna pagina (en:KG Mobility Ssangyong Korando, it:KG Mobility Ssangyong Korando)",
+  "provato": "2026-11-20"
+ },
+ "KG Mobility|Ssangyong Tivoli": {
+  "file": null,
+  "motivo": "nessuna pagina (en:KG Mobility Ssangyong Tivoli, it:KG Mobility Ssangyong Tivoli)",
+  "provato": "2026-11-20"
+ },
+ "KG Mobility|Ssangyong Torres": {
+  "file": null,
+  "motivo": "nessuna pagina (en:KG Mobility Ssangyong Torres, it:KG Mobility Ssangyong Torres)",
   "provato": "2026-11-20"
  },
  "Kia|Ceed": {
@@ -4604,6 +5504,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Lexus|Lbx": {
+  "anno": 2025,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "Lexus Lbx",
+  "file": "lexus__lbx.jpg",
+  "file_commons": "File:Lexus LBX\"Elegant\" (6AA-MAYH10-AWXMB(E)) front.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Lexus_LBX%22Elegant%22_(6AA-MAYH10-AWXMB(E))_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "Lexus|Lexus Lbx": {
   "anno": 2025,
   "autore": "Tokumeigakarinoaoshima",
@@ -4703,10 +5614,54 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Lexus|NX350H": {
+  "anno": 2026,
+  "autore": "Dinkun Chen",
+  "cercato": "Lexus NX350H",
+  "file": "lexus__nx350h.jpg",
+  "file_commons": "File:LEXUS NX350h China (19).jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:LEXUS_NX350h_China_(19).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Lexus|NX450H+": {
+  "anno": 2025,
+  "autore": "OWS Photography",
+  "cercato": "Lexus NX450H+",
+  "file": "lexus__nx450h.jpg",
+  "file_commons": "File:Lexus NX450h+ (AZ20) Washington DC Metro Area, USA.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Lexus_NX450h%2B_(AZ20)_Washington_DC_Metro_Area,_USA.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Lexus|RX350H": {
+  "anno": 2025,
+  "autore": "S5A-0043",
+  "cercato": "Lexus RX350H",
+  "file": "lexus__rx350h.jpg",
+  "file_commons": "File:(SGP-Singapore) Showcar Lexus RX350h No-plate 2025-01-11.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:(SGP-Singapore)_Showcar_Lexus_RX350h_No-plate_2025-01-11.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
  "Lexus|RX450H": {
   "anno": 2025,
   "autore": "OWS Photography",
   "cercato": "Lexus RX450H",
+  "file": "lexus__rx450h.jpg",
+  "file_commons": "File:Lexus RX450h (AL10) Washington DC Metro Area, USA.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Lexus_RX450h_(AL10)_Washington_DC_Metro_Area,_USA.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Lexus|RX450H+": {
+  "anno": 2025,
+  "autore": "OWS Photography",
+  "cercato": "Lexus RX450H+",
   "file": "lexus__rx450h.jpg",
   "file_commons": "File:Lexus RX450h (AL10) Washington DC Metro Area, USA.jpg",
   "licenza": "CC BY 4.0",
@@ -4724,6 +5679,39 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2018_Lexus_RX450hL_front_4.2.18.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Lexus|RX500H": {
+  "anno": 2023,
+  "autore": "Chanokchon",
+  "cercato": "Lexus RX500H",
+  "file": "lexus__rx500h.jpg",
+  "file_commons": "File:2023 Lexus RX500h F Sport Performance.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Lexus_RX500h_F_Sport_Performance.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Lexus|UX250H": {
+  "anno": 2024,
+  "autore": "Harvey Bold",
+  "cercato": "Lexus UX250H",
+  "file": "lexus__ux250h.jpg",
+  "file_commons": "File:2019 Lexus UX250h Plus HEV - 1987cc 2.0 (184PS) Petrol Hybrid - Silver - 11-2024, Front.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2019_Lexus_UX250h_Plus_HEV_-_1987cc_2.0_(184PS)_Petrol_Hybrid_-_Silver_-_11-2024,_Front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Lexus|UX300H": {
+  "anno": 2025,
+  "autore": "OWS Photography",
+  "cercato": "Lexus UX300H",
+  "file": "lexus__ux300h.jpg",
+  "file_commons": "File:Lexus UX300h (ZA10) Washington DC Metro Area, USA.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Lexus_UX300h_(ZA10)_Washington_DC_Metro_Area,_USA.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
  "Lotus|Eletre": {
   "anno": 2024,
@@ -4744,6 +5732,38 @@
   "file_commons": "File:2024 Lotus Emira First Edition in Mist White, front right (11-30-2024).jpg",
   "licenza": "CC BY-SA 4.0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2024_Lotus_Emira_First_Edition_in_Mist_White,_front_right_(11-30-2024).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Lynk & Co|01": {
+  "anno": 2025,
+  "autore": "Alexander-93",
+  "cercato": "Lynk & Co 01",
+  "file": "lynk_co__01.jpg",
+  "file_commons": "File:2024 Lynk & Co 01 IAA 2025 DSC 2314.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2024_Lynk_%26_Co_01_IAA_2025_DSC_2314.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Lynk & Co|1": {
+  "anno": 2026,
+  "autore": "Just a Man",
+  "cercato": "Lynk & Co 1",
+  "file": "lynk_co__1.jpg",
+  "file_commons": "File:Expo Auto Chino 2026. Lynk & Co - (1).jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Expo_Auto_Chino_2026._Lynk_%26_Co_-_(1).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Lynk & Co|8": {
+  "autore": "Navigator84",
+  "file": "lynk_co__8.jpg",
+  "file_commons": "File:Lynk_&_Co_01_01_China_2018-03-28.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Lynk_%26_Co_01_01_China_2018-03-28.jpg",
+  "pagina_wikipedia": "https://it.wikipedia.org/wiki/Lynk_%26_Co_01",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -4773,6 +5793,39 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Lynk_%26_Co_08_-_black_(2).jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "MG|Ehs": {
+  "anno": 2026,
+  "autore": "Raf24~commonswiki",
+  "cercato": "MG Ehs",
+  "file": "mg__ehs.jpg",
+  "file_commons": "File:MG EHS, Tórshavn.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:MG_EHS,_T%C3%B3rshavn.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "MG|HS": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "MG HS",
+  "file": "mg__hs.jpg",
+  "file_commons": "File:MG HS Hybrid+ Luxury (II) – f 12032026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:MG_HS_Hybrid%2B_Luxury_(II)_%E2%80%93_f_12032026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "MG|HS Hybrid+": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "MG HS Hybrid+",
+  "file": "mg__hs_hybrid.jpg",
+  "file_commons": "File:MG HS Hybrid+ Luxury (II) – f 12032026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:MG_HS_Hybrid%2B_Luxury_(II)_%E2%80%93_f_12032026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
  "MG|MG Ehs Plug-IN Hybrid": {
   "anno": 2026,
@@ -4873,6 +5926,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "MG|MG4": {
+  "anno": 2024,
+  "autore": "Soggietoes",
+  "cercato": "MG MG4",
+  "file": "mg__mg4.jpg",
+  "file_commons": "File:MG MG4.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:MG_MG4.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
  "MG|MG4 Electric": {
   "anno": 2024,
   "autore": "Soggietoes",
@@ -4883,6 +5947,61 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:MG_MG4.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "MG|Marvel": {
+  "anno": 2024,
+  "autore": "Ethan Llamas",
+  "cercato": "MG Marvel",
+  "file": "mg__marvel.jpg",
+  "file_commons": "File:2024 MG Marvel R EV, front right, 06-27-2024.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2024_MG_Marvel_R_EV,_front_right,_06-27-2024.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "MG|S5": {
+  "anno": 2026,
+  "autore": "JustAnotherCarDesigner",
+  "cercato": "MG S5",
+  "file": "mg__s5.jpg",
+  "file_commons": "File:MG S5 EV 001.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:MG_S5_EV_001.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "MG|ZS": {
+  "anno": 2025,
+  "autore": "Alexander Migl",
+  "cercato": "MG ZS",
+  "file": "mg__zs.jpg",
+  "file_commons": "File:MG ZS (crossover, second generation) Automesse Ludwigsburg 2025 DSC 2617.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:MG_ZS_(crossover,_second_generation)_Automesse_Ludwigsburg_2025_DSC_2617.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mahindra|Kuv 100 Nxt": {
+  "anno": 2023,
+  "autore": "RL GNZLZ from Chile",
+  "cercato": "Mahindra Kuv 100",
+  "file": "mahindra__kuv_100_nxt.jpg",
+  "file_commons": "File:Mahindra KUV 100 K6+ 2021 (53367145459).jpg",
+  "licenza": "CC BY-SA 2.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mahindra_KUV_100_K6%2B_2021_(53367145459).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/2.0"
+ },
+ "Mahindra|Kuv 100 Nxt Lpg": {
+  "anno": 2023,
+  "autore": "RL GNZLZ from Chile",
+  "cercato": "Mahindra Kuv 100",
+  "file": "mahindra__kuv_100_nxt_lpg.jpg",
+  "file_commons": "File:Mahindra KUV 100 K6+ 2021 (53367145459).jpg",
+  "licenza": "CC BY-SA 2.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mahindra_KUV_100_K6%2B_2021_(53367145459).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/2.0"
  },
  "Mahindra|Mahindra Kuv 100 Nxt": {
   "anno": 2023,
@@ -4905,6 +6024,28 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mahindra_KUV_100_K6%2B_2021_(53367145459).jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/2.0"
+ },
+ "Maserati|Ghibli": {
+  "anno": 2026,
+  "autore": "4084470 0.smil",
+  "cercato": "Maserati Ghibli",
+  "file": "maserati__ghibli.jpg",
+  "file_commons": "File:Maserati Ghibli III Front View 20260627.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Maserati_Ghibli_III_Front_View_20260627.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Maserati|Ghibli GT": {
+  "anno": 2026,
+  "autore": "4084470 0.smil",
+  "cercato": "Maserati Ghibli",
+  "file": "maserati__ghibli_gt.jpg",
+  "file_commons": "File:Maserati Ghibli III Front View 20260627.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Maserati_Ghibli_III_Front_View_20260627.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
  "Maserati|Ghibli GT Hybrid": {
   "anno": 2026,
@@ -4983,6 +6124,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Maserati|Levante GT": {
+  "anno": 2026,
+  "autore": "LuvsMG481",
+  "cercato": "Maserati Levante GT",
+  "file": "maserati__levante_gt.jpg",
+  "file_commons": "File:2022 Maserati Levante GT front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2022_Maserati_Levante_GT_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Maserati|Levante GT Hybrid": {
   "anno": 2026,
   "autore": "LuvsMG481",
@@ -4994,6 +6146,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Maserati|Levante Modena": {
+  "anno": 2026,
+  "autore": "HJUdall",
+  "cercato": "Maserati Levante Modena",
+  "file": "maserati__levante_modena.jpg",
+  "file_commons": "File:22 Maserati Levante Modena.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:22_Maserati_Levante_Modena.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "Maserati|Levante Modena S": {
   "anno": 2023,
   "autore": "Charles from Port Chester, New York",
@@ -5004,6 +6167,61 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Maserati_Levante_Modena_S_(2020)_(53321815657).jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/2.0"
+ },
+ "Mazda|6E": {
+  "anno": 2026,
+  "autore": "Chanokchon",
+  "cercato": "Mazda 6E",
+  "file": "mazda__6e.jpg",
+  "file_commons": "File:2026 Mazda 6e Exclusive.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2026_Mazda_6e_Exclusive.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mazda|CX-30": {
+  "anno": 2026,
+  "autore": "Mr.choppers",
+  "cercato": "Mazda CX-30",
+  "file": "mazda__cx_30.jpg",
+  "file_commons": "File:2024 Mazda CX-30 Select in Platinum Quartz, front left.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2024_Mazda_CX-30_Select_in_Platinum_Quartz,_front_left.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mazda|CX-5": {
+  "anno": 2026,
+  "autore": "TTTNIS",
+  "cercato": "Mazda CX-5",
+  "file": "mazda__cx_5.jpg",
+  "file_commons": "File:2026 Mazda CX-5 e-SKYACTIV G 2.5 L.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2026_Mazda_CX-5_e-SKYACTIV_G_2.5_L.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Mazda|CX-60": {
+  "anno": 2026,
+  "autore": "RL GNZLZ",
+  "cercato": "Mazda CX-60",
+  "file": "mazda__cx_60.jpg",
+  "file_commons": "File:Mazda CX-60 3.3 Sport 2025.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mazda_CX-60_3.3_Sport_2025.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mazda|CX-80": {
+  "anno": 2025,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "Mazda CX-80",
+  "file": "mazda__cx_80.jpg",
+  "file_commons": "File:Mazda CX-80 XD-HYBRID Premium Modern SIGNITURE STYLE (3CA-KL3R3P) front.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mazda_CX-80_XD-HYBRID_Premium_Modern_SIGNITURE_STYLE_(3CA-KL3R3P)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
  "Mazda|MAZDA2": {
   "autore": "OSX",
@@ -5039,6 +6257,17 @@
   "file_commons": "File:Mazda MX-30 Rotary-EV Edition R (3LA-DR8V3P) front-right.jpg",
   "licenza": "CC BY-SA 4.0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mazda_MX-30_Rotary-EV_Edition_R_(3LA-DR8V3P)_front-right.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mazda|MX-5": {
+  "anno": 2026,
+  "autore": "MercurySable99",
+  "cercato": "Mazda MX-5",
+  "file": "mazda__mx_5.jpg",
+  "file_commons": "File:2001 Mazda MX-5 Miata, front left, 05-24-2026.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2001_Mazda_MX-5_Miata,_front_left,_05-24-2026.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -5535,6 +6764,28 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/2.0"
  },
+ "Mercedes-Benz|CLA": {
+  "anno": 2025,
+  "autore": "Charles from Port Chester, New York",
+  "cercato": "Mercedes-Benz CLA",
+  "file": "mercedes_benz__cla.jpg",
+  "file_commons": "File:Mercedes-Benz CLA 180 Shooting Brake (X118, 2022) (54832938300).jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_CLA_180_Shooting_Brake_(X118,_2022)_(54832938300).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Mercedes-Benz|CLE": {
+  "anno": 2024,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "Mercedes-Benz CLE",
+  "file": "mercedes_benz__cle.jpg",
+  "file_commons": "File:Mercedes-Benz CLE 200 Cabriolet (A236) front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_CLE_200_Cabriolet_(A236)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Mercedes-Benz|Citan Tourer/t-Class": {
   "anno": 2024,
   "autore": "Harvey Bold",
@@ -5623,6 +6874,39 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Mercedes-Benz|Classe A": {
+  "anno": 2022,
+  "autore": "Dinkun Chen",
+  "cercato": "Mercedes-Benz A-Class",
+  "file": "mercedes_benz__classe_a.jpg",
+  "file_commons": "File:MERCEDES-BENZ A-CLASS SEDAN (Z177) China.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:MERCEDES-BENZ_A-CLASS_SEDAN_(Z177)_China.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mercedes-Benz|Classe B": {
+  "anno": 2025,
+  "autore": "Kotivalo",
+  "cercato": "Mercedes-Benz B-Class",
+  "file": "mercedes_benz__classe_b.jpg",
+  "file_commons": "File:Brown Mercedes-Benz B-Class in garage after snowstorm.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Brown_Mercedes-Benz_B-Class_in_garage_after_snowstorm.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mercedes-Benz|Classe C": {
+  "anno": 2026,
+  "autore": "Alexander Migl",
+  "cercato": "Mercedes-Benz C-Class",
+  "file": "mercedes_benz__classe_c.jpg",
+  "file_commons": "File:Mercedes-Benz C-Class All-Terrain IMG 8321.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_C-Class_All-Terrain_IMG_8321.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Mercedes-Benz|Classe E": {
   "anno": 2023,
   "autore": "Dinkun Chen",
@@ -5655,6 +6939,50 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Mercedes-Benz_EQB_300_AMG_Line_Premium_4Matic_-_66kWh_(228PS)_Electric_-_Polar_White_-_02-2024,_Front.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Mercedes-Benz|Classe G": {
+  "anno": 2026,
+  "autore": "Юрий Д.К.",
+  "cercato": "Mercedes-Benz G-Class",
+  "file": "mercedes_benz__classe_g.jpg",
+  "file_commons": "File:Moscow - 2026 - Mercedes-Benz G-Class AMG.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Moscow_-_2026_-_Mercedes-Benz_G-Class_AMG.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Mercedes-Benz|Classe S": {
+  "anno": 2024,
+  "autore": "Trop86",
+  "cercato": "Mercedes-Benz S-Class",
+  "file": "mercedes_benz__classe_s.jpg",
+  "file_commons": "File:Mercedes-Benz S Class W221 183036.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_S_Class_W221_183036.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Mercedes-Benz|Classe T": {
+  "anno": 2023,
+  "autore": "Matti Blume",
+  "cercato": "Mercedes-Benz T-Class",
+  "file": "mercedes_benz__classe_t.jpg",
+  "file_commons": "File:Mercedes-Benz T-Class, Nufam 2023, Rheinstetten (P1130651).jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_T-Class,_Nufam_2023,_Rheinstetten_(P1130651).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+ },
+ "Mercedes-Benz|Classe V": {
+  "anno": 2026,
+  "autore": "Dinkun Chen",
+  "cercato": "Mercedes-Benz V-Class",
+  "file": "mercedes_benz__classe_v.jpg",
+  "file_commons": "File:MERCEDES BENZ V-CLASS (W447) China (17).jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:MERCEDES_BENZ_V-CLASS_(W447)_China_(17).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Mercedes-Benz|Cle 200": {
   "anno": 2024,
@@ -5765,6 +7093,61 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_E_450_4MATIC_Coup%C3%A9_(C238,_2019)_(55252929368).jpg",
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Mercedes-Benz|EQA": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Mercedes-Benz EQA",
+  "file": "mercedes_benz__eqa.jpg",
+  "file_commons": "File:Mercedes-Benz EQA 250 AMG Line (H 243, Facelift) – f 08022026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_EQA_250_AMG_Line_(H_243,_Facelift)_%E2%80%93_f_08022026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Mercedes-Benz|EQB": {
+  "anno": 2024,
+  "autore": "Harvey Bold",
+  "cercato": "Mercedes-Benz EQB",
+  "file": "mercedes_benz__eqb.jpg",
+  "file_commons": "File:2023 Mercedes-Benz EQB 300 AMG Line Premium 4Matic - 66kWh (228PS) Electric - Polar White - 02-2024, Front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Mercedes-Benz_EQB_300_AMG_Line_Premium_4Matic_-_66kWh_(228PS)_Electric_-_Polar_White_-_02-2024,_Front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Mercedes-Benz|EQE": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Mercedes-Benz EQE",
+  "file": "mercedes_benz__eqe.jpg",
+  "file_commons": "File:Mercedes-Benz EQE 300 AMG Line (V 295) – f 25012026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_EQE_300_AMG_Line_(V_295)_%E2%80%93_f_25012026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Mercedes-Benz|EQS": {
+  "anno": 2024,
+  "autore": "Harvey Bold",
+  "cercato": "Mercedes-Benz EQS",
+  "file": "mercedes_benz__eqs.jpg",
+  "file_commons": "File:2023 Mercedes-Benz EQS 450+ Exclusive Luxury - 107kWh (332PS) Electric - Obsidian Black - 02-2024, Front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Mercedes-Benz_EQS_450%2B_Exclusive_Luxury_-_107kWh_(332PS)_Electric_-_Obsidian_Black_-_02-2024,_Front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Mercedes-Benz|EQV": {
+  "anno": 2025,
+  "autore": "© M 93",
+  "cercato": "Mercedes-Benz EQV",
+  "file": "mercedes_benz__eqv.jpg",
+  "file_commons": "File:Mercedes-Benz EQV 300 Design-Paket Lang (V 447, 2. Facelift) – f 15062025.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_EQV_300_Design-Paket_Lang_(V_447,_2._Facelift)_%E2%80%93_f_15062025.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
  "Mercedes-Benz|Eqa 250+": {
   "anno": 2026,
@@ -5908,6 +7291,72 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2000_Mercedes-Benz_G_500_Cabriolet,_TC_24,_Essen_(TCE43237).jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+ },
+ "Mercedes-Benz|GLA": {
+  "anno": 2023,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "Mercedes-Benz GLA",
+  "file": "mercedes_benz__gla.jpg",
+  "file_commons": "File:Mercedes-Benz GLA 200 d 4MATIC Night Edition (H247) front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_GLA_200_d_4MATIC_Night_Edition_(H247)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mercedes-Benz|GLB": {
+  "anno": 2026,
+  "autore": "Y.Leclercq",
+  "cercato": "Mercedes-Benz GLB",
+  "file": "mercedes_benz__glb.jpg",
+  "file_commons": "File:Mercedes-Benz GLB - Intérieur.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_GLB_-_Int%C3%A9rieur.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mercedes-Benz|GLC": {
+  "anno": 2026,
+  "autore": "Y.Leclercq",
+  "cercato": "Mercedes-Benz GLC",
+  "file": "mercedes_benz__glc.jpg",
+  "file_commons": "File:Mercedes-Benz GLC - Avant.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_GLC_-_Avant.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mercedes-Benz|GLE": {
+  "anno": 2025,
+  "autore": "LuvsMG481",
+  "cercato": "Mercedes-Benz GLE",
+  "file": "mercedes_benz__gle.jpg",
+  "file_commons": "File:2023 Mercedes-Benz GLE 400d 3.0 front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Mercedes-Benz_GLE_400d_3.0_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mercedes-Benz|GLS": {
+  "anno": 2026,
+  "autore": "Dinkun Chen",
+  "cercato": "Mercedes-Benz GLS",
+  "file": "mercedes_benz__gls.jpg",
+  "file_commons": "File:MERCEDES-BENZ GLS-CLASS (X166) China (24).jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:MERCEDES-BENZ_GLS-CLASS_(X166)_China_(24).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Mercedes-Benz|GT": {
+  "anno": 2019,
+  "autore": "Alexander Migl",
+  "cercato": "Mercedes-Benz GT",
+  "file": "mercedes_benz__gt.jpg",
+  "file_commons": "File:Mercedes-Benz GT-Rennsportwagen CLK-GTR (1997) 1Y7A6183.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_GT-Rennsportwagen_CLK-GTR_(1997)_1Y7A6183.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Mercedes-Benz|Gla 180": {
   "anno": 2025,
@@ -6294,6 +7743,17 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Mercedes-Benz|SL": {
+  "anno": 2026,
+  "autore": "Just a Man",
+  "cercato": "Mercedes-Benz SL",
+  "file": "mercedes_benz__sl.jpg",
+  "file_commons": "File:AutoClásica 2026. Mercedes-Benz SL 600 1998 - (1).jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:AutoCl%C3%A1sica_2026._Mercedes-Benz_SL_600_1998_-_(1).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
  "Mercedes-Benz|Sprinter": {
   "anno": 2023,
   "autore": "Aciarium",
@@ -6326,6 +7786,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mercedes_Benz_V-Klasse_172637.jpg",
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Mercedes-Benz|Vito": {
+  "anno": 2024,
+  "autore": "Harvey Bold",
+  "cercato": "Mercedes-Benz Vito",
+  "file": "mercedes_benz__vito.jpg",
+  "file_commons": "File:2007 Mercedes-Benz Vito Compact 115 CDi - 2148cc 2.1 (150PS) Diesel - Blue - 03-2024, Front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2007_Mercedes-Benz_Vito_Compact_115_CDi_-_2148cc_2.1_(150PS)_Diesel_-_Blue_-_03-2024,_Front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
  "Mercedes-Benz|Vito Tourer": {
   "anno": 2025,
@@ -6668,6 +8139,17 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Nissan|Leaf 40KWH": {
+  "anno": 2026,
+  "autore": "HJUdall",
+  "cercato": "Nissan Leaf",
+  "file": "nissan__leaf_40kwh.jpg",
+  "file_commons": "File:22 Nissan Leaf S.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:22_Nissan_Leaf_S.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "Nissan|Micra": {
   "anno": 2023,
   "autore": "DieselFordMondeo",
@@ -6767,6 +8249,39 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
+ "Nissan|X-Trail": {
+  "anno": 2026,
+  "autore": "TTTNIS",
+  "cercato": "Nissan X-Trail",
+  "file": "nissan__x_trail.jpg",
+  "file_commons": "File:2025 Nissan X-Trail X e-4ORCE.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2025_Nissan_X-Trail_X_e-4ORCE.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Omoda|5": {
+  "anno": 2025,
+  "autore": "LuvsMG481",
+  "cercato": "Omoda 5",
+  "file": "omoda__5.jpg",
+  "file_commons": "File:2023 Chery Omoda 5 230T front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Chery_Omoda_5_230T_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Omoda|9": {
+  "anno": 2026,
+  "autore": "Rutger van der Maar",
+  "cercato": "Omoda 9",
+  "file": "omoda__9.jpg",
+  "file_commons": "File:2025 Omoda 9 SHS-P 1.5T GDi black front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2025_Omoda_9_SHS-P_1.5T_GDi_black_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
  "Omoda|OMODA5": {
   "file": null,
   "motivo": "nessuna pagina (en:Omoda OMODA5, it:Omoda OMODA5)",
@@ -6809,6 +8324,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Opel_Astra_F_Cabrio.jpg",
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Opel|Astra Sports": {
+  "anno": 2025,
+  "autore": "© M 93",
+  "cercato": "Opel Astra Sports",
+  "file": "opel__astra_sports.jpg",
+  "file_commons": "File:Opel Astra Sports Tourer (L) – f 18042025.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Opel_Astra_Sports_Tourer_(L)_%E2%80%93_f_18042025.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
  "Opel|Astra Sports Tourer": {
   "anno": 2025,
@@ -7040,6 +8566,28 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2024_Peugeot_Traveller_IMG_6310.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Polestar|2": {
+  "anno": 2026,
+  "autore": "Alexandre Prevot from Nancy, France",
+  "cercato": "Polestar 2",
+  "file": "polestar__2.jpg",
+  "file_commons": "File:Polestar 2 (55151263096).jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Polestar_2_(55151263096).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Polestar|4": {
+  "anno": 2026,
+  "autore": "NutzerAusBerlin",
+  "cercato": "Polestar 4",
+  "file": "polestar__4.jpg",
+  "file_commons": "File:Berlin 20260323 Polestar 4 02.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Berlin_20260323_Polestar_4_02.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
  "Polestar|Polestar 2": {
   "anno": 2026,
@@ -7305,6 +8853,17 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Porsche|Cayenne Turbo": {
+  "anno": 2025,
+  "autore": "HJUdall",
+  "cercato": "Porsche Cayenne Turbo",
+  "file": "porsche__cayenne_turbo.jpg",
+  "file_commons": "File:23 Porsche Cayenne Turbo S e-Hybrid.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:23_Porsche_Cayenne_Turbo_S_e-Hybrid.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "Porsche|Cayenne Turbo E-Hybrid": {
   "anno": 2025,
   "autore": "Alexandre Prevot from Nancy, France",
@@ -7415,6 +8974,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Porsche|Panamera 4S": {
+  "anno": 2026,
+  "autore": "Retired electrician",
+  "cercato": "Porsche Panamera 4S",
+  "file": "porsche__panamera_4s.jpg",
+  "file_commons": "File:Moscow, Porsche Panamera 4S white, June 2026 01.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Moscow,_Porsche_Panamera_4S_white,_June_2026_01.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "Porsche|Panamera 4S E-Hybrid": {
   "anno": 2025,
   "autore": "Charles from Port Chester, New York",
@@ -7423,6 +8993,17 @@
   "file_commons": "File:Porsche Panamera 4S E-Hybrid (2023) (54719517811).jpg",
   "licenza": "CC0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Porsche_Panamera_4S_E-Hybrid_(2023)_(54719517811).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Porsche|Panamera Turbo": {
+  "anno": 2025,
+  "autore": "Charles from Port Chester, New York",
+  "cercato": "Porsche Panamera Turbo",
+  "file": "porsche__panamera_turbo.jpg",
+  "file_commons": "File:Porsche Panamera Turbo (2011) (54831760772).jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Porsche_Panamera_Turbo_(2011)_(54831760772).jpg",
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
@@ -7514,6 +9095,28 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Renault|4 E-Tech": {
+  "anno": 2025,
+  "autore": "© M 93",
+  "cercato": "Renault 4 E-Tech",
+  "file": "renault__4_e_tech.jpg",
+  "file_commons": "File:Renault 4 E-Tech 150 Comfort Range Techno – f 22062025.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Renault_4_E-Tech_150_Comfort_Range_Techno_%E2%80%93_f_22062025.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Renault|5 E-Tech": {
+  "anno": 2026,
+  "autore": "Trop86",
+  "cercato": "Renault 5 E-Tech",
+  "file": "renault__5_e_tech.jpg",
+  "file_commons": "File:Renault 5 E-Tech 161334.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Renault_5_E-Tech_161334.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
  "Renault|Arkana": {
   "anno": 2025,
   "autore": "Retired electrician",
@@ -7558,6 +9161,17 @@
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
+ "Renault|Captur E-Tech": {
+  "anno": 2022,
+  "autore": "Tokumeigakarinoaoshima",
+  "cercato": "Renault Captur E-Tech",
+  "file": "renault__captur_e_tech.jpg",
+  "file_commons": "File:Renault CAPTUR E-TECH HYBRID (5AA-HJBH4MH) front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Renault_CAPTUR_E-TECH_HYBRID_(5AA-HJBH4MH)_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Renault|Captur E-Tech Hybrid": {
   "anno": 2022,
   "autore": "Tokumeigakarinoaoshima",
@@ -7590,6 +9204,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2015_Renault_Clio_Expression_DCi_Grandtour_(Front_).png",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Renault|Clio E-Tech": {
+  "anno": 2026,
+  "autore": "Turning67",
+  "cercato": "Renault Clio E-Tech",
+  "file": "renault__clio_e_tech.jpg",
+  "file_commons": "File:Renault Clio E-Tech Hybrid.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Renault_Clio_E-Tech_Hybrid.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Renault|Clio E-Tech Hybrid": {
   "anno": 2026,
@@ -7643,6 +9268,17 @@
   "file_commons": "File:Renault Mégane (third generation).jpg",
   "licenza": "CC BY 4.0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Renault_M%C3%A9gane_(third_generation).jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "Renault|Megane E-Tech": {
+  "anno": 2024,
+  "autore": "Harvey Bold",
+  "cercato": "Renault Megane E-Tech",
+  "file": "renault__megane_e_tech.jpg",
+  "file_commons": "File:2022 Renault Megane E-Tech Launch Edition - 60kWh (220PS) Electric - Shadow Grey - 05-2024, Front.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2022_Renault_Megane_E-Tech_Launch_Edition_-_60kWh_(220PS)_Electric_-_Shadow_Grey_-_05-2024,_Front.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
@@ -7706,6 +9342,17 @@
   "autore": "© M 93",
   "cercato": "Renault Scenic",
   "file": "renault__scenic.jpg",
+  "file_commons": "File:Renault Scénic E-Tech Electric 220 Long Range Techno – f 30062024.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Renault_Sc%C3%A9nic_E-Tech_Electric_220_Long_Range_Techno_%E2%80%93_f_30062024.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Renault|Scenic E-Tech": {
+  "anno": 2024,
+  "autore": "© M 93",
+  "cercato": "Renault Scenic E-Tech",
+  "file": "renault__scenic_e_tech.jpg",
   "file_commons": "File:Renault Scénic E-Tech Electric 220 Long Range Techno – f 30062024.jpg",
   "licenza": "CC BY-SA 3.0 de",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Renault_Sc%C3%A9nic_E-Tech_Electric_220_Long_Range_Techno_%E2%80%93_f_30062024.jpg",
@@ -7822,6 +9469,28 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
+ "SWM|G05; Kmc; A6; Kmc A6": {
+  "anno": 2026,
+  "autore": "Corvettec6r",
+  "cercato": "SWM G05;",
+  "file": "swm__g05_kmc_a6_kmc_a6.jpg",
+  "file_commons": "File:SWM G05 Pro.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:SWM_G05_Pro.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "SWM|Tiger, G03F": {
+  "anno": 2026,
+  "autore": "JustAnotherCarDesigner",
+  "cercato": "SWM Tiger,",
+  "file": "swm__tiger_g03f.jpg",
+  "file_commons": "File:SWM Tiger EDi 001.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:SWM_Tiger_EDi_001.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "Seat|Arona": {
   "autore": "Vauxford",
   "file": "seat__arona.jpg",
@@ -7829,6 +9498,16 @@
   "licenza": "CC BY-SA 4.0",
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2018_SEAT_Arona_SE_Technology_TSi_1.0_Front_(1).jpg",
   "pagina_wikipedia": "https://en.wikipedia.org/wiki/SEAT_Arona",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Seat|Ateca": {
+  "autore": "Vauxford",
+  "file": "seat__ateca.jpg",
+  "file_commons": "File:2017_SEAT_Ateca_Xcellence_1.4_Front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2017_SEAT_Ateca_Xcellence_1.4_Front.jpg",
+  "pagina_wikipedia": "https://en.wikipedia.org/wiki/SEAT_Ateca",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
@@ -7841,6 +9520,26 @@
   "pagina_wikipedia": "https://en.wikipedia.org/wiki/SEAT_Ibiza",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Seat|Leon": {
+  "autore": "Vauxford",
+  "file": "seat__leon.jpg",
+  "file_commons": "File:2020_SEAT_Leon_FR_TSi_Evo_1.5_Front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2020_SEAT_Leon_FR_TSi_Evo_1.5_Front.jpg",
+  "pagina_wikipedia": "https://en.wikipedia.org/wiki/SEAT_Le%C3%B3n",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Seat|Leon SP": {
+  "autore": "Russell Trow from Worcester, UK",
+  "file": "seat__leon_sp.jpg",
+  "file_commons": "File:Mat_Jackson_2006_SEAT_Cupra_Oulton_Park.jpg",
+  "licenza": "CC BY 2.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Mat_Jackson_2006_SEAT_Cupra_Oulton_Park.jpg",
+  "pagina_wikipedia": "https://en.wikipedia.org/wiki/SEAT_Le%C3%B3n_Supercopa",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/2.0"
  },
  "Seat|Seat Ateca": {
   "file": null,
@@ -8069,6 +9768,26 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
+ "Sportequipe|5": {
+  "file": null,
+  "motivo": "nessuna pagina (en:Sportequipe 5, it:Sportequipe 5)",
+  "provato": "2026-11-20"
+ },
+ "Sportequipe|6": {
+  "file": null,
+  "motivo": "nessuna pagina (en:Sportequipe 6, it:Sportequipe 6)",
+  "provato": "2026-11-20"
+ },
+ "Sportequipe|7": {
+  "file": null,
+  "motivo": "nessuna pagina (en:Sportequipe 7, it:Sportequipe 7)",
+  "provato": "2026-11-20"
+ },
+ "Sportequipe|8H": {
+  "file": null,
+  "motivo": "nessuna pagina (en:Sportequipe 8H, it:Sportequipe 8H)",
+  "provato": "2026-11-20"
+ },
  "Sportequipe|Ich-X K3": {
   "file": null,
   "motivo": "nessuna pagina (en:Sportequipe Ich-X K3, it:Sportequipe Ich-X K3)",
@@ -8186,6 +9905,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
  },
+ "Suzuki|Across": {
+  "anno": 2026,
+  "autore": "Alexander Migl",
+  "cercato": "Suzuki Across",
+  "file": "suzuki__across.jpg",
+  "file_commons": "File:Suzuki Across (XA60) Auto Zuerich 2026 IMG 8517.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Suzuki_Across_(XA60)_Auto_Zuerich_2026_IMG_8517.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Suzuki|Ignis": {
   "anno": 2025,
   "autore": "Suzuki-Ham",
@@ -8285,6 +10015,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Tesla|Model": {
+  "anno": 2025,
+  "autore": "Dllu",
+  "cercato": "Tesla Model",
+  "file": "tesla__model.jpg",
+  "file_commons": "File:Tesla Model Y Standard front view dllu.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_Standard_front_view_dllu.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Tesla|Model 3": {
   "anno": 2025,
   "autore": "Ethan Llamas",
@@ -8329,6 +10070,16 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Tiger|Six": {
+  "autore": "Scheck",
+  "file": "tiger__six.jpg",
+  "file_commons": "File:Bundesarchiv_Bild_101I-299-1805-16,_Nordfrankreich,_Panzer_VI_(Tiger_I).2.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-299-1805-16,_Nordfrankreich,_Panzer_VI_(Tiger_I).2.jpg",
+  "pagina_wikipedia": "https://en.wikipedia.org/wiki/Tiger_I",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
  "Tiger|Tiger Six": {
   "autore": "Scanned and uploaded by User:Lee M",
   "file": "tiger__tiger_six.png",
@@ -8338,6 +10089,28 @@
   "pagina_wikipedia": "https://en.wikipedia.org/wiki/Tiger!_Tiger!_(Kipling_short_story)",
   "provato": "2026-11-20",
   "url_licenza": null
+ },
+ "Toyota|Aygo X": {
+  "anno": 2026,
+  "autore": "© M 93",
+  "cercato": "Toyota Aygo X",
+  "file": "toyota__aygo_x.jpg",
+  "file_commons": "File:Toyota Aygo X 1.5 Hybrid Pure (III, Facelift) – f 04042026.jpg",
+  "licenza": "CC BY-SA 3.0 de",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Toyota_Aygo_X_1.5_Hybrid_Pure_(III,_Facelift)_%E2%80%93_f_04042026.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Toyota|BZ4X": {
+  "anno": 2026,
+  "autore": "TTTNIS",
+  "cercato": "Toyota BZ4X",
+  "file": "toyota__bz4x.jpg",
+  "file_commons": "File:Toyota bZ4X Touring Z 4WD front right.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Toyota_bZ4X_Touring_Z_4WD_front_right.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
  "Toyota|C-HR": {
   "anno": 2023,
@@ -8361,6 +10134,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Toyota|Corolla": {
+  "anno": 2026,
+  "autore": "TTTNIS",
+  "cercato": "Toyota Corolla",
+  "file": "toyota__corolla.jpg",
+  "file_commons": "File:2026 Toyota Corolla Cross Z Adventure.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2026_Toyota_Corolla_Cross_Z_Adventure.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
  "Toyota|GR Yaris": {
   "anno": 2026,
   "autore": "TTTNIS",
@@ -8371,6 +10155,39 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2026_Toyota_GR_Yaris_RZ_High_performance_%2B_Aero_performance_package.jpg",
   "provato": "2026-11-20",
   "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Toyota|Highlander": {
+  "anno": 2026,
+  "autore": "Retired electrician",
+  "cercato": "Toyota Highlander",
+  "file": "toyota__highlander.jpg",
+  "file_commons": "File:Moscow, Toyota Highlander, May 2026 01.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Moscow,_Toyota_Highlander,_May_2026_01.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Toyota|Land Cruiser": {
+  "anno": 2025,
+  "autore": "TTTNIS",
+  "cercato": "Toyota Land Cruiser",
+  "file": "toyota__land_cruiser.jpg",
+  "file_commons": "File:2023 Toyota Land Cruiser 70 front left.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Toyota_Land_Cruiser_70_front_left.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Toyota|Prius": {
+  "anno": 2026,
+  "autore": "Teriyaki Boyz-Tokyo Drift (Fast & Furious)",
+  "cercato": "Toyota Prius",
+  "file": "toyota__prius.jpg",
+  "file_commons": "File:JDM Toyota Prius V (called Toyota Prius α in Japan) spotted in Tim Hortons parking lot at Tim Hortons, 3463 Dunbar Street, Dunbar-Southlands, Vancouver, British Columbia, Canada.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:JDM_Toyota_Prius_V_(called_Toyota_Prius_%CE%B1_in_Japan)_spotted_in_Tim_Hortons_parking_lot_at_Tim_Hortons,_3463_Dunbar_Street,_Dunbar-Southlands,_Vancouver,_British_Columbia,_Canada.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
  "Toyota|Proace": {
   "anno": 2024,
@@ -8404,6 +10221,28 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:Toyota_Proace_City_Verso_L2_Electric_Executive_%E2%80%93_f_20102024.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+ },
+ "Toyota|RAV4": {
+  "anno": 2025,
+  "autore": "Throwawayacc222",
+  "cercato": "Toyota RAV4",
+  "file": "toyota__rav4.jpg",
+  "file_commons": "File:2018 Toyota RAV4 2.0 CVT 4WD Adventure front.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2018_Toyota_RAV4_2.0_CVT_4WD_Adventure_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Toyota|Supra": {
+  "anno": 2025,
+  "autore": "TTTNIS",
+  "cercato": "Toyota Supra",
+  "file": "toyota__supra.jpg",
+  "file_commons": "File:1996-2002 Toyota Supra.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:1996-2002_Toyota_Supra.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
  },
  "Toyota|Toyota Aygo X": {
   "anno": 2026,
@@ -8581,6 +10420,28 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/4.0"
  },
+ "Volkswagen|ID. Buzz": {
+  "anno": 2026,
+  "autore": "JustAnotherCarDesigner",
+  "cercato": "Volkswagen ID. Buzz",
+  "file": "volkswagen__id_buzz.jpg",
+  "file_commons": "File:Volkswagen ID. Buzz 001.jpg",
+  "licenza": "CC0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Volkswagen_ID._Buzz_001.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ },
+ "Volkswagen|ID.3": {
+  "anno": 2026,
+  "autore": "Trop86",
+  "cercato": "Volkswagen ID.3",
+  "file": "volkswagen__id_3.jpg",
+  "file_commons": "File:Volkswagen ID.3 171102.jpg",
+  "licenza": "CC BY 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:Volkswagen_ID.3_171102.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/4.0"
+ },
  "Volkswagen|ID.3 Pro 150 KW": {
   "anno": 2023,
   "autore": "Charles from Port Chester, New York",
@@ -8613,6 +10474,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2021_Volkswagen_ID_3_Pure_Handhaving_gemeente_Beverwijk_(53485296867).jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by/2.0"
+ },
+ "Volkswagen|ID.4": {
+  "anno": 2024,
+  "autore": "MercurySable99",
+  "cercato": "Volkswagen ID.4",
+  "file": "volkswagen__id_4.jpg",
+  "file_commons": "File:2023 Volkswagen ID.4 Pro S, front left, 08-03-2024.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Volkswagen_ID.4_Pro_S,_front_left,_08-03-2024.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
  "Volkswagen|ID.4 Pro 210 KW": {
   "anno": 2025,
@@ -8647,6 +10519,17 @@
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
  },
+ "Volkswagen|ID.5": {
+  "anno": 2025,
+  "autore": "LuvsMG481",
+  "cercato": "Volkswagen ID.5",
+  "file": "volkswagen__id_5.jpg",
+  "file_commons": "File:2025 Volkswagen ID.5 GTX front.jpg",
+  "licenza": "CC BY-SA 4.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2025_Volkswagen_ID.5_GTX_front.jpg",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
  "Volkswagen|ID.5 Pro 210 KW": {
   "anno": 2025,
   "autore": "LuvsMG481",
@@ -8657,6 +10540,17 @@
   "pagina_commons": "https://commons.wikimedia.org/wiki/File:2025_Volkswagen_ID.5_GTX_front.jpg",
   "provato": "2026-11-20",
   "url_licenza": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "Volkswagen|ID.7": {
+  "anno": 2024,
+  "autore": "Ubi-testet",
+  "cercato": "Volkswagen ID.7",
+  "file": "volkswagen__id_7.png",
+  "file_commons": "File:2023 Volkswagen ID.7 Pro S Tourer front view.png",
+  "licenza": "CC BY 3.0",
+  "pagina_commons": "https://commons.wikimedia.org/wiki/File:2023_Volkswagen_ID.7_Pro_S_Tourer_front_view.png",
+  "provato": "2026-11-20",
+  "url_licenza": "https://creativecommons.org/licenses/by/3.0"
  },
  "Volkswagen|ID.7 Pro 210 KW": {
   "anno": 2024,
