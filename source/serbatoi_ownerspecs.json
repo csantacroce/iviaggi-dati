@@ -1,0 +1,667 @@
+{
+ "letto": "2026-11-21",
+ "licenza": "CC BY-SA 4.0",
+ "citazione": "ownerspecs.com — https://ownerspecs.com",
+ "generazioni": [
+  {
+   "brand": "Audi",
+   "model": "A1",
+   "generation": "A1 (GB)",
+   "body_type": "Hatchback",
+   "year_start": 2018,
+   "year_end": null,
+   "url": "https://ownerspecs.com/audi/a1-gb-hatch-2019-present",
+   "litri": 40.0
+  },
+  {
+   "brand": "Audi",
+   "model": "A6",
+   "generation": "A6 Allroad quattro (C8)",
+   "body_type": "Wagon",
+   "year_start": 2020,
+   "year_end": null,
+   "url": "https://ownerspecs.com/audi/a6-allroad-c8-2020-present",
+   "litri": 73.0
+  },
+  {
+   "brand": "Audi",
+   "model": "A6",
+   "generation": "A6 V (C8 LCI) Avant",
+   "body_type": "Estate",
+   "year_start": 2023,
+   "year_end": null,
+   "url": "https://ownerspecs.com/audi/a6-avant-c8-lci-2023-present",
+   "litri": 63.0
+  },
+  {
+   "brand": "Audi",
+   "model": "A6",
+   "generation": "A6 V (C8 LCI) Sedan",
+   "body_type": "Sedan",
+   "year_start": 2023,
+   "year_end": null,
+   "url": "https://ownerspecs.com/audi/a6-c8-lci-sedan-2023-present",
+   "litri": 63.0
+  },
+  {
+   "brand": "Audi",
+   "model": "A6",
+   "generation": "A6 V (C8) Avant",
+   "body_type": "Estate",
+   "year_start": 2018,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/audi/a6-avant-c8-2018-2023",
+   "litri": 63.0
+  },
+  {
+   "brand": "Audi",
+   "model": "A6",
+   "generation": "A6 V (C8) Sedan",
+   "body_type": "Sedan",
+   "year_start": 2018,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/audi/a6-c8-sedan-2018-2023",
+   "litri": 63.0
+  },
+  {
+   "brand": "Audi",
+   "model": "A7",
+   "generation": "A7 Sportback (4K)",
+   "body_type": "Hatchback",
+   "year_start": 2017,
+   "year_end": null,
+   "url": "https://ownerspecs.com/audi/a7-4k-sportback-2018-present",
+   "litri": 63.0
+  },
+  {
+   "brand": "Audi",
+   "model": "Q3",
+   "generation": "Q3 (8U, I)",
+   "body_type": "SUV",
+   "year_start": 2012,
+   "year_end": 2018,
+   "url": "https://ownerspecs.com/audi/q3-8u-suv-2012-2018",
+   "litri": 64.0
+  },
+  {
+   "brand": "Audi",
+   "model": "Q7",
+   "generation": "Q7 II (4M)",
+   "body_type": "SUV",
+   "year_start": 2015,
+   "year_end": 2019,
+   "url": "https://ownerspecs.com/audi/q7-4m-suv-2015-2019",
+   "litri": 75.0
+  },
+  {
+   "brand": "Audi",
+   "model": "Q8",
+   "generation": "Q8 (4MN)",
+   "body_type": "SUV",
+   "year_start": 2018,
+   "year_end": null,
+   "url": "https://ownerspecs.com/audi/q8-4mn-suv-2019-present",
+   "litri": 75.0
+  },
+  {
+   "brand": "Audi",
+   "model": "RS6",
+   "generation": "RS6 Avant (C8)",
+   "body_type": "Estate",
+   "year_start": 2019,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/audi/rs6-avant-c8-2019-2023",
+   "litri": 73.0
+  },
+  {
+   "brand": "BMW",
+   "model": "3 Series",
+   "generation": "3 Series (E90)",
+   "body_type": "Sedan",
+   "year_start": 2005,
+   "year_end": 2008,
+   "url": "https://ownerspecs.com/bmw/3-series-e90-sedan-2005-2008",
+   "litri": 61.0
+  },
+  {
+   "brand": "BMW",
+   "model": "3 Series",
+   "generation": "3 Series Sedan (F30 LCI)",
+   "body_type": "Sedan",
+   "year_start": 2015,
+   "year_end": 2018,
+   "url": "https://ownerspecs.com/bmw/3-series-f30-lci-sedan-2015-2018",
+   "litri": 57.0
+  },
+  {
+   "brand": "BMW",
+   "model": "3 Series",
+   "generation": "3 Series Sedan (F30)",
+   "body_type": "Sedan",
+   "year_start": 2012,
+   "year_end": 2015,
+   "url": "https://ownerspecs.com/bmw/3-series-f30-sedan-2012-2015",
+   "litri": 57.0
+  },
+  {
+   "brand": "BMW",
+   "model": "5 Series",
+   "generation": "5 Series (G30)",
+   "body_type": "Sedan",
+   "year_start": 2017,
+   "year_end": 2020,
+   "url": "https://ownerspecs.com/bmw/5-series-g30-sedan-2017-2020",
+   "litri": 68.0
+  },
+  {
+   "brand": "BMW",
+   "model": "5 Series",
+   "generation": "5 Series Sedan (G30 LCI)",
+   "body_type": "Sedan",
+   "year_start": 2020,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/bmw/5-series-g30-lci-sedan-2020-2023",
+   "litri": 68.0
+  },
+  {
+   "brand": "BMW",
+   "model": "5 Series",
+   "generation": "5 Series Touring (G31 LCI)",
+   "body_type": "Estate",
+   "year_start": 2020,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/bmw/5-series-g31-lci-touring-2020-2024",
+   "litri": 68.0
+  },
+  {
+   "brand": "BMW",
+   "model": "5 Series",
+   "generation": "5 Series Touring (G31)",
+   "body_type": "Estate",
+   "year_start": 2017,
+   "year_end": 2020,
+   "url": "https://ownerspecs.com/bmw/5-series-g31-touring-2017-2020",
+   "litri": 68.0
+  },
+  {
+   "brand": "BMW",
+   "model": "M3",
+   "generation": "F80 M3",
+   "body_type": "Sedan",
+   "year_start": 2014,
+   "year_end": 2018,
+   "url": "https://ownerspecs.com/bmw/m3-f80-sedan-2014-2018",
+   "litri": 60.0
+  },
+  {
+   "brand": "BMW",
+   "model": "M5",
+   "generation": "F90 M5",
+   "body_type": "Sedan",
+   "year_start": 2018,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/bmw/m5-f90-sedan-2018-2023",
+   "litri": 68.0
+  },
+  {
+   "brand": "BMW",
+   "model": "X3",
+   "generation": "X3 (G01)",
+   "body_type": "SUV",
+   "year_start": 2018,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/bmw/x3-g01-suv-2018-2024",
+   "litri": 67.0
+  },
+  {
+   "brand": "BMW",
+   "model": "X5",
+   "generation": "X5 (G05)",
+   "body_type": "SUV",
+   "year_start": 2019,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/bmw/x5-g05-suv-2019-2023",
+   "litri": 80.0
+  },
+  {
+   "brand": "Chevrolet",
+   "model": "Equinox",
+   "generation": "Equinox III (L1U)",
+   "body_type": "SUV",
+   "year_start": 2017,
+   "year_end": 2021,
+   "url": "https://ownerspecs.com/chevrolet/equinox-l1u-suv-2017-2021",
+   "litri": 59.0
+  },
+  {
+   "brand": "Chevrolet",
+   "model": "Silverado 1500",
+   "generation": "Silverado 1500 (T1)",
+   "body_type": "Pickup",
+   "year_start": 2019,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/chevrolet/silverado-t1-pickup-2019-2024",
+   "litri": 91.0
+  },
+  {
+   "brand": "Chrysler",
+   "model": "300",
+   "generation": "300 (LX)",
+   "body_type": "Sedan",
+   "year_start": 2005,
+   "year_end": 2010,
+   "url": "https://ownerspecs.com/chrysler/300-lx-sedan-2005-2010",
+   "litri": 72.0
+  },
+  {
+   "brand": "Dodge",
+   "model": "Challenger",
+   "generation": "Challenger (LC, 3rd gen)",
+   "body_type": "Coupe",
+   "year_start": 2008,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/dodge/challenger-lc-coupe-2008-2023",
+   "litri": 70.0
+  },
+  {
+   "brand": "Dodge",
+   "model": "Charger",
+   "generation": "Charger VI (LX)",
+   "body_type": "Sedan",
+   "year_start": 2006,
+   "year_end": 2010,
+   "url": "https://ownerspecs.com/dodge/charger-lx-sedan-2006-2010",
+   "litri": 72.0
+  },
+  {
+   "brand": "Dodge",
+   "model": "Charger",
+   "generation": "Charger VII (LD)",
+   "body_type": "Sedan",
+   "year_start": 2011,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/dodge/charger-ld-sedan-2011-2023",
+   "litri": 70.0
+  },
+  {
+   "brand": "Dodge",
+   "model": "Dart",
+   "generation": "Dart (PF, 1st gen modern)",
+   "body_type": "Sedan",
+   "year_start": 2013,
+   "year_end": 2016,
+   "url": "https://ownerspecs.com/dodge/dart-pf-sedan-2013-2016",
+   "litri": 54.0
+  },
+  {
+   "brand": "Fiat",
+   "model": "500",
+   "generation": "500 (312)",
+   "body_type": "Hatchback",
+   "year_start": 2007,
+   "year_end": 2015,
+   "url": "https://ownerspecs.com/fiat/500-312-hatchback-2007-2015",
+   "litri": 35.0
+  },
+  {
+   "brand": "Ford",
+   "model": "Explorer",
+   "generation": "Explorer VI (U625)",
+   "body_type": "SUV",
+   "year_start": 2020,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/ford/explorer-u625-suv-2020-2024",
+   "litri": 76.0
+  },
+  {
+   "brand": "Ford",
+   "model": "F-150",
+   "generation": "F-150 XIV (P702)",
+   "body_type": "Pickup",
+   "year_start": 2021,
+   "year_end": 2025,
+   "url": "https://ownerspecs.com/ford/f-150-p702-pickup-2021-2025",
+   "litri": 136.0
+  },
+  {
+   "brand": "Ford",
+   "model": "Mustang",
+   "generation": "Mustang VI",
+   "body_type": "Fastback",
+   "year_start": 2015,
+   "year_end": 2017,
+   "url": "https://ownerspecs.com/ford/mustang-s550-fastback-2015-2017",
+   "litri": 60.0
+  },
+  {
+   "brand": "GMC",
+   "model": "Sierra 1500",
+   "generation": "Sierra 1500 (T1XX)",
+   "body_type": "Pickup",
+   "year_start": 2019,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/gmc/sierra-1500-t1xx-pickup-2019-2024",
+   "litri": 91.0
+  },
+  {
+   "brand": "Hyundai",
+   "model": "i10",
+   "generation": "i10 III (AC3)",
+   "body_type": "Hatchback",
+   "year_start": 2020,
+   "year_end": null,
+   "url": "https://ownerspecs.com/hyundai/i10-ac3-hatchback-2020-present",
+   "litri": 36.0
+  },
+  {
+   "brand": "Hyundai",
+   "model": "i20",
+   "generation": "i20 II (GB)",
+   "body_type": "Hatchback",
+   "year_start": 2014,
+   "year_end": 2020,
+   "url": "https://ownerspecs.com/hyundai/i20-gb-hatchback-2014-2020",
+   "litri": 50.0
+  },
+  {
+   "brand": "Jeep",
+   "model": "Gladiator",
+   "generation": "Gladiator (JT, 1st gen)",
+   "body_type": "Pickup",
+   "year_start": 2020,
+   "year_end": null,
+   "url": "https://ownerspecs.com/jeep/gladiator-jt-pickup-2020-present",
+   "litri": 83.0
+  },
+  {
+   "brand": "Jeep",
+   "model": "Grand Cherokee",
+   "generation": "Grand Cherokee (WK2, 4th gen)",
+   "body_type": "SUV",
+   "year_start": 2011,
+   "year_end": 2021,
+   "url": "https://ownerspecs.com/jeep/grand-cherokee-wk2-suv-2011-2021",
+   "litri": 93.1
+  },
+  {
+   "brand": "Jeep",
+   "model": "Grand Cherokee",
+   "generation": "Grand Cherokee V (WL)",
+   "body_type": "SUV",
+   "year_start": 2022,
+   "year_end": null,
+   "url": "https://ownerspecs.com/jeep/grand-cherokee-wl-suv-2022-present",
+   "litri": 87.0
+  },
+  {
+   "brand": "Jeep",
+   "model": "Wrangler",
+   "generation": "Wrangler IV (JL)",
+   "body_type": "SUV",
+   "year_start": 2018,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/jeep/wrangler-jl-suv-2018-2023",
+   "litri": 81.0
+  },
+  {
+   "brand": "Kia",
+   "model": "Sportage",
+   "generation": "Sportage V",
+   "body_type": "SUV",
+   "year_start": 2021,
+   "year_end": null,
+   "url": "https://ownerspecs.com/kia/sportage-nq5-suv-2021-2025",
+   "litri": 54.0
+  },
+  {
+   "brand": "Lexus",
+   "model": "IS",
+   "generation": "IS II (XE20)",
+   "body_type": "Sedan",
+   "year_start": 2005,
+   "year_end": 2013,
+   "url": "https://ownerspecs.com/lexus/is-xe20-sedan-2005-2013",
+   "litri": 65.0
+  },
+  {
+   "brand": "Lexus",
+   "model": "NX",
+   "generation": "NX II (AZ20)",
+   "body_type": "SUV",
+   "year_start": 2022,
+   "year_end": null,
+   "url": "https://ownerspecs.com/lexus/nx-az20-suv-2022-present",
+   "litri": 55.0
+  },
+  {
+   "brand": "Mazda",
+   "model": "CX-5",
+   "generation": "CX-5 II (KF)",
+   "body_type": "SUV",
+   "year_start": 2017,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/mazda/cx-5-kf-suv-2017-2024",
+   "litri": 56.0
+  },
+  {
+   "brand": "Mercedes-Benz",
+   "model": "A-Class",
+   "generation": "A-Class (W177, 4th gen)",
+   "body_type": "Hatchback",
+   "year_start": 2018,
+   "year_end": null,
+   "url": "https://ownerspecs.com/mercedes-benz/a-class-w177-2018-present",
+   "litri": 51.0
+  },
+  {
+   "brand": "Mercedes-Benz",
+   "model": "B-Class",
+   "generation": "B-Class (W247, 3rd gen)",
+   "body_type": "Hatchback",
+   "year_start": 2019,
+   "year_end": null,
+   "url": "https://ownerspecs.com/mercedes-benz/b-class-w247-2019-present",
+   "litri": 43.0
+  },
+  {
+   "brand": "Mercedes-Benz",
+   "model": "GLE",
+   "generation": "GLE SUV (V167)",
+   "body_type": "SUV",
+   "year_start": 2019,
+   "year_end": null,
+   "url": "https://ownerspecs.com/mercedes-benz/gle-v167-suv-2019-2023",
+   "litri": 85.0
+  },
+  {
+   "brand": "Mitsubishi",
+   "model": "Outlander",
+   "generation": "Outlander III",
+   "body_type": "SUV",
+   "year_start": 2012,
+   "year_end": 2021,
+   "url": "https://ownerspecs.com/mitsubishi/outlander-gf-suv-2012-2021",
+   "litri": 60.0
+  },
+  {
+   "brand": "Mitsubishi",
+   "model": "Pajero",
+   "generation": "Pajero III (V60)",
+   "body_type": "SUV",
+   "year_start": 2000,
+   "year_end": 2006,
+   "url": "https://ownerspecs.com/mitsubishi/pajero-v60-suv-2000-2006",
+   "litri": 69.0
+  },
+  {
+   "brand": "Nissan",
+   "model": "Juke",
+   "generation": "Juke (F15)",
+   "body_type": "SUV",
+   "year_start": 2010,
+   "year_end": 2019,
+   "url": "https://ownerspecs.com/nissan/juke-f15-suv-2010-2019",
+   "litri": 50.0
+  },
+  {
+   "brand": "Nissan",
+   "model": "Qashqai",
+   "generation": "Qashqai II (J11)",
+   "body_type": "SUV",
+   "year_start": 2014,
+   "year_end": 2021,
+   "url": "https://ownerspecs.com/nissan/qashqai-j11-suv-2014-2021",
+   "litri": 55.0
+  },
+  {
+   "brand": "Nissan",
+   "model": "Rogue",
+   "generation": "Rogue III (T33)",
+   "body_type": "SUV",
+   "year_start": 2021,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/nissan/rogue-t33-suv-2021-present",
+   "litri": 55.0
+  },
+  {
+   "brand": "Skoda",
+   "model": "Octavia",
+   "generation": "Octavia IV",
+   "body_type": "Liftback",
+   "year_start": 2020,
+   "year_end": 2025,
+   "url": "https://ownerspecs.com/skoda/octavia-mk4-liftback-2020-2025",
+   "litri": 40.0
+  },
+  {
+   "brand": "Suzuki",
+   "model": "Baleno",
+   "generation": "Baleno (WB, 2nd gen)",
+   "body_type": "Hatchback",
+   "year_start": 2015,
+   "year_end": 2022,
+   "url": "https://ownerspecs.com/suzuki/baleno-wb-hatchback-2015-2022",
+   "litri": 37.0
+  },
+  {
+   "brand": "Suzuki",
+   "model": "Celerio",
+   "generation": "Celerio (LF, 1st gen)",
+   "body_type": "Hatchback",
+   "year_start": 2014,
+   "year_end": 2017,
+   "url": "https://ownerspecs.com/suzuki/celerio-lf-hatchback-2014-2017",
+   "litri": 35.0
+  },
+  {
+   "brand": "Suzuki",
+   "model": "Ignis",
+   "generation": "Ignis (MF, 1st gen)",
+   "body_type": "Hatchback",
+   "year_start": 2016,
+   "year_end": null,
+   "url": "https://ownerspecs.com/suzuki/ignis-mf-hatchback-2016-present",
+   "litri": 32.0
+  },
+  {
+   "brand": "Suzuki",
+   "model": "S-Cross",
+   "generation": "S-Cross (JY, 1st gen)",
+   "body_type": "SUV",
+   "year_start": 2013,
+   "year_end": 2021,
+   "url": "https://ownerspecs.com/suzuki/s-cross-jy-suv-2013-2021",
+   "litri": 47.0
+  },
+  {
+   "brand": "Suzuki",
+   "model": "Swift",
+   "generation": "Swift (ZC/ZD)",
+   "body_type": "Hatchback",
+   "year_start": 2004,
+   "year_end": 2010,
+   "url": "https://ownerspecs.com/suzuki/swift-zc-hatchback-2004-2010",
+   "litri": 43.0
+  },
+  {
+   "brand": "Toyota",
+   "model": "4Runner",
+   "generation": "4Runner V (N280)",
+   "body_type": "SUV",
+   "year_start": 2010,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/toyota/4runner-n280-suv-2010-2024",
+   "litri": 90.0
+  },
+  {
+   "brand": "Toyota",
+   "model": "Camry",
+   "generation": "Camry (XV70)",
+   "body_type": "Sedan",
+   "year_start": 2018,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/toyota/camry-xv70-2018-2024",
+   "litri": 60.0
+  },
+  {
+   "brand": "Toyota",
+   "model": "Highlander",
+   "generation": "Highlander IV (XU70)",
+   "body_type": "SUV",
+   "year_start": 2020,
+   "year_end": 2025,
+   "url": "https://ownerspecs.com/toyota/highlander-xu70-suv-2020-2025",
+   "litri": 68.0
+  },
+  {
+   "brand": "Toyota",
+   "model": "RAV4",
+   "generation": "RAV4 V",
+   "body_type": "SUV",
+   "year_start": 2019,
+   "year_end": 2021,
+   "url": "https://ownerspecs.com/toyota/rav4-xa50-suv-2019-2021",
+   "litri": 55.0
+  },
+  {
+   "brand": "Volkswagen",
+   "model": "Atlas",
+   "generation": "Atlas (CA)",
+   "body_type": "SUV",
+   "year_start": 2018,
+   "year_end": 2023,
+   "url": "https://ownerspecs.com/volkswagen/atlas-ca-suv-2018-2023",
+   "litri": 70.4
+  },
+  {
+   "brand": "Volkswagen",
+   "model": "Golf",
+   "generation": "Golf VIII",
+   "body_type": "Hatchback",
+   "year_start": 2020,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/volkswagen/golf-mk8-hatchback-2020-2024",
+   "litri": 50.0
+  },
+  {
+   "brand": "Volkswagen",
+   "model": "Passat",
+   "generation": "Passat (B8)",
+   "body_type": "Sedan",
+   "year_start": 2015,
+   "year_end": 2019,
+   "url": "https://ownerspecs.com/volkswagen/passat-b8-sedan-2015-2019",
+   "litri": 50.0
+  },
+  {
+   "brand": "Volkswagen",
+   "model": "Tiguan",
+   "generation": "Tiguan II (AD1)",
+   "body_type": "SUV",
+   "year_start": 2017,
+   "year_end": 2024,
+   "url": "https://ownerspecs.com/volkswagen/tiguan-ad1-suv-2017-2024",
+   "litri": 60.0
+  }
+ ]
+}
