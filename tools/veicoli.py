@@ -134,14 +134,16 @@ def interroga_api_eea(anno):
             comp["after"] = dopo
         q = {"size": 0, "query": {"bool": {"must": [{"term": {"year": anno}}, {"term": {"MS": "IT"}}]}},
              "aggs": {"v": {"composite": comp, "aggs": {"auto": {"sum": {"field": "r"}}, "fc": {"avg": {"field": "Fc"}},
-                                                         "z": {"avg": {"field": "z__Wh_km_"}}}}}}
+                                                         "z": {"avg": {"field": "z__Wh_km_"}},
+                                                         "zr": {"avg": {"field": "Zr"}}}}}}
         r = leggi(EEA_API, {"source": json.dumps(q, separators=(",", ":"))})
         agg = r.get("aggregations", {}).get("v", {})
         for b in agg.get("buckets", []):
             k = b["key"]
             if not k.get("marca") or not k.get("modello"):
                 continue
-            righe.append({**k, "auto": b["auto"]["value"], "fc": b["fc"]["value"], "z": b["z"]["value"], "anno": anno})
+            righe.append({**k, "auto": b["auto"]["value"], "fc": b["fc"]["value"], "z": b["z"]["value"],
+                          "zr": b.get("zr", {}).get("value"), "anno": anno})   # Zr: autonomia elettrica WLTP (km)
         dopo = agg.get("after_key")
         if not dopo or not agg.get("buckets"):
             break
@@ -172,6 +174,7 @@ def scarica_eea():
                 v["auto"] = (v["auto"] or 0) + (r["auto"] or 0)
                 v["fc"] = r["fc"] if r["fc"] is not None else v["fc"]
                 v["z"] = r["z"] if r["z"] is not None else v["z"]
+                v["zr"] = r.get("zr") if r.get("zr") is not None else v.get("zr")
                 v["anno"] = r["anno"]
             else:
                 unite[k] = dict(r)
@@ -591,11 +594,16 @@ def costruisci(con):
         kw = _num(r.get("Puissance_maximale"))
         cc = _num(r.get("Cylindrée"))
         auto_it = None
+        z_it, zr_it = [], []      # consumo e autonomia elettrica EEA delle versioni abbinate (21/11/2026)
         if italia:
             for kw_it, n, rif in italia.get((norm(nome_marca(marca)), norm(modello), alim), []):
                 if kw and abs(kw_it - kw) <= 2:
                     auto_it = (auto_it or 0) + n
                     usate.add(id(rif))
+                    if _num(rif.get("z")):
+                        z_it.append(_num(rif.get("z")))
+                    if _num(rif.get("zr")):
+                        zr_it.append(_num(rif.get("zr")))
         plug = alim.startswith("Plug-in")
         elettr = _media(r.get("Conso_elec_Min"), r.get("Conso_elec_Max"))
         righe.append(dict(
@@ -607,8 +615,8 @@ def costruisci(con):
             cambio={"AUTOMATIQUE": "Automatico", "MECANIQUE": "Manuale"}.get(norm(r.get("Type_de_boite"))),
             consumo_misto=None if plug or alim == "Elettrica" else _media(r.get("Conso_vitesse_mixte_Min"), r.get("Conso_vitesse_mixte_Max")),
             consumo_extra_alto=None if alim == "Elettrica" else _media(r.get("Conso_T-haute_vitesse_Min"), r.get("Conso_T-haute_vitesse_Max")),
-            consumo_elettrico=round(elettr / 10, 1) if elettr else None,     # Wh/km → kWh/100 km
-            autonomia_elettrica=int(_num(r.get("Autonomie_elec_Max")) or 0) or None,
+            consumo_elettrico=round(elettr / 10, 1) if elettr else (round(min(z_it) / 10, 1) if z_it else None),
+            autonomia_elettrica=int(_num(r.get("Autonomie_elec_Max")) or 0) or (int(min(zr_it)) if zr_it else None),
             immatricolate_it=auto_it, fonte="ADEME"))
     # versioni vendute in Italia che ADEME non ha (solo dati EEA: consumo WLTP misto, niente fasi né descrizione
     # commerciale; il nome commerciale EEA, se dice più della famiglia, diventa l'allestimento: "320D Xdrive")
@@ -632,7 +640,8 @@ def costruisci(con):
                 consumo_misto=None if alim.startswith("Plug-in") or alim == "Elettrica" else (round(fc, 2) if fc else None),
                 consumo_extra_alto=None,
                 consumo_elettrico=round(z / 10, 1) if z else None,
-                autonomia_elettrica=None, immatricolate_it=n, fonte="EEA"))
+                autonomia_elettrica=int(_num(rif.get("zr"))) if _num(rif.get("zr")) else None,   # Zr, dal 21/11/2026
+                immatricolate_it=n, fonte="EEA"))
     for r in righe:
         r["motore"] = motore_testo(r["cilindrata"], r["kw"], r["alimentazione"], r["versione"])
     righe = unisci_doppioni(righe)

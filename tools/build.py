@@ -402,6 +402,14 @@ def main():
             except Exception as e:
                 pb.warn(f"Serbatoi non inseriti: {e}")
                 print("Serbatoi:", e)
+            # 21/11/2026: auto elettriche, batteria utile e ricarica massima (source/elettriche.csv)
+            try:
+                if check.execute("SELECT COUNT(*) FROM sqlite_master WHERE name = 'veicoli'").fetchone()[0]:
+                    import elettriche
+                    elettriche.costruisci(check)
+            except Exception as e:
+                pb.warn(f"Dati delle elettriche non inseriti: {e}")
+                print("Elettriche:", e)
             # 20/11/2026: foto dei modelli da Wikimedia Commons (solo licenze libere), colonna veicoli.foto
             try:
                 if check.execute("SELECT COUNT(*) FROM sqlite_master WHERE name = 'veicoli'").fetchone()[0]:
