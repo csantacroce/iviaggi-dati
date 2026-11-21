@@ -2,9 +2,22 @@ marca,modello,kw_da,kw_a,autonomia_km,consumo_kwh100,batteria_kwh,ricarica_dc_kw
 Leapmotor,T03,,,265,16.3,37.3,48,https://www.media.stellantis.com/uploads/fr/attachment/8217/t03brochure_en-66f58fb03368c.pdf,"Brochure ufficiale: batteria 37,3 kWh, autonomia WLTP 265 km, 163 Wh/km, DC 48 kW"
 Audi,Q4,,,463,19.0,77,175,https://uploads.audi-mediacenter.com/system/production/car_motorizations/1292/file_en/e14d3bf3b5d821e3d7be3c0bb58de427379bf403/eTD-Audi-Q4-45-e-tron-quattro-210kW_241106.pdf,"Audi MediaCenter, Q4 45 e-tron quattro: 82/77 kWh, 463-526 km, 16,7-19,0 kWh/100 km, DC 175 kW (valori più prudenti)"
 Volkswagen,ID.4,,,,18.4,77,135,https://www.volkswagen-newsroom.com/en/the-new-id4-and-id5-17756/download,"VW Newsroom, ID.4 Pro: 77 kWh netti, 15,9-18,4 kWh/100 km, DC 135 kW (Pure 52 kWh e 115 kW)"
-Volkswagen,ID.3,,,,,59,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Volkswagen-Nuova-ID3.pdf,"Listino VW Italia: Pro 59 kWh netti (Pure 52, Pro S e GTX 79)"
-Cupra,Born,,,413,16.7,58,,https://www.seat-cupra-mediacenter.com/content/dam/seat-media-center/models-all-brands/cupra-models/cupra-born/technical-data/New_CUPRA_Born_Technical_Data_26.pdf,"Cupra Media Center MY26: Born 58 kWh, 413-484 km, 14,2-16,7 kWh/100 km (Endurance e VZ 79 kWh)"
-Cupra,Tavascan,,,441,,,135,https://www.cupra.com/en/cars/tavascan/tavascan-endurance,"Cupra: fino a 441 km (Tavascan), 557 (Endurance), 533 (VZ); ricarica DC 135 kW"
-Skoda,Elroq,,,377,16.2,52,135,https://cdn.skoda-storyboard.com/2025/06/Skoda_Elroq_Technical_data_d5686460.pdf,"Dati tecnici Škoda 06/2025: 50 (52 kWh, 377 km, 145 kW), 60 (59 kWh, 430 km, 165 kW), 85 (77 kWh, 574 km, 135 kW), RS (79 kWh, 549 km, 185 kW): valori più prudenti"
 Dacia,Spring,,,,,26.8,30,https://cdn.group.renault.com/dac/ch/dacia-new-cars/pricelists/Spring_PL_i.pdf,"Listino Dacia Svizzera: batteria utile 26,8 kWh, ricarica rapida DC fino a 30 kW"
 BYD,Dolphin Surf,,,,,,65,https://www.byd.com/eu/news-list/BYD_brings_fun_future_ready_DOLPHIN_SURF_to_European_customers,"BYD Europa: DC 65 kW (Active, 30 kWh) e 85 kW (Boost e Comfort, 43,2 kWh): valore più prudente"
+Skoda,Elroq,,130,377,15.7,52,145,https://cdn.skoda-storyboard.com/2025/06/Skoda_Elroq_Technical_data_d5686460.pdf,Dati tecnici Škoda 06/2025: Elroq 50 (125 kW)
+Skoda,Elroq,131,160,430,15.7,59,165,https://cdn.skoda-storyboard.com/2025/06/Skoda_Elroq_Technical_data_d5686460.pdf,Dati tecnici Škoda 06/2025: Elroq 60 (150 kW)
+Skoda,Elroq,161,220,574,15.2,77,135,https://cdn.skoda-storyboard.com/2025/06/Skoda_Elroq_Technical_data_d5686460.pdf,Dati tecnici Škoda 06/2025: Elroq 85 (210 kW)
+Skoda,Elroq,221,,549,16.2,79,185,https://cdn.skoda-storyboard.com/2025/06/Skoda_Elroq_Technical_data_d5686460.pdf,Dati tecnici Škoda 06/2025: Elroq RS (250 kW)
+Skoda,Enyaq,,160,428,16.0,58,105,https://cdn.skoda-storyboard.com/2025/06/TD-Enyaq-en_new_db50ac09.pdf,"Dati tecnici Škoda 06/2025: Enyaq 60 (428-456 km, 15,0-16,0 kWh/100 km)"
+Skoda,Enyaq,161,,547,16.5,77,165,https://cdn.skoda-storyboard.com/2025/06/TD-Enyaq-en_new_db50ac09.pdf,"Dati tecnici Škoda 06/2025: Enyaq 85 e 85x (547-584 km, 15,3-16,5 kWh/100 km)"
+Cupra,Born,,160,413,16.7,58,,https://www.seat-cupra-mediacenter.com/content/dam/seat-media-center/models-all-brands/cupra-models/cupra-born/technical-data/New_CUPRA_Born_Technical_Data_26.pdf,"Cupra Media Center MY26: Born 58 kWh, 413-484 km, 14,2-16,7 kWh/100 km"
+Cupra,Born,161,,538,16.8,79,,https://www.seat-cupra-mediacenter.com/content/dam/seat-media-center/models-all-brands/cupra-models/cupra-born/technical-data/New_CUPRA_Born_Technical_Data_26.pdf,"Cupra Media Center MY26: Endurance 79 kWh, 538-627 km, 14,4-16,8 kWh/100 km"
+Volkswagen,ID.3,131,160,,,59,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Volkswagen-Nuova-ID3.pdf,Listino VW Italia: Pro 59 kWh netti (150 kW)
+Volkswagen,ID.3,161,,,,79,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Volkswagen-Nuova-ID3.pdf,Listino VW Italia: Pro S e GTX 79 kWh netti
+Volkswagen,ID.4,,130,,17.9,52,115,https://www.volkswagen-newsroom.com/en/the-new-id4-and-id5-17756/download,"VW Newsroom: ID.4 Pure 52 kWh, 16,3-17,9 kWh/100 km, DC fino a 115 kW"
+Cupra,Tavascan,,150,441,,,135,https://www.cupra.com/en/cars/tavascan/tavascan-endurance,"Cupra: Tavascan fino a 441 km, DC 135 kW"
+Cupra,Tavascan,151,220,557,,,135,https://www.cupra.com/en/cars/tavascan/tavascan-endurance,Cupra: Tavascan Endurance fino a 557 km
+Cupra,Tavascan,221,,533,,,135,https://www.cupra.com/en/cars/tavascan/tavascan-endurance,Cupra: Tavascan VZ fino a 533 km
+Audi,Q6,200,,,19.6,94.9,270,https://www.audi.com/en/the-audi-q6-e-tron-electric-mobility-on-a-new-level-15929/the-facts-15948,"Audi: Q6 e-tron quattro 100/94,9 kWh, 17,0-19,6 kWh/100 km, DC 270 kW (dal 185 kW con batteria più piccola: non indicata)"
+Citroën,E-C3 Aircross,,,300,,44,,https://www.citroen.it/content/dam/citroen/italy/b2c/models/new-c3-aircross/CITROEN-EC3-AIRCROSS_ITA_3.pdf,"Citroën Italia: batteria LFP 44 kWh, 300 km WLTP"
+Volkswagen,ID.3,,130,,,52,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Volkswagen-Nuova-ID3.pdf,Listino VW Italia: Pure 52 kWh netti (125 kW)
