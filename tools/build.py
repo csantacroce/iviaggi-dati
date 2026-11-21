@@ -390,14 +390,14 @@ def main():
                 print("Veicoli:", e)
                 check.execute("DROP TABLE IF EXISTS veicoli")
                 check.commit()
-            # 20/11/2026: capacità del serbatoio (siti delle case + Wikipedia), colonne serbatoio nella tabella veicoli
+            # 20/11/2026: capacità del serbatoio (siti delle case e prove + OwnerSpecs dal 21/11), colonne serbatoio nella tabella veicoli
             try:
                 if check.execute("SELECT COUNT(*) FROM sqlite_master WHERE name = 'veicoli'").fetchone()[0]:
                     import serbatoi
                     try:
-                        print("Serbatoi da Wikipedia (nuovi, errori):", serbatoi.aggiorna_cache(check))
+                        print("Serbatoi da OwnerSpecs:", serbatoi.aggiorna_cache(check))
                     except Exception as e:
-                        pb.warn(f"Serbatoi da Wikipedia non aggiornati: {e}")
+                        pb.warn(f"Serbatoi da OwnerSpecs non aggiornati: {e}")
                     serbatoi.costruisci(check)
             except Exception as e:
                 pb.warn(f"Serbatoi non inseriti: {e}")
