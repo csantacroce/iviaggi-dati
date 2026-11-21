@@ -178,4 +178,4 @@ def costruisci(con):
     con.commit()
     tot = con.execute("SELECT COUNT(DISTINCT marca||modello) FROM veicoli WHERE alimentazione <> 'Elettrica'").fetchone()[0]
     con_dato = con.execute("SELECT COUNT(DISTINCT marca||modello) FROM veicoli WHERE serbatoio IS NOT NULL").fetchone()[0]
-    print(f"Serbatoi: {con_dato} modelli su {tot} ({len(manuali)} valori dai siti delle case)")
+    print(f"Serbatoi: {con_dato} modelli su {tot} ({len(manuali)} valori presi a mano, ognuno con la fonte)")
