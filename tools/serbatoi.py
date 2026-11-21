@@ -6,8 +6,9 @@ Nessuna fonte aperta unica ha il serbatoio: si mettono insieme più fonti, ognun
      schede di singoli modelli, ognuno con il link. Hanno sempre la precedenza.
   2. OwnerSpecs (21/11/2026, Carlo: ok), https://ownerspecs.com, licenza CC BY-SA 4.0 (citazione obbligatoria, i dati
      derivati restano CC BY-SA): campo fuel_tank_l per generazione, controllato dal sito su libretti, certificati di
-     conformità e registri. Si usa la generazione ancora in produzione (se manca, quella finita dal 2024) e, se ce ne sono più
-     di una (carrozzerie diverse), il valore più basso. Cache in source/serbatoi_ownerspecs.json, riletta una volta
+     conformità e registri. Si usa solo la generazione ancora in produzione e, se ce ne sono più
+     di una (carrozzerie diverse), il valore più basso. Controllo a campione del 21/11/2026: Octavia IV 40 l (scheda
+     Škoda: 45) e Classe A 51 l (43 di serie, 51 a richiesta) sbagliati, corretti con righe a mano. Cache in source/serbatoi_ownerspecs.json, riletta una volta
      al mese o con source/aggiorna_serbatoi.
   (Wikipedia in inglese, provata il 20/11/2026: nelle schede il serbatoio non c'è più, 0 valori su 364 modelli.)
 Nella tabella veicoli: colonne serbatoio (litri), serbatoio_gpl (litri, solo GPL) e fonte_serbatoio.
@@ -28,7 +29,7 @@ TRIGGER = os.path.join(ROOT, "source", "aggiorna_serbatoi")
 GIORNI = 30
 AGENTE = "iVIAGGI-dati/1.0 (https://github.com/csantacroce/iviaggi-dati; app iVIAGGI Autostrade Italiane)"
 OWNERSPECS = "https://ownerspecs.com/data/dataset.json"
-ANNO_MINIMO = 2024      # generazioni finite prima: fuori dal catalogo (immatricolazioni degli ultimi due anni)
+ANNO_MINIMO = 2024      # (filtro di riserva) generazioni finite prima: fuori dal catalogo
 
 
 def norm(t):
@@ -83,9 +84,9 @@ def scelta_ownerspecs(generazioni, marca, modello):
                if norm(f"{g['brand']} {g['model']}") == chiave and (g.get("year_end") or 9999) >= ANNO_MINIMO]
     if not attuali:
         return None
-    in_produzione = [g for g in attuali if not g.get("year_end")]
-    if in_produzione:                              # c'è la generazione nuova: quella finita non conta
-        attuali = in_produzione
+    attuali = [g for g in attuali if not g.get("year_end")]   # solo la generazione in produzione (21/11/2026)
+    if not attuali:                                # quella finita può essere già stata sostituita (BMW X3, Serie 5)
+        return None
     g = min(attuali, key=lambda g: g["litri"])     # più carrozzerie: il valore più basso (autonomia prudente)
     return g["litri"], g.get("url") or "https://ownerspecs.com"
 
@@ -106,7 +107,7 @@ def costruisci(con):
                         "AND alimentazione NOT IN ('Elettrica', 'GPL', 'Metano', 'Plug-in benzina', 'Plug-in gasolio')",
                         (v[0], "OwnerSpecs (CC BY-SA 4.0): " + v[1], marca, modello))
     # 1) valori presi a mano (precedenza), dal più generico al più specifico:
-    #    riga senza alimentazione = tutto il modello tranne GPL e metano (serbatoi diversi, servono righe proprie);
+    #    riga senza alimentazione = tutto il modello tranne GPL, metano e plug-in (serbatoi diversi, servono righe proprie);
     #    poi le righe con alimentazione; per ultime quelle limitate per potenza (colonne kw_da / kw_a, estremi inclusi)
     manuali = list(csv.DictReader(open(MANUALI, encoding="utf-8"))) if os.path.exists(MANUALI) else []
 
@@ -119,7 +120,7 @@ def costruisci(con):
             dove += " AND alimentazione = ?"
             par.append(r["alimentazione"])
         else:
-            dove += " AND alimentazione NOT IN ('GPL', 'Metano')"
+            dove += " AND alimentazione NOT IN ('GPL', 'Metano', 'Plug-in benzina', 'Plug-in gasolio')"
         if r.get("kw_da"):
             dove += " AND kw >= ?"
             par.append(float(r["kw_da"]))
