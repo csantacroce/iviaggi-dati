@@ -1,1 +1,10 @@
 marca,modello,kw_da,kw_a,autonomia_km,consumo_kwh100,batteria_kwh,ricarica_dc_kw,fonte,note
+Leapmotor,T03,,,265,16.3,37.3,48,https://www.media.stellantis.com/uploads/fr/attachment/8217/t03brochure_en-66f58fb03368c.pdf,"Brochure ufficiale: batteria 37,3 kWh, autonomia WLTP 265 km, 163 Wh/km, DC 48 kW"
+Audi,Q4,,,463,19.0,77,175,https://uploads.audi-mediacenter.com/system/production/car_motorizations/1292/file_en/e14d3bf3b5d821e3d7be3c0bb58de427379bf403/eTD-Audi-Q4-45-e-tron-quattro-210kW_241106.pdf,"Audi MediaCenter, Q4 45 e-tron quattro: 82/77 kWh, 463-526 km, 16,7-19,0 kWh/100 km, DC 175 kW (valori più prudenti)"
+Volkswagen,ID.4,,,,18.4,77,135,https://www.volkswagen-newsroom.com/en/the-new-id4-and-id5-17756/download,"VW Newsroom, ID.4 Pro: 77 kWh netti, 15,9-18,4 kWh/100 km, DC 135 kW (Pure 52 kWh e 115 kW)"
+Volkswagen,ID.3,,,,,59,,https://www.volkswagen.it/idhub/content/dam/onehub_pkw/importers/it/download/listini/Listino-prezzi-Volkswagen-Nuova-ID3.pdf,"Listino VW Italia: Pro 59 kWh netti (Pure 52, Pro S e GTX 79)"
+Cupra,Born,,,413,16.7,58,,https://www.seat-cupra-mediacenter.com/content/dam/seat-media-center/models-all-brands/cupra-models/cupra-born/technical-data/New_CUPRA_Born_Technical_Data_26.pdf,"Cupra Media Center MY26: Born 58 kWh, 413-484 km, 14,2-16,7 kWh/100 km (Endurance e VZ 79 kWh)"
+Cupra,Tavascan,,,441,,,135,https://www.cupra.com/en/cars/tavascan/tavascan-endurance,"Cupra: fino a 441 km (Tavascan), 557 (Endurance), 533 (VZ); ricarica DC 135 kW"
+Skoda,Elroq,,,377,16.2,52,135,https://cdn.skoda-storyboard.com/2025/06/Skoda_Elroq_Technical_data_d5686460.pdf,"Dati tecnici Škoda 06/2025: 50 (52 kWh, 377 km, 145 kW), 60 (59 kWh, 430 km, 165 kW), 85 (77 kWh, 574 km, 135 kW), RS (79 kWh, 549 km, 185 kW): valori più prudenti"
+Dacia,Spring,,,,,26.8,30,https://cdn.group.renault.com/dac/ch/dacia-new-cars/pricelists/Spring_PL_i.pdf,"Listino Dacia Svizzera: batteria utile 26,8 kWh, ricarica rapida DC fino a 30 kW"
+BYD,Dolphin Surf,,,,,,65,https://www.byd.com/eu/news-list/BYD_brings_fun_future_ready_DOLPHIN_SURF_to_European_customers,"BYD Europa: DC 65 kW (Active, 30 kWh) e 85 kW (Boost e Comfort, 43,2 kWh): valore più prudente"
