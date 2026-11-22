@@ -1,7 +1,7 @@
 {
-  "quando": "2026-11-21T14:49:01Z",
+  "quando": "2026-11-22T14:36:02Z",
   "ok": [
-    "prezzi: 2124 righe da 526/537 impianti (estrazione 2026-11-21), 13 righe vecchie tenute (fonte: API Osservaprezzi del Ministero, prezzi in tempo reale: 537 impianti letti, 0 non letti (232 letti al secondo o terzo tentativo))"
+    "prezzi: 2124 righe da 526/537 impianti (estrazione 2026-11-22), 13 righe vecchie tenute (fonte: API Osservaprezzi del Ministero, prezzi in tempo reale: 537 impianti letti, 0 non letti)"
   ],
   "problemi": [],
   "non_necessari": [
