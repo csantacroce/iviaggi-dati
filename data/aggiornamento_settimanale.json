@@ -1,9 +1,12 @@
 {
-  "quando": "2026-11-23T18:23:20Z",
+  "quando": "2026-11-24T17:37:25Z",
   "ok": [
-    "prezzi: 2124 righe da 526/537 impianti (estrazione 2026-11-23), 13 righe vecchie tenute (fonte: API Osservaprezzi del Ministero, prezzi in tempo reale: 537 impianti letti, 0 non letti (1 letti al secondo o terzo tentativo))"
+    "prezzi: 2106 righe da 523/537 impianti (estrazione 2026-11-17), 29 righe vecchie tenute (fonte: copia OpenDataView.it degli open data MIMIT)"
   ],
-  "problemi": [],
+  "problemi": [
+    "API Osservaprezzi non raggiungibile (Remote end closed connection without response); provo il file CSV del Ministero",
+    "Ministero non raggiungibile (download non riuscito da https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv: <urlopen error timed out>); provo la copia OpenDataView"
+  ],
   "non_necessari": [
     "cambi: aggiornati da meno di 6 giorni"
   ]
