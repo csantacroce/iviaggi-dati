@@ -215,8 +215,23 @@ def ids_abbinati(wb):
             if r[i_area] is not None and r[i_imp] is not None]
 
 
+def data_info(wb, chiave):
+    """Valore (testo AAAA-MM-GG) di una voce di info_aggiornamento, o None."""
+    for row in wb["info_aggiornamento"].iter_rows(min_row=2, values_only=True):
+        if row[0] == chiave and row[1]:
+            return str(row[1])[:10]
+    return None
+
+
 def aggiorna_prezzi(wb, raw, oggi):
     estrazione, righe = leggi_prezzi(raw)
+    # Mai tornare indietro: il 24/11/2026 l'API e il CSV del Ministero non rispondevano e la copia di riserva
+    # (OpenDataView, ferma al 17/11) aveva sostituito i prezzi del 23/11. Un file più vecchio dei prezzi già
+    # nel database viene scartato: l'app tiene i prezzi più recenti e l'allarme segnala comunque il problema.
+    attuale = data_info(wb, "data_estrazione")
+    if estrazione and attuale and estrazione < attuale:
+        raise ValueError(f"il file ha i prezzi del {estrazione}, più vecchi di quelli già nel database "
+                         f"({attuale}): tenuti quelli del {attuale}")
     ws_imp = wb["impianti_ministero"]
     h_imp = [c.value for c in ws_imp[1]]
     i_area, i_imp = h_imp.index("id_area"), h_imp.index("id_impianto")
