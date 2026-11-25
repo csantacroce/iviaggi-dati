@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "when": "2026-11-25T17:27:30Z",
-  "changed": true,
-  "message": "Pubblicata la versione 166. Gli utenti la ricevono alla prossima apertura dell'app.",
+  "when": "2026-11-25T22:00:07Z",
+  "changed": false,
+  "message": "Nessuna modifica rispetto alla versione 166: non c'è nulla da pubblicare.",
   "errors": [],
   "warnings": [
     "Tracciati: A1 → Milano S. Giuliano: ramo parallelo tra Aglio Est e Cantagallo Est (52.7 km, nuovi 30.2)",
@@ -33,22 +33,5 @@
     "tassi_cambio": 10,
     "tariffe_pedaggi": 80,
     "aree_servizio_attive": 475
-  },
-  "changes": {
-    "info_aggiornamento": {
-      "aggiunte": 3,
-      "tolte": 3,
-      "modificate": 0
-    },
-    "prezzi": {
-      "aggiunte": 2124,
-      "tolte": 2122,
-      "modificate": 0
-    },
-    "tassi_cambio": {
-      "aggiunte": 10,
-      "tolte": 10,
-      "modificate": 0
-    }
   }
 }
